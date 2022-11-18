@@ -7,8 +7,24 @@
 script = ExtResource("1_njju0")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.881196, 0.472751, 0, -0.472751, 0.881196, 0.750379, 2.8547, 3.27346)
+transform = Transform3D(1, 0, 0, 0, 0.660447, 0.750872, 0, -0.750872, 0.660447, 0.750379, 5.10537, 3.87269)
 current = true
 
 [node name="rowing_boat" parent="." instance=ExtResource("2_6o7dt")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="forward_vec" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93302, 0)
+target_position = Vector3(0, 0, -10)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 4
+
+[node name="velocity" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93302, 0)
+target_position = Vector3(0, 0, -10)
+debug_shape_custom_color = Color(0.411765, 0.462745, 1, 1)
+
+[node name="acceleration" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93302, 0)
+target_position = Vector3(0, 0, -10)
+debug_shape_custom_color = Color(0, 0.643137, 0.298039, 1)
+debug_shape_thickness = 4
