@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkv7tl0c20sc4"
-path.s3tc="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex"
-path.etc2="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.etc2.ctex"
+uid="uid://jlykxa6arsv"
+path.s3tc="res://.godot/imported/lightning_blank.svg-e317414b870b684fd9e6e8ecf92d069d.s3tc.ctex"
+path.etc2="res://.godot/imported/lightning_blank.svg-e317414b870b684fd9e6e8ecf92d069d.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex", "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.etc2.ctex"]
+source_file="res://world/weather/lightning_blank.svg"
+dest_files=["res://.godot/imported/lightning_blank.svg-e317414b870b684fd9e6e8ecf92d069d.s3tc.ctex", "res://.godot/imported/lightning_blank.svg-e317414b870b684fd9e6e8ecf92d069d.etc2.ctex"]
 
 [params]
 
