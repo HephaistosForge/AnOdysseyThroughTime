@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://nw8wbyufev5i"]
+[gd_scene load_steps=8 format=3 uid="uid://do7cwpg6tht1h"]
 
 [ext_resource type="Shader" path="res://world/ocean/water.gdshader" id="1_8qx3y"]
-[ext_resource type="PackedScene" path="res://entities/ships/rowing_boat/rowing_boat.tscn" id="2_w484w"]
-[ext_resource type="PackedScene" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
+[ext_resource type="PackedScene" uid="uid://qkol5h6avnsc" path="res://entities/ships/rowing_boat/rowing_boat.tscn" id="2_w484w"]
+[ext_resource type="PackedScene" uid="uid://c0eg78m7jmyuo" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
+[ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vplt3"]
 size = Vector3(0.1, 1, 0.1)
@@ -34,10 +35,13 @@ mesh = SubResource("PlaneMesh_iacdl")
 [node name="RowingBoat" parent="." instance=ExtResource("2_w484w")]
 visible = false
 
-[node name="Camera3D" type="Camera3D" parent="RowingBoat"]
-transform = Transform3D(1, 0, 0, 0, 0.809335, 0.587347, 0, -0.587347, 0.809335, 0, 7.30701, 5.83753)
-current = true
-
 [node name="viking_boat" parent="." instance=ExtResource("3_13om1")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.598479, 0.801139, 0, -0.801139, 0.598479, 3.1558, 15.0181, 9.90466)
+current = true
+fov = 100.0
+script = ExtResource("4_p8d8g")
+player = NodePath("../viking_boat")
