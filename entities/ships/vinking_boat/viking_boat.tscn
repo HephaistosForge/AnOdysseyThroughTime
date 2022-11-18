@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0eg78m7jmyuo"]
+
+[ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_gv77f"]
+[ext_resource type="PackedScene" uid="uid://d2gpfit42ejd3" path="res://entities/ships/vinking_boat/viking.glb" id="2_jl4av"]
+
+[node name="VikingBoat" type="CharacterBody3D"]
+
+[node name="ShipSteering" parent="." instance=ExtResource("1_gv77f")]
+
+[node name="VikingModel" parent="." instance=ExtResource("2_jl4av")]

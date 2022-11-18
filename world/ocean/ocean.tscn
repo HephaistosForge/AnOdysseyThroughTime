@@ -1,20 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://do7cwpg6tht1h"]
+[gd_scene load_steps=7 format=3 uid="uid://do7cwpg6tht1h"]
 
 [ext_resource type="Shader" path="res://world/ocean/water.gdshader" id="1_8qx3y"]
-[ext_resource type="PackedScene" uid="uid://c4splgee3fdum" path="res://entities/ships/ship.tscn" id="1_cfrkg"]
+[ext_resource type="PackedScene" uid="uid://qkol5h6avnsc" path="res://entities/ships/rowing_boat/rowing_boat.tscn" id="2_w484w"]
+[ext_resource type="PackedScene" uid="uid://c0eg78m7jmyuo" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vplt3"]
 size = Vector3(0.1, 1, 0.1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_3bilh"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1fb50"]
-noise = SubResource("FastNoiseLite_3bilh")
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hqk6h"]
 render_priority = 0
 shader = ExtResource("1_8qx3y")
-shader_parameter/noise = SubResource("NoiseTexture2D_1fb50")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iacdl"]
 material = SubResource("ShaderMaterial_hqk6h")
@@ -24,11 +19,6 @@ subdivide_depth = 32
 
 [node name="ocean" type="Node3D"]
 
-[node name="ship" parent="." instance=ExtResource("1_cfrkg")]
-
-[node name="OmniLight3D" type="OmniLight3D" parent="ship"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
 visible = false
 emitting = false
@@ -37,9 +27,17 @@ mesh = SubResource("BoxMesh_vplt3")
 emission_shape = 3
 emission_box_extents = Vector3(10, 19, 19)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.809335, 0.587347, 0, -0.587347, 0.809335, 0, 7.30701, 5.83753)
-
 [node name="WaterShader" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("PlaneMesh_iacdl")
+
+[node name="RowingBoat" parent="." instance=ExtResource("2_w484w")]
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="RowingBoat"]
+transform = Transform3D(1, 0, 0, 0, 0.809335, 0.587347, 0, -0.587347, 0.809335, 0, 7.30701, 5.83753)
+current = true
+
+[node name="viking_boat" parent="." instance=ExtResource("3_13om1")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://qkol5h6avnsc"]
+
+[ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_tjyn1"]
+[ext_resource type="PackedScene" uid="uid://bkogtdpbfkee4" path="res://entities/ships/rowing_boat/rowing_boat.glb" id="2_1xris"]
+
+[node name="RowingBoat" type="CharacterBody3D"]
+
+[node name="ShipSteering" parent="." instance=ExtResource("1_tjyn1")]
+
+[node name="RowingBoatModel" parent="." instance=ExtResource("2_1xris")]
