@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://do7cwpg6tht1h"]
+[gd_scene load_steps=8 format=3 uid="uid://nw8wbyufev5i"]
 
 [ext_resource type="Shader" path="res://world/ocean/water.gdshader" id="1_8qx3y"]
-[ext_resource type="PackedScene" uid="uid://qkol5h6avnsc" path="res://entities/ships/rowing_boat/rowing_boat.tscn" id="2_w484w"]
+[ext_resource type="PackedScene" path="res://entities/ships/rowing_boat/rowing_boat.tscn" id="2_w484w"]
 [ext_resource type="PackedScene" uid="uid://c0eg78m7jmyuo" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
+[ext_resource type="Script" path="res://world/ocean/water_shader.gd" id="3_dekj3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vplt3"]
 size = Vector3(0.1, 1, 0.1)
@@ -10,6 +11,9 @@ size = Vector3(0.1, 1, 0.1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hqk6h"]
 render_priority = 0
 shader = ExtResource("1_8qx3y")
+shader_parameter/center = null
+shader_parameter/height_scale = null
+shader_parameter/water_color = null
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iacdl"]
 material = SubResource("ShaderMaterial_hqk6h")
@@ -30,6 +34,7 @@ emission_box_extents = Vector3(10, 19, 19)
 [node name="WaterShader" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("PlaneMesh_iacdl")
+script = ExtResource("3_dekj3")
 
 [node name="RowingBoat" parent="." instance=ExtResource("2_w484w")]
 visible = false

@@ -1,6 +1,9 @@
 shader_type spatial;
 
 uniform sampler2D noise;
+uniform float height_scale = 1.0;
+uniform vec3 water_color = vec3(0.1, 0.3, 0.5);
+uniform vec3 center;
 
 float wave(vec2 position) {
 	position += texture(noise, position / 10.0).x * 2.0 - 1.0;
@@ -19,7 +22,7 @@ float height(vec2 position, float time) {
 void vertex() {
 	vec2 pos = VERTEX.xz;
 	float k = height(pos, TIME);
-	VERTEX.y = k;
+	VERTEX.y = k * height_scale;
 	NORMAL = normalize(vec3(k - height(pos + vec2(0.1, 0.0), TIME), 0.1, k - height(pos + vec2(0.0, 0.1), TIME)));
 }
 
@@ -29,6 +32,5 @@ void fragment() {
 	METALLIC = 0.0;
 	ROUGHNESS = 0.1 * (1.0 - fresnel);
 	
-	ALBEDO = vec3(0.1, 0.3, 0.5) + (0.1 * fresnel); // Bright water
-	// ALBEDO = vec3(0.01, 0.03, 0.05) + (0.1 * fresnel); // Dark water
+	ALBEDO = water_color + (0.1 * fresnel);
 }
