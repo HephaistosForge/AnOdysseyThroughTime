@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://do7cwpg6tht1h"]
+[gd_scene load_steps=7 format=3 uid="uid://nw8wbyufev5i"]
 
 [ext_resource type="Shader" path="res://world/ocean/water.gdshader" id="1_8qx3y"]
-[ext_resource type="PackedScene" uid="uid://qkol5h6avnsc" path="res://entities/ships/rowing_boat/rowing_boat.tscn" id="2_w484w"]
-[ext_resource type="PackedScene" uid="uid://c0eg78m7jmyuo" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
+[ext_resource type="PackedScene" path="res://entities/ships/rowing_boat/rowing_boat.tscn" id="2_w484w"]
+[ext_resource type="PackedScene" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vplt3"]
 size = Vector3(0.1, 1, 0.1)
