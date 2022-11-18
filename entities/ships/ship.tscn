@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4splgee3fdum"]
+
+[ext_resource type="Script" path="res://entities/ships/ship.gd" id="1_njju0"]
+[ext_resource type="PackedScene" uid="uid://bkogtdpbfkee4" path="res://entities/ships/rowing_boat/rowing_boat.glb" id="2_6o7dt"]
+
+[node name="ship" type="CharacterBody3D"]
+script = ExtResource("1_njju0")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.881196, 0.472751, 0, -0.472751, 0.881196, 0.750379, 2.8547, 3.27346)
+current = true
+
+[node name="rowing_boat" parent="." instance=ExtResource("2_6o7dt")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://do7cwpg6tht1h"]
+
+[ext_resource type="PackedScene" uid="uid://c4splgee3fdum" path="res://entities/ships/ship.tscn" id="1_cfrkg"]
+[ext_resource type="Texture2D" uid="uid://dehfojo737s8k" path="res://world/ocean/water.png" id="2_kwlug"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vplt3"]
+size = Vector3(0.1, 1, 0.1)
+
+[node name="ocean" type="Node3D"]
+
+[node name="ship" parent="." instance=ExtResource("1_cfrkg")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.33439, 1.80299, 0)
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+visible = false
+emitting = false
+amount = 100
+mesh = SubResource("BoxMesh_vplt3")
+emission_shape = 3
+emission_box_extents = Vector3(10, 19, 19)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.809335, 0.587347, 0, -0.587347, 0.809335, 0, 7.30701, 5.83753)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(4.42928, 0, 0, 0, 0.109276, 1.0859, 0, -4.72805, 0.0250977, -0.358104, -0.915847, -0.403091)
+texture = ExtResource("2_kwlug")
