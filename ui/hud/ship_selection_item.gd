@@ -1,6 +1,8 @@
 extends PanelContainer
 @onready var name_label: Label = $CenterContainer/VBoxContainer/Name/Name
 
+#@onready var image = $CenterContainer/VBoxContainer/Image2
+
 @onready var geschwindigkeit = $CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer/Texture_Geschwindigkeit
 @onready var wendigkeit = $CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer/Texture_Wendigkeit
 @onready var beschleunigung = $CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer/Texture_Beschleunigung
