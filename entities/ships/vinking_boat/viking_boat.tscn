@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkw1thi6wsk62"]
+[gd_scene load_steps=6 format=3 uid="uid://c0eg78m7jmyuo"]
 
-[ext_resource type="PackedScene" path="res://entities/ships/ship_steering.tscn" id="1_gv77f"]
+[ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_gv77f"]
 [ext_resource type="PackedScene" uid="uid://d2gpfit42ejd3" path="res://entities/ships/vinking_boat/viking.glb" id="2_jl4av"]
 [ext_resource type="PackedScene" uid="uid://b8pkku6jgdsh0" path="res://ui/dialogue/Dialogue.tscn" id="3_u7opl"]
 [ext_resource type="PackedScene" uid="uid://byaks36vihbmo" path="res://entities/ships/pointer.glb" id="4_uy5om"]
-[ext_resource type="PackedScene" uid="uid://00wpf5wk5tb7" path="res://audio/sounds/ships/creaking_ship/CreakingShip.tscn" id="5_gn2lm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4v0rn"]
 radius = 2.30067
@@ -22,10 +21,11 @@ transform = Transform3D(0.6, 0, 0, 0, -2.62268e-08, 0.6, 0, -0.6, -2.62268e-08, 
 shape = SubResource("CapsuleShape3D_4v0rn")
 
 [node name="Dialogue" parent="." instance=ExtResource("3_u7opl")]
+inital_dialog = ["ᚾᚨᚾᚢ?", "ᚺᚢᚨᛞ ᛖᚱ ᛞᛖᚱ ᚾᚢ ᛊᚲᛖᛏ?", "ᛞᛖᚱ ᛖᚱ ᛊᚲᛖᛏ ᚾᛟᚷᛖᛏ!"]
+follow_up_dialog = ["ᛃᛖᚷ ᚲᚨᚾ ᚷᛟᛞᛏ ᛚᛁᛞᛖ ᚱᚨᛁᛞᛊ!", "ᚲᛚᚨᚱ ᛏᛁᛚ ᚲᚨᛗᛈ.", "ᛏᛁᛞ ᛏᛁᛚ ᛖᚱᛟᛒᚱᛁᛜᛖᚱ, ᚺᚨᚺᚨ!"]
+name_of_speaker = ["Astrid", "Freya", "Bjorn", "Erik"]
 
 [node name="Anchor" type="Node3D" parent="." groups=["anchor"]]
 
 [node name="pointer" parent="Anchor" instance=ExtResource("4_uy5om")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 4.39667)
-
-[node name="CreakingShip" parent="." instance=ExtResource("5_gn2lm")]
