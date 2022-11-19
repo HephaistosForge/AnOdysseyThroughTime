@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://jlykxa6arsv" path="res://world/weather/lightning_blank.svg" id="2_qedqn"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_khqrx"]
+height = 19.926
 radius = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u04p4"]
@@ -38,7 +39,6 @@ shape = SubResource("CylinderShape3D_khqrx")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.87735, 0)
-visible = false
 material_overlay = ExtResource("1_yx63d")
 texture = ExtResource("2_qedqn")
 

@@ -27,7 +27,6 @@ func set_active():
 	sprite.visible = true
 	despawn_timer.start(despawn_time)
 	var bodies = area3D.get_overlapping_bodies()
-	print(bodies)
 	if bodies:
 		for body in bodies:
 			if body.is_in_group("boat"):
@@ -37,14 +36,14 @@ func set_active():
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if active and body.is_in_group("boat"):
 		lightning_strike_generator.on_hit()
-		#ship_selection.prompt_ui()
+		ship_selection.prompt_ui()
 		print("hit")
 	active = false
 
 
 func _on_despawn_timer_timeout() -> void:
-	self.queue_free()
-	#pass
+	#self.queue_free()
+	pass
 
 
 

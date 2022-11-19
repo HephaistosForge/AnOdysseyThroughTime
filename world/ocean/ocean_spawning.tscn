@@ -82,12 +82,6 @@ shader_parameter/iChannel1 = SubResource("NoiseTexture2D_ya8hl")
 shader_parameter/iChannel2 = SubResource("NoiseTexture2D_8x484")
 shader_parameter/maelstrom_positions0 = null
 shader_parameter/maelstrom_positions1 = Basis(0.1, 0.3, 0.8, 0.2, 0.9, 0.4, 0, 0, 1)
-shader_parameter/maelstrom_positions10 = null
-shader_parameter/maelstrom_positions11 = null
-shader_parameter/maelstrom_positions12 = null
-shader_parameter/maelstrom_positions13 = null
-shader_parameter/maelstrom_positions14 = null
-shader_parameter/maelstrom_positions15 = null
 shader_parameter/maelstrom_positions2 = null
 shader_parameter/maelstrom_positions3 = null
 shader_parameter/maelstrom_positions4 = null
@@ -193,7 +187,6 @@ directional_shadow_blend_splits = true
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["camera"]]
 transform = Transform3D(1, 0, 0, 0, 0.598479, 0.801139, 0, -0.801139, 0.598479, 3.1558, 15.0181, 9.90466)
-current = true
 fov = 100.0
 script = ExtResource("6_5goi6")
 player = NodePath("../viking_boat")
@@ -212,7 +205,6 @@ mouse_filter = 2
 [node name="Camera3D2" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 360.784, 0)
 projection = 1
-current = true
 fov = 85.0
 size = 1200.0
 
