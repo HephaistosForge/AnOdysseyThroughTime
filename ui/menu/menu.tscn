@@ -1,6 +1,8 @@
-[gd_scene format=3 uid="uid://bharo7xq0nma4"]
+[gd_scene load_steps=2 format=3 uid="uid://bharo7xq0nma4"]
 
-[node name="Control" type="PanelContainer"]
+[ext_resource type="Script" path="res://ui/menu/menu.gd" id="1_haam4"]
+
+[node name="Menu" type="PanelContainer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -12,242 +14,160 @@ offset_right = 86.0
 offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_haam4")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_right = 1157.0
-offset_bottom = 658.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
+offset_bottom = 649.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
+[node name="header" type="VBoxContainer" parent="VBoxContainer"]
 offset_right = 1157.0
-offset_bottom = 658.0
+offset_bottom = 187.0
 
-[node name="Header" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+[node name="game" type="MarginContainer" parent="VBoxContainer/header"]
 offset_right = 1157.0
-offset_bottom = 72.0
-theme_override_constants/margin_left = 166
-theme_override_constants/margin_top = 72
-theme_override_constants/margin_right = 166
-
-[node name="Titel" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 76.0
-offset_right = 1157.0
-offset_bottom = 215.0
-
-[node name="Titel_container" type="MarginContainer" parent="MarginContainer/VBoxContainer/Titel"]
-layout_mode = 2
-offset_right = 1157.0
-offset_bottom = 139.0
+offset_bottom = 141.0
 theme_override_constants/margin_left = 266
-theme_override_constants/margin_top = 24
+theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 266
-theme_override_constants/margin_bottom = 24
+theme_override_constants/margin_bottom = 0
 
-[node name="Spielname" type="Label" parent="MarginContainer/VBoxContainer/Titel/Titel_container"]
-layout_mode = 2
+[node name="game_name" type="Label" parent="VBoxContainer/header/game"]
 offset_left = 266.0
-offset_top = 24.0
+offset_top = 50.0
 offset_right = 891.0
-offset_bottom = 115.0
+offset_bottom = 141.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
 text = "Ein ganz tolles Spiel	!"
 
-[node name="Space" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 219.0
-offset_right = 1157.0
-offset_bottom = 235.0
-theme_override_constants/margin_left = 166
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 166
-
-[node name="Publisher" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_left = 467.0
-offset_top = 239.0
-offset_right = 690.0
-offset_bottom = 281.0
+[node name="publisher" type="MarginContainer" parent="VBoxContainer/header"]
+offset_left = 475.0
+offset_top = 145.0
+offset_right = 682.0
+offset_bottom = 187.0
 size_flags_horizontal = 4
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 16
 
-[node name="Publisher_container" type="MarginContainer" parent="MarginContainer/VBoxContainer/Publisher"]
-layout_mode = 2
-offset_right = 223.0
-offset_bottom = 42.0
-size_flags_horizontal = 4
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="Teamname" type="Label" parent="MarginContainer/VBoxContainer/Publisher/Publisher_container"]
-layout_mode = 2
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 215.0
-offset_bottom = 34.0
+[node name="publisher_name" type="Label" parent="VBoxContainer/header/publisher"]
+offset_right = 207.0
+offset_bottom = 26.0
 size_flags_horizontal = 4
 text = "Game by Hephaistos Forge"
 
-[node name="Space2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 285.0
+[node name="body" type="MarginContainer" parent="VBoxContainer"]
+offset_top = 191.0
 offset_right = 1157.0
-offset_bottom = 301.0
-theme_override_constants/margin_left = 166
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 166
+offset_bottom = 603.0
+theme_override_constants/margin_left = 96
+theme_override_constants/margin_top = 56
+theme_override_constants/margin_right = 800
+theme_override_constants/margin_bottom = 56
 
-[node name="Middle" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 305.0
-offset_right = 1157.0
-offset_bottom = 576.0
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
+[node name="menu_frame" type="PanelContainer" parent="VBoxContainer/body"]
+offset_left = 96.0
+offset_top = 56.0
+offset_right = 357.0
+offset_bottom = 356.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Middle"]
-layout_mode = 2
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 1149.0
-offset_bottom = 263.0
-
-[node name="Space" type="MarginContainer" parent="MarginContainer/VBoxContainer/Middle/HBoxContainer"]
-layout_mode = 2
-offset_right = 80.0
-offset_bottom = 255.0
-theme_override_constants/margin_left = 80
-theme_override_constants/margin_top = 0
-
-[node name="Menu" type="PanelContainer" parent="MarginContainer/VBoxContainer/Middle/HBoxContainer"]
-layout_mode = 2
-offset_left = 84.0
-offset_right = 348.0
-offset_bottom = 255.0
-size_flags_horizontal = 0
-size_flags_vertical = 4
-
-[node name="Buttons" type="MarginContainer" parent="MarginContainer/VBoxContainer/Middle/HBoxContainer/Menu"]
-layout_mode = 2
-offset_right = 264.0
-offset_bottom = 255.0
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="Buttons_list" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Middle/HBoxContainer/Menu/Buttons"]
-layout_mode = 2
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 248.0
-offset_bottom = 239.0
+[node name="buttons_list" type="VBoxContainer" parent="VBoxContainer/body"]
+offset_left = 96.0
+offset_top = 56.0
+offset_right = 357.0
+offset_bottom = 356.0
 size_flags_vertical = 4
 theme_override_constants/separation = 16
 
-[node name="Spielen_container" type="MarginContainer" parent="MarginContainer/VBoxContainer/Middle/HBoxContainer/Menu/Buttons/Buttons_list"]
-layout_mode = 2
-offset_right = 232.0
+[node name="play_container" type="MarginContainer" parent="VBoxContainer/body/buttons_list"]
+offset_right = 261.0
 offset_bottom = 65.0
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 4
 
-[node name="Spielen" type="Button" parent="MarginContainer/VBoxContainer/Middle/HBoxContainer/Menu/Buttons/Buttons_list/Spielen_container"]
-layout_mode = 2
+[node name="play" type="Button" parent="VBoxContainer/body/buttons_list/play_container"]
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 224.0
+offset_right = 253.0
 offset_bottom = 61.0
 theme_override_font_sizes/font_size = 32
 text = "Spielen"
 
-[node name="Einstellungen_container" type="MarginContainer" parent="MarginContainer/VBoxContainer/Middle/HBoxContainer/Menu/Buttons/Buttons_list"]
-layout_mode = 2
+[node name="highscore_container" type="MarginContainer" parent="VBoxContainer/body/buttons_list"]
 offset_top = 81.0
-offset_right = 232.0
+offset_right = 261.0
 offset_bottom = 142.0
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 4
 
-[node name="Einstellungen" type="Button" parent="MarginContainer/VBoxContainer/Middle/HBoxContainer/Menu/Buttons/Buttons_list/Einstellungen_container"]
-layout_mode = 2
+[node name="highscore" type="Button" parent="VBoxContainer/body/buttons_list/highscore_container"]
 offset_left = 8.0
 offset_top = 4.0
-offset_right = 224.0
+offset_right = 253.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 32
+text = "Highscore"
+
+[node name="options_container" type="MarginContainer" parent="VBoxContainer/body/buttons_list"]
+offset_top = 158.0
+offset_right = 261.0
+offset_bottom = 219.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="options" type="Button" parent="VBoxContainer/body/buttons_list/options_container"]
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 253.0
 offset_bottom = 57.0
 theme_override_font_sizes/font_size = 32
 text = "Einstellungen"
 
-[node name="Einstellungen_container2" type="MarginContainer" parent="MarginContainer/VBoxContainer/Middle/HBoxContainer/Menu/Buttons/Buttons_list"]
-layout_mode = 2
-offset_top = 158.0
-offset_right = 232.0
-offset_bottom = 223.0
+[node name="exit_container" type="MarginContainer" parent="VBoxContainer/body/buttons_list"]
+offset_top = 235.0
+offset_right = 261.0
+offset_bottom = 300.0
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Beenden" type="Button" parent="MarginContainer/VBoxContainer/Middle/HBoxContainer/Menu/Buttons/Buttons_list/Einstellungen_container2"]
-layout_mode = 2
+[node name="exit" type="Button" parent="VBoxContainer/body/buttons_list/exit_container"]
 offset_left = 8.0
 offset_top = 4.0
-offset_right = 224.0
+offset_right = 253.0
 offset_bottom = 57.0
 theme_override_font_sizes/font_size = 32
 text = "Beenden"
 
-[node name="Space2" type="MarginContainer" parent="MarginContainer/VBoxContainer/Middle/HBoxContainer"]
-layout_mode = 2
-offset_left = 352.0
-offset_right = 432.0
-offset_bottom = 255.0
-theme_override_constants/margin_left = 80
-theme_override_constants/margin_top = 0
-
-[node name="Image" type="TextureRect" parent="MarginContainer/VBoxContainer/Middle/HBoxContainer"]
-layout_mode = 2
-offset_left = 436.0
-offset_right = 436.0
-offset_bottom = 255.0
-size_flags_horizontal = 4
-
-[node name="Space3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 580.0
+[node name="footer" type="MarginContainer" parent="VBoxContainer"]
+offset_top = 607.0
 offset_right = 1157.0
-offset_bottom = 612.0
-theme_override_constants/margin_left = 166
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 166
-
-[node name="Footer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-offset_top = 616.0
-offset_right = 1157.0
-offset_bottom = 658.0
+offset_bottom = 649.0
 size_flags_vertical = 3
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="version" type="Label" parent="MarginContainer/VBoxContainer/Footer"]
-layout_mode = 2
+[node name="version" type="Label" parent="VBoxContainer/footer"]
 offset_top = 8.0
 offset_right = 1149.0
 offset_bottom = 34.0
 text = "alpha zerro"
 horizontal_alignment = 2
+
+[connection signal="pressed" from="VBoxContainer/body/buttons_list/play_container/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/body/buttons_list/play_container/play" to="." method="_on_spielen_pressed"]
+[connection signal="pressed" from="VBoxContainer/body/buttons_list/highscore_container/highscore" to="." method="_on_highscore_pressed"]
+[connection signal="pressed" from="VBoxContainer/body/buttons_list/highscore_container/highscore" to="." method="_on_einstellungen_pressed"]
+[connection signal="pressed" from="VBoxContainer/body/buttons_list/options_container/options" to="." method="_on_einstellungen_pressed"]
+[connection signal="pressed" from="VBoxContainer/body/buttons_list/options_container/options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/body/buttons_list/exit_container/exit" to="." method="_on_beenden_pressed"]
+[connection signal="pressed" from="VBoxContainer/body/buttons_list/exit_container/exit" to="." method="_on_exit_pressed"]
