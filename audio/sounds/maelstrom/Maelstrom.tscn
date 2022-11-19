@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://pcd7badpojb8"]
+
+[ext_resource type="AudioStream" uid="uid://24uq0toi8bxj" path="res://audio/sounds/maelstrom/maelstrom.ogg" id="1_564to"]
+
+[node name="MaelstromSFX" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_564to")
+volume_db = 10.0
+unit_size = 99.0
+max_db = 4.0
+autoplay = true
+panning_strength = 3.0
+bus = &"Maelstrom"
