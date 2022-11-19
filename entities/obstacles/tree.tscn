@@ -1,19 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cickuipjoy040"]
+[gd_scene load_steps=3 format=3 uid="uid://cickuipjoy040"]
 
-[ext_resource type="Script" path="res://entities/obstacles/obstacle.gd" id="1_3kuej"]
 [ext_resource type="PackedScene" uid="uid://xh0qjsm5vv31" path="res://entities/obstacles/models/tree.glb" id="1_6eki5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gvscn"]
 size = Vector3(1.74231, 1.39506, 15.3462)
 
-[node name="tree" type="RigidBody3D" groups=["obstacle", "pullable"]]
+[node name="tree" type="RigidBody3D" groups=["pullable"]]
 gravity_scale = 0.0
-lock_rotation = true
-script = ExtResource("1_3kuej")
 
 [node name="tree" parent="." instance=ExtResource("1_6eki5")]
 transform = Transform3D(0.497284, 0, 0, 0, 0.497284, 0, 0, 0, 0.497284, 0, 0.1, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.497284, 0, 0, 0, 0.497284, 0, 0, 0, 0.497284, 0, 0.1, 0)
+[node name="Area3D" type="Area3D" parent="tree"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tree/Area3D"]
 shape = SubResource("BoxShape3D_gvscn")

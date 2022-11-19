@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://caethxedp4npb"]
+[gd_scene load_steps=22 format=3 uid="uid://b3tjwxnqgc6dj"]
 
 [ext_resource type="Shader" path="res://world/weather/sky.gdshader" id="1_8oio7"]
 [ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_ddwd0"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cx01enkvm0qdr" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_ngqft"]
 [ext_resource type="PackedScene" uid="uid://dxc1ht5s5puis" path="res://ui/dialogue/TutorialInformation/TutorialInformation.tscn" id="8_uvx3f"]
-[ext_resource type="PackedScene" path="res://world/maelstrom/maelstrom_area.tscn" id="9_5csxv"]
+[ext_resource type="PackedScene" uid="uid://drf1jxsbswk04" path="res://world/maelstrom/maelstrom_area.tscn" id="9_5csxv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iekdp"]
 shader = ExtResource("1_8oio7")

@@ -26,6 +26,12 @@ func _on_spawn_timer_timeout() -> void:
 	
 	var obstacle = OBSTACLE_PREFABS[next_obstacle].instantiate()
 	self.add_child(obstacle)
-	obstacle.position = rand_position
+	obstacle.position = rand_position - Vector3(0,20,0)
+	obstacle.scale = Vector3.ONE * 0.5
+	
+	var tween = create_tween()
+	var _error = tween.tween_property(obstacle, "position", rand_position, 3).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
+	#_error = tween.parallel().tween_property(obstacle, "scale", Vector3.ONE, 1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
+
 	
 	spawn_timer.start(spawn_time)
