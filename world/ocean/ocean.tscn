@@ -237,4 +237,3 @@ transform = Transform3D(4.951, 0.698285, 0, -0.698285, 4.951, 0, 0, 0, 5, -0.637
 transform = Transform3D(1.58046, -0.523911, -1.108, 0.62931, 1.89841, 0, 1.05172, -0.348639, 1.66503, -5.75548, 6.86144, 9.15125)
 
 [connection signal="body_entered" from="GameManager/GoalArea" to="GameManager" method="_on_goal_area_body_entered"]
-[connection signal="body_entered" from="GameManager/GoalArea" to="GameManager/GoalArea" method="_on_body_entered"]

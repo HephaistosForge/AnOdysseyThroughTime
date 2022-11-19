@@ -9,7 +9,6 @@
 script = ExtResource("1_qmr2d")
 
 [node name="CenterContainer" type="MarginContainer" parent="."]
-layout_mode = 2
 offset_right = 364.0
 offset_bottom = 449.0
 theme_override_constants/margin_left = 16
@@ -18,7 +17,6 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-layout_mode = 2
 offset_left = 16.0
 offset_top = 8.0
 offset_right = 348.0
@@ -27,19 +25,16 @@ theme_override_constants/separation = 5
 alignment = 1
 
 [node name="Name" type="PanelContainer" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
 offset_right = 332.0
 offset_bottom = 26.0
 
 [node name="Name" type="Label" parent="CenterContainer/VBoxContainer/Name"]
-layout_mode = 2
 offset_right = 332.0
 offset_bottom = 26.0
 text = "<Name>"
 horizontal_alignment = 1
 
 [node name="Image2" type="TextureRect" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
 offset_left = 102.0
 offset_top = 31.0
 offset_right = 230.0
@@ -49,13 +44,11 @@ size_flags_vertical = 4
 texture = ExtResource("1_w5l0a")
 
 [node name="Attribute" type="PanelContainer" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 164.0
 offset_right = 332.0
 offset_bottom = 316.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer/Attribute"]
-layout_mode = 2
 offset_right = 332.0
 offset_bottom = 152.0
 theme_override_constants/margin_left = 8
@@ -64,7 +57,6 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
 [node name="GridContainer" type="GridContainer" parent="CenterContainer/VBoxContainer/Attribute/MarginContainer"]
-layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 324.0
@@ -75,14 +67,12 @@ theme_override_constants/v_separation = 8
 columns = 2
 
 [node name="Geschwindigkeit" type="Label" parent="CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_top = 1.0
 offset_right = 127.0
 offset_bottom = 27.0
 text = "Geschwindigkeit"
 
 [node name="Texture_Geschwindigkeit" type="TextureProgressBar" parent="CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_left = 143.0
 offset_right = 316.0
 offset_bottom = 28.0
@@ -91,14 +81,12 @@ texture_under = ExtResource("2_piq0s")
 texture_progress = ExtResource("3_qpaaf")
 
 [node name="Wendigkeit" type="Label" parent="CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_top = 37.0
 offset_right = 127.0
 offset_bottom = 63.0
 text = "Wendigkeit"
 
 [node name="Texture_Wendigkeit" type="TextureProgressBar" parent="CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_left = 143.0
 offset_top = 36.0
 offset_right = 316.0
@@ -108,14 +96,12 @@ texture_under = ExtResource("2_piq0s")
 texture_progress = ExtResource("3_qpaaf")
 
 [node name="Beschleunigung" type="Label" parent="CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_top = 73.0
 offset_right = 127.0
 offset_bottom = 99.0
 text = "Beschleunigung"
 
 [node name="Texture_Beschleunigung" type="TextureProgressBar" parent="CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_left = 143.0
 offset_top = 72.0
 offset_right = 316.0
@@ -125,14 +111,12 @@ texture_under = ExtResource("2_piq0s")
 texture_progress = ExtResource("3_qpaaf")
 
 [node name="Größe" type="Label" parent="CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_top = 109.0
 offset_right = 127.0
 offset_bottom = 135.0
 text = "Größe"
 
 [node name="Texture_Größe" type="TextureProgressBar" parent="CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_left = 143.0
 offset_top = 108.0
 offset_right = 316.0
@@ -142,13 +126,11 @@ texture_under = ExtResource("2_piq0s")
 texture_progress = ExtResource("3_qpaaf")
 
 [node name="Trivia" type="PanelContainer" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 321.0
 offset_right = 332.0
 offset_bottom = 397.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer/Trivia"]
-layout_mode = 2
 offset_right = 332.0
 offset_bottom = 76.0
 theme_override_constants/margin_left = 8
@@ -157,7 +139,6 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
 [node name="GridContainer" type="GridContainer" parent="CenterContainer/VBoxContainer/Trivia/MarginContainer"]
-layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 324.0
@@ -167,13 +148,11 @@ theme_override_constants/v_separation = 8
 columns = 2
 
 [node name="Jahrgang" type="Label" parent="CenterContainer/VBoxContainer/Trivia/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_right = 84.0
 offset_bottom = 26.0
 text = "Jahrgang"
 
 [node name="Jahrgang_Wert" type="Label" parent="CenterContainer/VBoxContainer/Trivia/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_left = 267.0
 offset_right = 316.0
 offset_bottom = 26.0
@@ -182,14 +161,12 @@ text = "<text>"
 horizontal_alignment = 2
 
 [node name="Gewicht" type="Label" parent="CenterContainer/VBoxContainer/Trivia/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_top = 34.0
 offset_right = 84.0
 offset_bottom = 60.0
 text = "Gewicht (t)"
 
 [node name="Gewicht_Wert" type="Label" parent="CenterContainer/VBoxContainer/Trivia/MarginContainer/GridContainer"]
-layout_mode = 2
 offset_left = 164.0
 offset_top = 34.0
 offset_right = 316.0
@@ -199,14 +176,12 @@ text = "<text>"
 horizontal_alignment = 2
 
 [node name="Button" type="PanelContainer" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
 offset_top = 402.0
 offset_right = 332.0
 offset_bottom = 433.0
 
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer/Button"]
 process_mode = 3
-layout_mode = 2
 offset_right = 332.0
 offset_bottom = 31.0
 text = "Auswählen
