@@ -12,13 +12,12 @@ extends PanelContainer
 @onready var breite_label: Label = $CenterContainer/VBoxContainer/Trivia/MarginContainer/GridContainer/Breite_Wert
 @onready var gewicht_label: Label = $CenterContainer/VBoxContainer/Trivia/MarginContainer/GridContainer/Gewicht_Wert
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	init_values('Titanic', 10, 30, 90, '1909', '20', '5', '10')
-	
-	
-func init_values(_name, _geschwindigkeit, _wendigkeit, _beschleunigung, _jahrgang, _laenge, _breite, _gewicht):
+@onready var ship_image: TextureRect = $CenterContainer/VBoxContainer/Image2
+
+func init_values(_name, _ship_image, _geschwindigkeit, _wendigkeit, _beschleunigung, _jahrgang, _laenge, _breite, _gewicht):
 	name_label.text = _name
+	
+	ship_image.texture = _ship_image
 	
 	geschwindigkeit.value = _geschwindigkeit
 	wendigkeit.value = _wendigkeit

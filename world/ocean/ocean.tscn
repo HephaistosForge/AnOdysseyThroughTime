@@ -12,26 +12,26 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iekdp"]
 shader = ExtResource("1_8oio7")
-shader_parameter/base_noise_scale = null
-shader_parameter/dark_falloff = null
-shader_parameter/day_bottom_color = null
-shader_parameter/day_top_color = null
-shader_parameter/flat_sun = null
-shader_parameter/horizon_color_day = null
-shader_parameter/horizon_color_night = null
-shader_parameter/horizon_intensity = null
-shader_parameter/moon_color = null
-shader_parameter/moon_crescent = null
-shader_parameter/moon_radius = null
-shader_parameter/night_bottom_color = null
-shader_parameter/night_top_color = null
-shader_parameter/offset_horizon = null
-shader_parameter/stars_cutoff = null
-shader_parameter/stars_sky_color = null
-shader_parameter/stars_speed = null
-shader_parameter/sun_color = null
-shader_parameter/sun_radius = null
-shader_parameter/sun_set = null
+shader_parameter/base_noise_scale = 0.2
+shader_parameter/dark_falloff = 4.0
+shader_parameter/day_bottom_color = Color(0.0705882, 0.101961, 0.121569, 1)
+shader_parameter/day_top_color = Color(0.200037, 0.260183, 0.372396, 1)
+shader_parameter/flat_sun = true
+shader_parameter/horizon_color_day = Color(0.490196, 0.54902, 0.643137, 1)
+shader_parameter/horizon_color_night = Color(0, 0.8, 1, 1)
+shader_parameter/horizon_intensity = -3.901
+shader_parameter/moon_color = Color(1, 1, 1, 1)
+shader_parameter/moon_crescent = -0.3
+shader_parameter/moon_radius = 0.15
+shader_parameter/night_bottom_color = Color(0, 0, 0.2, 1)
+shader_parameter/night_top_color = Color(0, 0, 0, 1)
+shader_parameter/offset_horizon = 0.0
+shader_parameter/stars_cutoff = 0.08
+shader_parameter/stars_sky_color = Color(0, 0.2, 0.1, 1)
+shader_parameter/stars_speed = 0.3
+shader_parameter/sun_color = Color(0.521569, 0.517647, 0.560784, 1)
+shader_parameter/sun_radius = 0.05
+shader_parameter/sun_set = Color(0.427451, 0.384314, 0.388235, 1)
 
 [sub_resource type="Sky" id="Sky_loxr7"]
 sky_material = SubResource("ShaderMaterial_iekdp")
@@ -39,6 +39,16 @@ sky_material = SubResource("ShaderMaterial_iekdp")
 [sub_resource type="Environment" id="Environment_pcp7k"]
 background_mode = 2
 sky = SubResource("Sky_loxr7")
+ambient_light_source = 3
+ambient_light_color = Color(0.505882, 0.505882, 0.505882, 1)
+ambient_light_energy = 0.27
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_use_occlusion = true
+sdfgi_min_cell_size = 0.01
+sdfgi_cascade0_distance = 0.64
+sdfgi_max_distance = 10.24
 glow_enabled = true
 glow_intensity = 1.85
 fog_light_color = Color(0.478431, 0.509804, 0.560784, 1)
@@ -78,6 +88,7 @@ shader_parameter/maelstrom_positions7 = null
 shader_parameter/maelstrom_positions8 = null
 shader_parameter/maelstrom_positions9 = null
 shader_parameter/screen_resolution = null
+shader_parameter/water_color = Color(0.329412, 0.498039, 0.592157, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iacdl"]
 material = SubResource("ShaderMaterial_hqk6h")
