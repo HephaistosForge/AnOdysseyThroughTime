@@ -25,7 +25,7 @@ func interpolate0to10(value, _min, _max):
 	return diff * (value / 10.0) + _min;
 
 func set_attributes(_size, _max_speed, _turn_speed, _acceleration):
-	scale = interpolate0to10(_size, 0.5, 3)
+	scale = interpolate0to10(_size, 0.5, 3) * Vector3(1,1,1)
 	
 	MAX_SPEED = interpolate0to10(_max_speed, 5, 30)
 	

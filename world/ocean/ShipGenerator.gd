@@ -122,12 +122,12 @@ func setup_ship_options() -> void:
 		var ship_values: Array = ship_with_attributes[1] # Distribution of modifiable attributes
 		var ship_attributes: Dictionary = ship_with_attributes[2] # Dictionary of Ship Attributes
 		
-#		ship.set_attributes(
-#			ship_values[0],
-#			ship_values[1],
-#			ship_values[2],
-#			ship_values[3],
-#		)
+		ship.get_node("ShipSteering").set_attributes(
+			ship_values[0],
+			ship_values[1],
+			ship_values[2],
+			ship_values[3],
+		)
 		options.append(ship)
 		
 		# setup UI
