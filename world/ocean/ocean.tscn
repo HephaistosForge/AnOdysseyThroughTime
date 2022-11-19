@@ -137,7 +137,6 @@ script = ExtResource("8_ngqft")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 350.093, 392.596, -6.82382)
 
 [node name="TutorialInformation" parent="." instance=ExtResource("8_uvx3f")]
-visible = false
 mouse_filter = 2
 
 [node name="ShipGenerator" type="Node3D" parent="." groups=["ship_generator"]]
