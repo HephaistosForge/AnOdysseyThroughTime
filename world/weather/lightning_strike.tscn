@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bo22tvthdxm7n"]
+[gd_scene load_steps=10 format=3 uid="uid://bo22tvthdxm7n"]
 
 [ext_resource type="Script" path="res://world/weather/lightning_strike.gd" id="1_vskvf"]
 [ext_resource type="Material" uid="uid://uaa80rtlifqf" path="res://world/weather/lightning_material.tres" id="1_yx63d"]
 [ext_resource type="Texture2D" uid="uid://jlykxa6arsv" path="res://world/weather/lightning_blank.svg" id="2_qedqn"]
+[ext_resource type="PackedScene" uid="uid://dhlug70ic41i1" path="res://audio/sounds/lightning_strike/LightningStrikeSFX.tscn" id="4_vcl08"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_khqrx"]
 height = 19.926
@@ -53,6 +54,8 @@ mesh = SubResource("CylinderMesh_0jjhy")
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.4, 0)
 mesh = SubResource("TorusMesh_ptqcc")
 skeleton = NodePath("")
+
+[node name="LightningStrikeSFX" parent="." instance=ExtResource("4_vcl08")]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
