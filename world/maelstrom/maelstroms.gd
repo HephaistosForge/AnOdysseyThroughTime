@@ -29,7 +29,7 @@ func _ready():
 		var trials = 0
 		while true:
 			pos = Vector3(randf(), randf(), .2)
-			if pos.distance_to(spawn_point_as_uv) > 0.1 and pos.length() > 0.17:
+			if pos.distance_to(spawn_point_as_uv) > 0.15 and pos.length() > 0.17:
 				if trials < 10:
 					for p in maelstroms:
 						if pos.distance_to(p) < 0.1:

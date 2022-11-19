@@ -1,99 +1,20 @@
-[gd_scene load_steps=24 format=3 uid="uid://c0eg78m7jmyuo"]
+[gd_scene load_steps=6 format=3 uid="uid://c0eg78m7jmyuo"]
 
 [ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_gv77f"]
-[ext_resource type="PackedScene" uid="uid://dtimnj6efcpbn" path="res://entities/ships/vinking_boat/viking.glb" id="2_jl4av"]
-[ext_resource type="PackedScene" path="res://ui/dialogue/Dialogue.tscn" id="3_u7opl"]
+[ext_resource type="PackedScene" uid="uid://d2gpfit42ejd3" path="res://entities/ships/vinking_boat/viking.glb" id="2_jl4av"]
+[ext_resource type="PackedScene" uid="uid://b8pkku6jgdsh0" path="res://ui/dialogue/Dialogue.tscn" id="3_u7opl"]
 [ext_resource type="PackedScene" uid="uid://byaks36vihbmo" path="res://entities/ships/pointer.glb" id="4_uy5om"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4v0rn"]
 radius = 2.30067
 height = 10.4836
 
-[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_eunp2"]
-
-[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_1b4vj"]
-
-[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_kiys2"]
-
-[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_ctm1q"]
-
-[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_nqu17"]
-
-[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_autry"]
-
-[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_up3xm"]
-
-[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_80gg2"]
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vj67d"]
-animation = &"Paddle002Action"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eaw0c"]
-animation = &"Paddle003Action"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s34jv"]
-animation = &"Paddle004Action"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8oqu4"]
-animation = &"Paddle005Action"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cw1lf"]
-animation = &"Paddle006Action"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ljo1s"]
-animation = &"Paddle008Action"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1nqw3"]
-animation = &"Paddle008Action"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tdtsh"]
-animation = &"Paddle009Action"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x8bqh"]
-animation = &"Paddle001Action"
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_aqy5f"]
-graph_offset = Vector2(-674.357, -457.987)
-nodes/Add2/node = SubResource("AnimationNodeAdd2_80gg2")
-nodes/Add2/position = Vector2(-300, -340)
-"nodes/Add2 2/node" = SubResource("AnimationNodeAdd2_eunp2")
-"nodes/Add2 2/position" = Vector2(-120, -220)
-"nodes/Add2 3/node" = SubResource("AnimationNodeAdd2_1b4vj")
-"nodes/Add2 3/position" = Vector2(-300, -20)
-"nodes/Add2 4/node" = SubResource("AnimationNodeAdd2_kiys2")
-"nodes/Add2 4/position" = Vector2(-300, 360)
-"nodes/Add2 5/node" = SubResource("AnimationNodeAdd2_ctm1q")
-"nodes/Add2 5/position" = Vector2(-300, 160)
-"nodes/Add2 6/node" = SubResource("AnimationNodeAdd2_nqu17")
-"nodes/Add2 6/position" = Vector2(80, -120)
-"nodes/Add2 7/node" = SubResource("AnimationNodeAdd2_autry")
-"nodes/Add2 7/position" = Vector2(80, 220)
-"nodes/Add2 8/node" = SubResource("AnimationNodeAdd2_up3xm")
-"nodes/Add2 8/position" = Vector2(280, 60)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_x8bqh")
-nodes/Animation/position = Vector2(-540, -340)
-"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_vj67d")
-"nodes/Animation 2/position" = Vector2(-540, -240)
-"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_eaw0c")
-"nodes/Animation 3/position" = Vector2(-540, -140)
-"nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_s34jv")
-"nodes/Animation 4/position" = Vector2(-540, -40)
-"nodes/Animation 5/node" = SubResource("AnimationNodeAnimation_8oqu4")
-"nodes/Animation 5/position" = Vector2(-540, 60)
-"nodes/Animation 6/node" = SubResource("AnimationNodeAnimation_cw1lf")
-"nodes/Animation 6/position" = Vector2(-540, 160)
-"nodes/Animation 7/node" = SubResource("AnimationNodeAnimation_ljo1s")
-"nodes/Animation 7/position" = Vector2(-540, 260)
-"nodes/Animation 8/node" = SubResource("AnimationNodeAnimation_1nqw3")
-"nodes/Animation 8/position" = Vector2(-540, 360)
-"nodes/Animation 9/node" = SubResource("AnimationNodeAnimation_tdtsh")
-"nodes/Animation 9/position" = Vector2(-540, 460)
-nodes/output/position = Vector2(0, -540)
-node_connections = [&"output", 0, &"Add2", &"Add2", 0, &"Animation", &"Add2", 1, &"Animation 2", &"Add2 2", 1, &"Animation 3", &"Add2 3", 0, &"Animation 4", &"Add2 3", 1, &"Animation 5", &"Add2 4", 0, &"Animation 8", &"Add2 4", 1, &"Animation 9", &"Add2 5", 0, &"Animation 6", &"Add2 5", 1, &"Animation 7", &"Add2 6", 0, &"Add2 2", &"Add2 6", 1, &"Add2 3", &"Add2 7", 0, &"Add2 5", &"Add2 7", 1, &"Add2 4", &"Add2 8", 0, &"Add2 6", &"Add2 8", 1, &"Add2 7"]
-
 [node name="VikingBoat" type="CharacterBody3D" groups=["boat", "pullable"]]
 
 [node name="ShipSteering" parent="." instance=ExtResource("1_gv77f")]
+
+[node name="Model" parent="." instance=ExtResource("2_jl4av")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, -2.62268e-08, 0.6, 0, -0.6, -2.62268e-08, 0, 1.56517, 0)
@@ -107,81 +28,4 @@ name_of_speaker = ["Astrid", "Freya", "Bjorn", "Erik"]
 [node name="Anchor" type="Node3D" parent="." groups=["anchor"]]
 
 [node name="pointer" parent="Anchor" instance=ExtResource("4_uy5om")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 4.39667)
-
-[node name="Model" parent="." instance=ExtResource("2_jl4av")]
-
-[node name="Paddle" parent="Model" index="4"]
-transform = Transform3D(0.0694766, 0.241033, 0.025447, 0.00332185, 1.72348, -0.0334303, -0.0268926, 0.835593, 0.0616125, 1.89956, 2.58681, -2.98266)
-
-[node name="Paddle001" parent="Model" index="17"]
-transform = Transform3D(0.0614954, 0.37291, 0.039649, 0.0184905, 1.39256, -0.0482236, -0.0379165, 1.28391, 0.0407884, 2.10819, 2.44315, -2.21575)
-
-[node name="Paddle002" parent="Model" index="18"]
-transform = Transform3D(0.0597829, 0.692963, 0.0356464, 0.00567284, 1.41285, -0.0505002, -0.0442162, 1.11819, 0.041717, 2.22769, 2.31473, -1.46476)
-
-[node name="Paddle003" parent="Model" index="19"]
-transform = Transform3D(0.0694766, 0.241033, 0.025447, 0.00332185, 1.72348, -0.0334303, -0.0268926, 0.835593, 0.0616125, 2.31456, 2.25105, -0.695506)
-
-[node name="Paddle004" parent="Model" index="20"]
-transform = Transform3D(0.0694766, 0.241033, 0.025447, 0.00332185, 1.72348, -0.0334303, -0.0268926, 0.835593, 0.0616125, 2.37027, 2.26692, 0.0826391)
-
-[node name="Paddle005" parent="Model" index="21"]
-transform = Transform3D(0.0694766, 0.241033, 0.025447, 0.00332185, 1.72348, -0.0334303, -0.0268926, 0.835593, 0.0616125, 2.46804, 2.29769, 0.843094)
-
-[node name="Paddle006" parent="Model" index="22"]
-transform = Transform3D(0.0694766, 0.241033, 0.025447, 0.00332185, 1.72348, -0.0334303, -0.0268926, 0.835593, 0.0616125, 2.35187, 2.33514, 1.59034)
-
-[node name="Paddle007" parent="Model" index="23"]
-transform = Transform3D(0.0694766, 0.241033, 0.025447, 0.00332185, 1.72348, -0.0334303, -0.0268926, 0.835593, 0.0616125, 2.22733, 2.46066, 2.36601)
-
-[node name="Paddle008" parent="Model" index="24"]
-transform = Transform3D(0.0694766, 0.241033, 0.025447, 0.00332185, 1.72348, -0.0334303, -0.0268926, 0.835593, 0.0616125, 1.90449, 2.57983, 3.04978)
-
-[node name="Paddle009" parent="Model" index="25"]
-transform = Transform3D(0.0694766, 0.241033, 0.025447, 0.00332185, 1.72348, -0.0334303, -0.0268926, 0.835593, 0.0616125, 1.6394, 2.84768, 3.77539)
-
-[node name="Paddle010" parent="Model" index="26"]
-transform = Transform3D(0.0730044, -0.166856, 0.0137862, 0.0146507, 1.2438, -0.055118, 0.00411847, -1.46691, -0.0483031, -1.80205, 2.60483, -2.89856)
-
-[node name="Paddle011" parent="Model" index="27"]
-transform = Transform3D(0.0730044, -0.166856, 0.0137862, 0.0146507, 1.2438, -0.055118, 0.00411847, -1.46691, -0.0483031, -2.01068, 2.46117, -2.13165)
-
-[node name="Paddle012" parent="Model" index="28"]
-transform = Transform3D(0.0730044, -0.166856, 0.0137862, 0.0146507, 1.2438, -0.055118, 0.00411847, -1.46691, -0.0483031, -2.13018, 2.33274, -1.38066)
-
-[node name="Paddle013" parent="Model" index="29"]
-transform = Transform3D(0.0730044, -0.166856, 0.0137862, 0.0146507, 1.2438, -0.055118, 0.00411847, -1.46691, -0.0483031, -2.21705, 2.26907, -0.611404)
-
-[node name="Paddle014" parent="Model" index="30"]
-transform = Transform3D(0.0730044, -0.166856, 0.0137862, 0.0146507, 1.2438, -0.055118, 0.00411847, -1.46691, -0.0483031, -2.27275, 2.28494, 0.166741)
-
-[node name="Paddle015" parent="Model" index="31"]
-transform = Transform3D(0.0730044, -0.166856, 0.0137862, 0.0146507, 1.2438, -0.055118, 0.00411847, -1.46691, -0.0483031, -2.37053, 2.3157, 0.927196)
-
-[node name="Paddle016" parent="Model" index="32"]
-transform = Transform3D(0.0730044, -0.166856, 0.0137862, 0.0146507, 1.2438, -0.055118, 0.00411847, -1.46691, -0.0483031, -2.25436, 2.35316, 1.67445)
-
-[node name="Paddle017" parent="Model" index="33"]
-transform = Transform3D(0.0730044, -0.166856, 0.0137862, 0.0146507, 1.2438, -0.055118, 0.00411847, -1.46691, -0.0483031, -2.12981, 2.47868, 2.45011)
-
-[node name="Paddle018" parent="Model" index="34"]
-transform = Transform3D(0.0730044, -0.166856, 0.0137862, 0.0146507, 1.2438, -0.055118, 0.00411847, -1.46691, -0.0483031, -1.80698, 2.59785, 3.13389)
-
-[node name="Paddle019" parent="Model" index="35"]
-transform = Transform3D(0.0730044, -0.166856, 0.0137862, 0.0146507, 1.2438, -0.055118, 0.00411847, -1.46691, -0.0483031, -1.54189, 2.8657, 3.85949)
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeBlendTree_aqy5f")
-anim_player = NodePath("../Model/AnimationPlayer")
-active = true
-parameters/Add2/add_amount = 1.0
-"parameters/Add2 2/add_amount" = 1.0
-"parameters/Add2 3/add_amount" = 1.0
-"parameters/Add2 4/add_amount" = 1.0
-"parameters/Add2 5/add_amount" = 1.0
-"parameters/Add2 6/add_amount" = 1.0
-"parameters/Add2 7/add_amount" = 1.0
-"parameters/Add2 8/add_amount" = 1.0
-
-[editable path="Model"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 3.75909, 5.58862)
