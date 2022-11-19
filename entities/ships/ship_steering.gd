@@ -44,9 +44,9 @@ func _physics_process(_delta: float) -> void:
 	turn_acceleration *= 0.9
 	
 	forward_vec_gloal = Vector3(cos(parent.rotation.y), 0, sin(parent.rotation.y))
-	$RayForwardVec.target_position = forward_vec_gloal
+	$RayForwardVec.target_position = forward_vec_gloal.normalized()
 	var velocity_vec_global = parent.velocity.rotated(axis, -parent.rotation.y)
-	$RayVelocity.target_position = velocity_vec_global
+	$RayVelocity.target_position = velocity_vec_global.normalized()
 	
 	$RayAcceleration.target_position = (acceleration * 10).normalized()
 	var forward_component = abs(velocity_vec_global.normalized().dot(forward_vec))
