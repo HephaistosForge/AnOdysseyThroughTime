@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8pkku6jgdsh0"]
+
+[ext_resource type="Script" path="res://ui/dialogue/dialogue.gd" id="1_bmxfx"]
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bmxfx")
+label_name_path = NodePath("TextBoxBackground/ContentContainer/Name")
+label_text_path = NodePath("TextBoxBackground/ContentContainer/Text")
+
+[node name="TextBoxBackground" type="ColorRect" parent="."]
+offset_left = 235.0
+offset_top = 34.0
+offset_right = 525.0
+offset_bottom = 178.0
+color = Color(0.592157, 0.482353, 0.521569, 1)
+
+[node name="ContentContainer" type="VBoxContainer" parent="TextBoxBackground"]
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 280.0
+offset_bottom = 133.0
+
+[node name="Name" type="Label" parent="TextBoxBackground/ContentContainer"]
+offset_right = 273.0
+offset_bottom = 26.0
+text = "<>"
+autowrap_mode = 3
+
+[node name="Text" type="Label" parent="TextBoxBackground/ContentContainer"]
+offset_top = 30.0
+offset_right = 273.0
+offset_bottom = 56.0
+text = "<>"
+autowrap_mode = 3

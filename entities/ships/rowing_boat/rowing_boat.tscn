@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://qkol5h6avnsc"]
+[gd_scene load_steps=6 format=3 uid="uid://qkol5h6avnsc"]
 
 [ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_tjyn1"]
 [ext_resource type="PackedScene" uid="uid://bkogtdpbfkee4" path="res://entities/ships/rowing_boat/rowing_boat.glb" id="2_1xris"]
@@ -6,6 +6,14 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tagk"]
 radius = 1.02721
 height = 5.68763
+
+[sub_resource type="Animation" id="Animation_yuown"]
+resource_name = "move_left"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7q44v"]
+_data = {
+"move_left": SubResource("Animation_yuown")
+}
 
 [node name="RowingBoat" type="CharacterBody3D" groups=["boat", "pullable"]]
 
@@ -16,9 +24,22 @@ MIN_TURN_ACCELERATION = 0.2
 MAX_TURN_SPEED = 0.7
 TURN_ACCELERATION_FACTOR = 1.2
 
-[node name="RowingBoatModel" parent="." instance=ExtResource("2_1xris")]
+[node name="Model" parent="." instance=ExtResource("2_1xris")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.28475, 0)
+
+[node name="RightPaddle" parent="Model" index="4"]
+transform = Transform3D(0.0167728, 1.85854, 0.0111971, 0.0172032, -0.39059, 0.0709763, 0.0705972, -0.346381, -0.0199558, 0.959433, 0.926597, -0.0850979)
+
+[node name="LeftPaddle" parent="Model" index="6"]
+transform = Transform3D(0.0579923, 1.09, 0.0206196, 0.0115996, 0.489051, -0.0712024, -0.0454266, 1.51639, 0.00814189, -0.959434, 0.93199, -0.0850973)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.86076, -0.292078)
 shape = SubResource("CapsuleShape3D_3tagk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7q44v")
+}
+
+[editable path="Model"]
