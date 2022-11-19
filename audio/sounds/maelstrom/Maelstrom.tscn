@@ -4,9 +4,7 @@
 
 [node name="MaelstromSFX" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_564to")
-volume_db = 10.0
-unit_size = 99.0
-max_db = 4.0
+volume_db = 1.0
+unit_size = 5.0
 autoplay = true
-panning_strength = 3.0
 bus = &"Maelstrom"
