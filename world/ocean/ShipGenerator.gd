@@ -145,14 +145,14 @@ func setup_ship_options() -> void:
 
 func init_new_ship(choice_index: int) -> void:
 	var old_ship = get_tree().get_first_node_in_group("boat")
-	options[choice_index].position = old_ship.position
+	options[choice_index].position = Vector3(
+		old_ship.position.x, 
+		options[choice_index].position.y, 
+		old_ship.position.x
+		)
+	options[choice_index].rotation = old_ship.rotation
 	camera.player_node = options[choice_index]
 	lightning_strike_generator.ship = options[choice_index]
 	old_ship.queue_free()
 	ocean.add_child(options[choice_index])
-	#assert(len(get_tree().get_nodes_in_group("boat")) == 1) 
-	
-	
-	
 
-	

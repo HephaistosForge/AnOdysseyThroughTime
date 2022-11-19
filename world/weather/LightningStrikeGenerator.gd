@@ -11,11 +11,11 @@ enum DIFFICULTY {
 }
 
 const DIFFICULTY_ATTRIBUTES: Dictionary = {
-	DIFFICULTY.PEACEFUL: [30, 10],
-	DIFFICULTY.EASY: [20, 8],
-	DIFFICULTY.MEDIUM: [15, 6],
-	DIFFICULTY.HARD: [10, 4],
-	DIFFICULTY.DEADLY: [5, 2]
+	DIFFICULTY.PEACEFUL: [30, 5, 2.0],
+	DIFFICULTY.EASY: [20, 4, 1.5],
+	DIFFICULTY.MEDIUM: [15, 3, 1.2],
+	DIFFICULTY.HARD: [10, 2, 0.8],
+	DIFFICULTY.DEADLY: [5, 0.5, 0.3]
 }
 
 @onready var spawn_timer: Timer = $SpawnTimer
@@ -61,8 +61,9 @@ func _on_timer_timeout() -> void:
 	time_since_last_hit = now - last_hit
 	set_difficulty()
 	var lightning_strike = LIGHTNING_STRIKE_PREFAB.instantiate()
+	lightning_strike.set_spawn_delay(DIFFICULTY_ATTRIBUTES[difficulty][2])
 	self.add_child(lightning_strike)
 	lightning_strike.position = get_randomized_spawn_position()
-	spawn_timer.start(DIFFICULTY_ATTRIBUTES[difficulty][1])
+	spawn_timer.start(Globals.rng.randf_range(0.0, DIFFICULTY_ATTRIBUTES[difficulty][1]))
 	
 	

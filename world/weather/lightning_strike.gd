@@ -20,7 +20,10 @@ func _ready() -> void:
 	_error = tween.tween_property(spawn_indicator, "visible", false, 0.05)
 	_error = tween.parallel().tween_property(spawn_area_indicator, "visible", false, 0.05)
 	_error = tween.tween_callback(set_active)
-	
+
+
+func set_spawn_delay(_delay: float):
+	spawn_time = _delay
 
 func set_active():
 	self.active = true

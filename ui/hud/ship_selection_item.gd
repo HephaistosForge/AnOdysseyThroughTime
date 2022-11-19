@@ -1,15 +1,14 @@
 extends PanelContainer
 @onready var name_label: Label = $CenterContainer/VBoxContainer/Name/Name
 
-#@onready var image = $CenterContainer/VBoxContainer/Image2
+@onready var ship_size: TextureProgressBar = $"CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer/Texture_Größe"
 
 @onready var geschwindigkeit = $CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer/Texture_Geschwindigkeit
 @onready var wendigkeit = $CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer/Texture_Wendigkeit
 @onready var beschleunigung = $CenterContainer/VBoxContainer/Attribute/MarginContainer/GridContainer/Texture_Beschleunigung
 
 @onready var jahrgang_label: Label = $CenterContainer/VBoxContainer/Trivia/MarginContainer/GridContainer/Jahrgang_Wert
-@onready var laenge_label: Label = $"CenterContainer/VBoxContainer/Trivia/MarginContainer/GridContainer/Länge_Wert"
-@onready var breite_label: Label = $CenterContainer/VBoxContainer/Trivia/MarginContainer/GridContainer/Breite_Wert
+
 @onready var gewicht_label: Label = $CenterContainer/VBoxContainer/Trivia/MarginContainer/GridContainer/Gewicht_Wert
 
 @onready var ship_image: TextureRect = $CenterContainer/VBoxContainer/Image2
@@ -26,7 +25,7 @@ func init_values(attributes):
 	geschwindigkeit.value = attributes[1] * 10
 	wendigkeit.value = attributes[2] * 10
 	beschleunigung.value = attributes[3] * 10
-	#ship_size.value = attributes[0] * 10
+	ship_size.value = attributes[0] * 10
 	
 	jahrgang_label.text = attributes[6]
 	gewicht_label.text = attributes[7]
