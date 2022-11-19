@@ -42,6 +42,7 @@ shader_parameter/maelstrom_positions7 = null
 shader_parameter/maelstrom_positions8 = null
 shader_parameter/maelstrom_positions9 = null
 shader_parameter/screen_resolution = null
+shader_parameter/water_color = Color(0.282353, 0.27451, 0.392157, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iacdl"]
 material = SubResource("ShaderMaterial_hqk6h")

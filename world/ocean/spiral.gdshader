@@ -17,6 +17,8 @@ uniform sampler2D iChannel0;
 uniform sampler2D iChannel1;
 uniform sampler2D iChannel2;
 
+uniform vec4 water_color : source_color;
+
 uniform float screen_resolution = 1;
 
 const vec2 SCREEN_PIXEL_SIZE = vec2(.001);
@@ -107,8 +109,10 @@ float add_maelstrom(vec2 uv, vec3 positions) {
 }
 
 float height(vec2 uv) {
-	float h = sin(TIME * 1.0 + uv.x*100. + uv.y*120.) / 3.;
-	h += sin(TIME * 0.5 + uv.x*80. + uv.y*20.) / 3.;
+	float h = sin(TIME * 1.0 + uv.x*100. + uv.y*120. * texture(iChannel1, vec2(uv.x, uv.y)).r *0.009)*1.3;
+	h += sin(TIME * 0.5 + uv.x*80. + uv.y*20. 
+		* texture(iChannel0, vec2(uv.x, uv.y)).r *0.6 
+		* texture(iChannel2, vec2(uv.y, uv.x)).r)*1.2;
 	h += add_maelstrom(uv, maelstrom_positions0);
 	h += add_maelstrom(uv, maelstrom_positions1);
 	h += add_maelstrom(uv, maelstrom_positions2);
@@ -140,7 +144,9 @@ void fragment()
 	METALLIC = 0.0;
 	ROUGHNESS = 0.1 * (1.0 - fresnel);
 	
-	ALBEDO = vec3(0.0, 0.2, 0.4) + (0.05 * fresnel); // Bright water
+	ALBEDO = vec3(water_color.x, water_color.y, water_color.z) + (0.05 * fresnel);
+	
+	//ALBEDO = vec3(0.0, 0.2, 0.4) + (0.05 * fresnel); // Bright water
     //vec3 hole = get_hole(UV);
     //ALBEDO.bgr = max(ALBEDO.bgr, hole * .1);
 	ALPHA = 1.0;
