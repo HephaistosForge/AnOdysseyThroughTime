@@ -2,7 +2,7 @@ extends Node
 
 var rng
 var start_pos = Vector3.ZERO
-var map_size = Vector2(1200, 1200)
+var map_size = Vector2(1800, 1800)
 
 func _ready():
 	rng = RandomNumberGenerator.new()

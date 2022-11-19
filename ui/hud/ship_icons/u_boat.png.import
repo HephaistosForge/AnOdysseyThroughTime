@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0pyntlgl0iga"
-path="res://.godot/imported/titanic.png-9556a3af4b221095887c08a46097e8db.ctex"
+uid="uid://b1rjdsd5d55pr"
+path="res://.godot/imported/u_boat.png-214095f33322812edc48e7e766893925.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/hud/ship_icons/titanic.png"
-dest_files=["res://.godot/imported/titanic.png-9556a3af4b221095887c08a46097e8db.ctex"]
+source_file="res://ui/hud/ship_icons/u_boat.png"
+dest_files=["res://.godot/imported/u_boat.png-214095f33322812edc48e7e766893925.ctex"]
 
 [params]
 

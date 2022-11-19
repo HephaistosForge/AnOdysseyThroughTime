@@ -9,10 +9,10 @@ const VIKING_BOAT_PREFAB: PackedScene = preload("res://entities/ships/vinking_bo
 @onready var lightning_strike_generator = get_tree().get_first_node_in_group("lightning_strike_generator")
 
 #images
-const IMG_TITANIC = preload("res://ui/hud/ship_icons/titanic_2.png")
-const IMG_PIRATE = preload("res://ui/hud/ship_icons/titanic_2.png")
-const img_viking = null
-const img_u_boat = null
+const IMG_TITANIC = preload("res://ui/hud/ship_icons/titanic.png")
+const IMG_ROWING_BOAT = preload("res://ui/hud/ship_icons/rowing_boat.png")
+const IMG_U_BOAT = preload("res://ui/hud/ship_icons/u_boat.png")
+const IMG_VIKING = preload("res://ui/hud/ship_icons/viking.png")
 
 const distribution_keys = ["size", "max_speed", "turn_speed", "acceleration"]
 
@@ -25,7 +25,7 @@ var available_ships: Array = [
 
 var ROWING_BOAT_ATTRIBUTES: Dictionary = {
 	"name": "Ruderboot",
-	"image": IMG_TITANIC,
+	"image": IMG_ROWING_BOAT,
 	"date": "1589",
 	"weight": "0.3",
 	"size": [2, 1],
@@ -47,7 +47,7 @@ var TITANIC_BOAT_ATTRIBUTES: Dictionary = {
 
 var U_BOAT_ATTRIBUTES: Dictionary = {
 	"name": "U-Boot",
-	"image": IMG_TITANIC,
+	"image": IMG_U_BOAT,
 	"date": "1985",
 	"weight": "0.3",
 	"size": [7, 2],
@@ -58,7 +58,7 @@ var U_BOAT_ATTRIBUTES: Dictionary = {
 
 var VIKINGBOAT_ATTRIBUTES: Dictionary = {
 	"name": "Drachenboot",
-	"image": IMG_PIRATE,
+	"image": IMG_VIKING,
 	"date": "1267",
 	"weight": "0.3",
 	"size": [4, 2],

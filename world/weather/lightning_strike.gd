@@ -34,6 +34,11 @@ func set_active():
 		for body in bodies:
 			if body.is_in_group("boat"):
 				_on_area_3d_body_entered(body)
+	
+	var lightning = $LightningStrikeSFX.duplicate()
+	get_tree().get_root().add_child(lightning)
+	lightning.position = self.position
+	lightning.play()
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
