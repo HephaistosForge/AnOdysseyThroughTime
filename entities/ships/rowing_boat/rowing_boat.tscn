@@ -1,19 +1,46 @@
-[gd_scene load_steps=6 format=3 uid="uid://qkol5h6avnsc"]
+[gd_scene load_steps=12 format=3 uid="uid://qkol5h6avnsc"]
 
 [ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_tjyn1"]
-[ext_resource type="PackedScene" uid="uid://bkogtdpbfkee4" path="res://entities/ships/rowing_boat/rowing_boat.glb" id="2_1xris"]
+[ext_resource type="PackedScene" uid="uid://d1uh2akavm7ew" path="res://entities/ships/rowing_boat/rowing_boat_model.tscn" id="2_5vwr0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tagk"]
 radius = 1.02721
 height = 5.68763
 
-[sub_resource type="Animation" id="Animation_yuown"]
-resource_name = "move_left"
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_4qfww"]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7q44v"]
-_data = {
-"move_left": SubResource("Animation_yuown")
-}
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yxd7q"]
+animation = &"RightPaddling"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fk6pq"]
+animation = &"LeftPaddling"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_2pe7l"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_umwgx"]
+
+[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_7asnd"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_3ijmq"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_6akt3"]
+graph_offset = Vector2(-204.194, -19.1111)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_4qfww")
+nodes/Add2/position = Vector2(160, 80)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_yxd7q")
+nodes/Animation/position = Vector2(-180, 180)
+nodes/LeftPaddling/node = SubResource("AnimationNodeAnimation_fk6pq")
+nodes/LeftPaddling/position = Vector2(-180, 60)
+nodes/LeftScale/node = SubResource("AnimationNodeTimeScale_2pe7l")
+nodes/LeftScale/position = Vector2(0, 40)
+nodes/RightScale/node = SubResource("AnimationNodeTimeScale_umwgx")
+nodes/RightScale/position = Vector2(0, 180)
+nodes/Seek/node = SubResource("AnimationNodeTimeSeek_7asnd")
+nodes/Seek/position = Vector2(540, 80)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_3ijmq")
+nodes/TimeScale/position = Vector2(380, 80)
+nodes/output/position = Vector2(720, 120)
+node_connections = [&"output", 0, &"Seek", &"Add2", 0, &"LeftScale", &"Add2", 1, &"RightScale", &"LeftScale", 0, &"LeftPaddling", &"RightScale", 0, &"Animation", &"Seek", 0, &"TimeScale", &"TimeScale", 0, &"Add2"]
 
 [node name="RowingBoat" type="CharacterBody3D" groups=["boat", "pullable"]]
 
@@ -24,22 +51,29 @@ MIN_TURN_ACCELERATION = 0.2
 MAX_TURN_SPEED = 0.7
 TURN_ACCELERATION_FACTOR = 1.2
 
-[node name="Model" parent="." instance=ExtResource("2_1xris")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.28475, 0)
-
-[node name="RightPaddle" parent="Model" index="4"]
-transform = Transform3D(0.0167728, 1.85854, 0.0111971, 0.0172032, -0.39059, 0.0709763, 0.0705972, -0.346381, -0.0199558, 0.959433, 0.926597, -0.0850979)
-
-[node name="LeftPaddle" parent="Model" index="6"]
-transform = Transform3D(0.0579923, 1.09, 0.0206196, 0.0115996, 0.489051, -0.0712024, -0.0454266, 1.51639, 0.00814189, -0.959434, 0.93199, -0.0850973)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.86076, -0.292078)
 shape = SubResource("CapsuleShape3D_3tagk")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_7q44v")
-}
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_6akt3")
+anim_player = NodePath("../Model/AnimationPlayer")
+active = true
+parameters/Add2/add_amount = 1.0
+parameters/LeftScale/scale = 1.0
+parameters/RightScale/scale = 1.0
+parameters/Seek/seek_position = -1.0
+parameters/TimeScale/scale = 1.0
+
+[node name="Model" parent="." instance=ExtResource("2_5vwr0")]
+
+[node name="RightPaddle" parent="Model" index="4"]
+transform = Transform3D(0.0121577, 1.74891, -0.029139, 0.0254095, 0.617698, 0.065926, 0.0690492, -0.535243, -0.0191296, 0.959433, 0.926597, -0.0850979)
+
+[node name="LeftPaddle" parent="Model" index="5"]
+transform = Transform3D(0.0561022, 1.27156, -0.000979606, -0.00431995, 0.0893307, -0.0743684, -0.0489399, 1.44977, 0.00544157, -0.959434, 0.93199, -0.0850973)
+
+[node name="AnimationPlayer" parent="Model" index="6"]
+playback_speed = 0.1
 
 [editable path="Model"]

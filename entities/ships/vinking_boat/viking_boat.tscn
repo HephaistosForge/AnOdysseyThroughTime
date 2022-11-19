@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0eg78m7jmyuo"]
 
-[ext_resource type="PackedScene" path="res://entities/ships/ship_steering.tscn" id="1_gv77f"]
+[ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_gv77f"]
 [ext_resource type="PackedScene" uid="uid://d2gpfit42ejd3" path="res://entities/ships/vinking_boat/viking.glb" id="2_jl4av"]
-[ext_resource type="PackedScene" uid="uid://b8pkku6jgdsh0" path="res://ui/dialogue/Dialogue.tscn" id="3_u7opl"]
+[ext_resource type="PackedScene" path="res://ui/dialogue/Dialogue.tscn" id="3_u7opl"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4v0rn"]
 radius = 2.30067

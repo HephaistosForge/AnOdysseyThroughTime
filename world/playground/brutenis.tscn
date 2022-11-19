@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://b1pjkbcauabyl"]
+[gd_scene load_steps=3 format=3 uid="uid://b1pjkbcauabyl"]
+
+[ext_resource type="PackedScene" uid="uid://qkol5h6avnsc" path="res://entities/ships/rowing_boat/rowing_boat.tscn" id="1_gq03a"]
+[ext_resource type="Script" path="res://managers/Camera.gd" id="1_kx0ec"]
 
 [node name="brutenis" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.598479, 0.801139, 0, -0.801139, 0.598479, 3.03493, 11.4739, 9.76256)
+current = true
+fov = 100.0
+script = ExtResource("1_kx0ec")
+player = NodePath("../RowingBoat")
+
+[node name="RowingBoat" parent="." instance=ExtResource("1_gq03a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.120867, -3.54417, -0.142098)

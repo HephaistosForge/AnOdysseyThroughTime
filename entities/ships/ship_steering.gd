@@ -15,6 +15,12 @@ class_name Ship
 @export var FRICTION = 0.01
 @export var SIDEWAYS_FRICTION_MULTIPLIER = 3
 
+@export var right_move_anim = "move_right"
+@export var left_move_anim = "move_left"
+
+@export var accelerate_only_on_accelerate_signal = true
+
+
 # In radians
 var turn_speed = 0
 var turn_acceleration = 0
@@ -23,10 +29,19 @@ var turn_acceleration = 0
 var acceleration = Vector3.ZERO
 
 var forward_vec = Vector3(0, 0, -1)
-var forward_vec_gloal = Vector3.ZERO
+var forward_vec_global = Vector3.ZERO
 
-
+var move_left_right_separately = false
 var axis = Vector3(0, 1, 0)
+
+		
+func accelerate_on_signal(vector):
+	acceleration += vector
+
+func _ready():
+	if accelerate_only_on_accelerate_signal:
+		parent.get_node("Model").connect("accelerate", accelerate_on_signal)
+
 
 func action_strength(_name):
 	return Input.get_action_strength(_name)
@@ -37,14 +52,15 @@ func normalize_vec_with_max(vec, max_val):
 	return vec
 
 @onready var parent = get_parent()
+@onready var anim_player = get_parent().get_node("Model").get_node("AnimationPlayer")
 
 func _physics_process(_delta: float) -> void:
 	
 	acceleration *= 0.9
 	turn_acceleration *= 0.9
 	
-	forward_vec_gloal = Vector3(cos(parent.rotation.y), 0, sin(parent.rotation.y))
-	$RayForwardVec.target_position = forward_vec_gloal.normalized()
+	forward_vec_global = Vector3(cos(parent.rotation.y), 0, sin(parent.rotation.y))
+	$RayForwardVec.target_position = forward_vec_global.normalized()
 	var velocity_vec_global = parent.velocity.rotated(axis, -parent.rotation.y)
 	$RayVelocity.target_position = velocity_vec_global.normalized()
 	
@@ -55,11 +71,9 @@ func _physics_process(_delta: float) -> void:
 	var friction = FRICTION * forward_component + sideways_friction * drift_component
 	
 	
-
-	
 	var strength = action_strength("move_forwards") - action_strength("move_backwards") * 0.02
-	acceleration += (forward_vec * strength * ACCELERATION_MULTIPLIER)
-	acceleration = normalize_vec_with_max(acceleration, MAX_ACCELERATION)
+	# acceleration += (forward_vec * strength * ACCELERATION_MULTIPLIER)
+	# acceleration = normalize_vec_with_max(acceleration, MAX_ACCELERATION)
 		
 		
 	var raw_turning = action_strength("turn_left") - action_strength("turn_right")
@@ -69,6 +83,20 @@ func _physics_process(_delta: float) -> void:
 	turn_speed = clamp(turn_speed, -MAX_TURN_SPEED, MAX_TURN_SPEED)
 	
 	acceleration = acceleration.rotated(axis, -turn_speed)
+	var anim_tree = parent.get_node("AnimationTree")
+	
+	anim_tree.set("parameters/TimeScale/scale", max(acceleration.length()*2, strength * 3))
+	if move_left_right_separately:
+		var left_ratio = clamp(acceleration.x, -0.5, 0.5) * 2 + 1
+		var right_ratio = 2 - left_ratio
+		anim_tree.set("parameters/LeftScale/scale", left_ratio)
+		anim_tree.set("parameters/RightScale/scale", right_ratio)
+
+	#anim_player.playback_speed = acceleration.length() * 100
+	#if acceleration:
+	#	if not anim_player.is_playing():
+	#		anim_player.play("LeftPaddling")
+	#		anim_player.play("RightPaddling")
 	
 	turn_speed *= 1 - friction
 	parent.rotate(axis, turn_speed)
