@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj8v2bbnujv4u"]
+[gd_scene load_steps=5 format=3 uid="uid://dj8v2bbnujv4u"]
 
-[ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_ymrqw"]
+[ext_resource type="PackedScene" path="res://entities/ships/ship_steering.tscn" id="1_ymrqw"]
 [ext_resource type="PackedScene" uid="uid://bdml33d4hkfp0" path="res://entities/ships/titanic/titanic.glb" id="2_jktoa"]
+[ext_resource type="PackedScene" uid="uid://b8pkku6jgdsh0" path="res://ui/dialogue/Dialogue.tscn" id="3_ou6vq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tagk"]
 radius = 1.278
@@ -24,3 +25,8 @@ shape = SubResource("CapsuleShape3D_3tagk")
 
 [node name="TitanicModel" parent="." instance=ExtResource("2_jktoa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.17636, -4.01898)
+
+[node name="Dialogue" parent="." instance=ExtResource("3_ou6vq")]
+inital_dialog = ["Ich habe kein gutes Gefühl bei der Sache...", "Och nö, nicht dieses Schiff schon wieder!", "Immer eine Handbreite Wasser unterm Kiel..."]
+follow_up_dialog = ["Egal, wird schon nichts passieren.", "Aber was könnte schon schiefgehen?", "Ob es hier Eisberge gibt?"]
+name_of_speaker = ["Edward", "Jack", "Rose", "Caledon"]

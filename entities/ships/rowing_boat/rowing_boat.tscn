@@ -1,11 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://qkol5h6avnsc"]
+[gd_scene load_steps=7 format=3 uid="uid://qkol5h6avnsc"]
 
-[ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_tjyn1"]
+[ext_resource type="PackedScene" path="res://entities/ships/ship_steering.tscn" id="1_tjyn1"]
 [ext_resource type="PackedScene" uid="uid://bkogtdpbfkee4" path="res://entities/ships/rowing_boat/rowing_boat.glb" id="2_1xris"]
+[ext_resource type="PackedScene" uid="uid://b8pkku6jgdsh0" path="res://ui/dialogue/Dialogue.tscn" id="3_gdptf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tagk"]
 radius = 1.02721
 height = 5.68763
+
+[sub_resource type="Animation" id="Animation_yuown"]
+resource_name = "move_left"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7q44v"]
+_data = {
+"move_left": SubResource("Animation_yuown")
+}
 
 [node name="RowingBoat" type="CharacterBody3D" groups=["boat", "pullable"]]
 
@@ -16,9 +25,21 @@ MIN_TURN_ACCELERATION = 0.2
 MAX_TURN_SPEED = 0.7
 TURN_ACCELERATION_FACTOR = 1.2
 
-[node name="RowingBoatModel" parent="." instance=ExtResource("2_1xris")]
+[node name="Model" parent="." instance=ExtResource("2_1xris")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.28475, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.86076, -0.292078)
 shape = SubResource("CapsuleShape3D_3tagk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7q44v")
+}
+
+[node name="Dialogue" parent="." instance=ExtResource("3_gdptf")]
+inital_dialog = ["Wenn man in die falsche Richtung läuft, hat es keinen Zweck, das Tempo zu erhöhen...", "Das Leben ist wie eine Schachtel Pralinen. Man weiß nie, was man bekommt...", "Wie viele Dinge es gibt, die ich nicht brauche..."]
+follow_up_dialog = ["Hm. Weniger ist mehr.", "Hm. Lieber nichts besitzen als zu verlieren.", "Hm. Das Leben ist leicht, aber wir machen es uns schwer."]
+name_of_speaker = ["Forrest", "Albert", "Marcus", "Sokrates"]
+
+[editable path="Model"]
