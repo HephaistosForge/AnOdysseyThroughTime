@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b000mudnwbtww"
-path="res://.godot/imported/barrel.glb-d38f94246168657c4c7d0957cadc0a1e.scn"
+uid="uid://dka3ufiicdo65"
+path="res://.godot/imported/plank_complex.glb-ea8cd724b6c7677f0e49e630e5ee3884.scn"
 
 [deps]
 
-source_file="res://entities/obstacles/barrel.glb"
-dest_files=["res://.godot/imported/barrel.glb-d38f94246168657c4c7d0957cadc0a1e.scn"]
+source_file="res://entities/obstacles/models/plank_complex.glb"
+dest_files=["res://.godot/imported/plank_complex.glb-ea8cd724b6c7677f0e49e630e5ee3884.scn"]
 
 [params]
 

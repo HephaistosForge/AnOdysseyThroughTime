@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbngchwb84j1j"]
+
+[ext_resource type="PackedScene" uid="uid://bs53cp0fdyvp3" path="res://entities/obstacles/models/shipwreck.glb" id="1_c54r6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_phgfu"]
+radius = 2.14507
+
+[node name="shipwreck" type="RigidBody3D" groups=["pullable"]]
+
+[node name="shipwreck" parent="." instance=ExtResource("1_c54r6")]
+transform = Transform3D(0.973391, -0.229149, 0, 0.229149, 0.973391, 0, 0, 0, 1, 0, -0.86, 0)
+
+[node name="Area3D" type="Area3D" parent="shipwreck"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shipwreck/Area3D"]
+shape = SubResource("SphereShape3D_phgfu")

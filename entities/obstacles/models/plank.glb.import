@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://csjjhauc6sdv1"
-path="res://.godot/imported/plank.glb-f9d604e01ef951d13cc0135814016901.scn"
+path="res://.godot/imported/plank.glb-e56418c2e31686c43344e8b3277b85af.scn"
 
 [deps]
 
-source_file="res://entities/obstacles/plank.glb"
-dest_files=["res://.godot/imported/plank.glb-f9d604e01ef951d13cc0135814016901.scn"]
+source_file="res://entities/obstacles/models/plank.glb"
+dest_files=["res://.godot/imported/plank.glb-e56418c2e31686c43344e8b3277b85af.scn"]
 
 [params]
 

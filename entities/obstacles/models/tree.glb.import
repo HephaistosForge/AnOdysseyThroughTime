@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ci3rk255q1f13"
-path="res://.godot/imported/ice_berg.glb-0fc428643e8ff924b3c20bbdb7740503.scn"
+uid="uid://xh0qjsm5vv31"
+path="res://.godot/imported/tree.glb-e3cc2993094a81de259e83e66af21753.scn"
 
 [deps]
 
-source_file="res://entities/obstacles/ice_berg.glb"
-dest_files=["res://.godot/imported/ice_berg.glb-0fc428643e8ff924b3c20bbdb7740503.scn"]
+source_file="res://entities/obstacles/models/tree.glb"
+dest_files=["res://.godot/imported/tree.glb-e3cc2993094a81de259e83e66af21753.scn"]
 
 [params]
 

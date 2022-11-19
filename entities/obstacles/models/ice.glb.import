@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dka3ufiicdo65"
-path="res://.godot/imported/plank_complex.glb-4fe0b3865167a9146b69c0231116289b.scn"
+uid="uid://cnkp07v3ga3re"
+path="res://.godot/imported/ice.glb-6049048e5d09c1e945b77453f81f61bd.scn"
 
 [deps]
 
-source_file="res://entities/obstacles/plank_complex.glb"
-dest_files=["res://.godot/imported/plank_complex.glb-4fe0b3865167a9146b69c0231116289b.scn"]
+source_file="res://entities/obstacles/models/ice.glb"
+dest_files=["res://.godot/imported/ice.glb-6049048e5d09c1e945b77453f81f61bd.scn"]
 
 [params]
 

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwm2nfteihmdi"]
+
+[ext_resource type="PackedScene" uid="uid://cbahwex4fprtk" path="res://entities/obstacles/models/island.glb" id="1_8vs6t"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sg3hc"]
+radius = 7.43915
+height = 14.8783
+
+[node name="island" type="StaticBody3D"]
+
+[node name="island" parent="." instance=ExtResource("1_8vs6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17, 0)
+shape = SubResource("CapsuleShape3D_sg3hc")

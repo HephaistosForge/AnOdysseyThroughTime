@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cbahwex4fprtk"
-path="res://.godot/imported/island.glb-725166c9df39725fafc41a4a7702145a.scn"
+uid="uid://ci3rk255q1f13"
+path="res://.godot/imported/ice_berg.glb-c1214c0190a7355ba74f8860f0c3dee6.scn"
 
 [deps]
 
-source_file="res://entities/obstacles/island.glb"
-dest_files=["res://.godot/imported/island.glb-725166c9df39725fafc41a4a7702145a.scn"]
+source_file="res://entities/obstacles/models/ice_berg.glb"
+dest_files=["res://.godot/imported/ice_berg.glb-c1214c0190a7355ba74f8860f0c3dee6.scn"]
 
 [params]
 

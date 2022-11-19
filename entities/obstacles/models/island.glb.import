@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cnkp07v3ga3re"
-path="res://.godot/imported/ice.glb-a6eaee4bfa2a1d05b0f8c2f2df1d4c71.scn"
+uid="uid://cbahwex4fprtk"
+path="res://.godot/imported/island.glb-0f7eaee8997621d4a76ff9003d83c082.scn"
 
 [deps]
 
-source_file="res://entities/obstacles/ice.glb"
-dest_files=["res://.godot/imported/ice.glb-a6eaee4bfa2a1d05b0f8c2f2df1d4c71.scn"]
+source_file="res://entities/obstacles/models/island.glb"
+dest_files=["res://.godot/imported/island.glb-0f7eaee8997621d4a76ff9003d83c082.scn"]
 
 [params]
 

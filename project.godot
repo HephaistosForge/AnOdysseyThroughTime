@@ -31,7 +31,7 @@ Globals="*res://globals/globals.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 

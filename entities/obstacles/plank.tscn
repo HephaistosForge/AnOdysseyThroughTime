@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ktu1w7htr6kd"]
+
+[ext_resource type="PackedScene" uid="uid://csjjhauc6sdv1" path="res://entities/obstacles/models/plank.glb" id="1_6d8kq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhcb2"]
+size = Vector3(0.662207, 0.304479, 5.07915)
+
+[node name="plank" type="RigidBody3D" groups=["pullable"]]
+
+[node name="plank" parent="." instance=ExtResource("1_6d8kq")]
+transform = Transform3D(0.994441, 0.0821893, -0.0658131, -0.0618133, 0.96171, 0.267007, 0.0852382, -0.261454, 0.961445, 0, -0.293, 0)
+
+[node name="Area3D" type="Area3D" parent="plank"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plank/Area3D"]
+shape = SubResource("BoxShape3D_bhcb2")

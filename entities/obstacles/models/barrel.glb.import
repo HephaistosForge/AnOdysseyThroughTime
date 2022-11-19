@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bs53cp0fdyvp3"
-path="res://.godot/imported/shipwreck.glb-1915edb6303d2a9fd23515d573a8fd20.scn"
+uid="uid://b000mudnwbtww"
+path="res://.godot/imported/barrel.glb-bc0a7e4158b58f8a16fc3290bea36b47.scn"
 
 [deps]
 
-source_file="res://entities/obstacles/shipwreck.glb"
-dest_files=["res://.godot/imported/shipwreck.glb-1915edb6303d2a9fd23515d573a8fd20.scn"]
+source_file="res://entities/obstacles/models/barrel.glb"
+dest_files=["res://.godot/imported/barrel.glb-bc0a7e4158b58f8a16fc3290bea36b47.scn"]
 
 [params]
 
