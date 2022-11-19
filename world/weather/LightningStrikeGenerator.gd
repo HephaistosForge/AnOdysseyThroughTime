@@ -1,6 +1,7 @@
 extends Node3D
 
 const LIGHTNING_STRIKE_PREFAB: PackedScene = preload("res://world/weather/lightning_strike.tscn")
+@export var spawn_on_self = false
 
 enum DIFFICULTY {
 	PEACEFUL,
@@ -63,7 +64,10 @@ func _on_timer_timeout() -> void:
 	var lightning_strike = LIGHTNING_STRIKE_PREFAB.instantiate()
 	lightning_strike.set_spawn_delay(DIFFICULTY_ATTRIBUTES[difficulty][2])
 	self.add_child(lightning_strike)
-	lightning_strike.position = get_randomized_spawn_position()
+	if spawn_on_self: 
+		lightning_strike.position = ship.position
+	else:
+		lightning_strike.position = get_randomized_spawn_position()
 	spawn_timer.start(Globals.rng.randf_range(0.0, DIFFICULTY_ATTRIBUTES[difficulty][1]))
-	
-	
+
+
