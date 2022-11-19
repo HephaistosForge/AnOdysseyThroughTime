@@ -12,6 +12,12 @@ uniform vec3 maelstrom_positions6;
 uniform vec3 maelstrom_positions7;
 uniform vec3 maelstrom_positions8;
 uniform vec3 maelstrom_positions9;
+uniform vec3 maelstrom_positions10;
+uniform vec3 maelstrom_positions11;
+uniform vec3 maelstrom_positions12;
+uniform vec3 maelstrom_positions13;
+uniform vec3 maelstrom_positions14;
+uniform vec3 maelstrom_positions15;
 
 
 uniform sampler2D iChannel0;
@@ -124,6 +130,12 @@ float height(vec2 uv) {
 	h += add_maelstrom(uv, maelstrom_positions7);
 	h += add_maelstrom(uv, maelstrom_positions8);
 	h += add_maelstrom(uv, maelstrom_positions9);
+	h += add_maelstrom(uv, maelstrom_positions10);
+	h += add_maelstrom(uv, maelstrom_positions11);
+	h += add_maelstrom(uv, maelstrom_positions12);
+	h += add_maelstrom(uv, maelstrom_positions13);
+	h += add_maelstrom(uv, maelstrom_positions14);
+	h += add_maelstrom(uv, maelstrom_positions15);
 	
 	return h;
 }
