@@ -63,7 +63,8 @@ func _ready():
 func point_anchor():
 	anchor = get_tree().get_first_node_in_group("anchor")
 	var ship = get_tree().get_first_node_in_group("boat")
-	if ship:
+	
+	if ship and is_instance_valid(ship):
 		var ship_to_mid = -ship.position
 		var theta = atan2(ship_to_mid.x, ship_to_mid.z)
 		
