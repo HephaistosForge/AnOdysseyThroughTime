@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://qkol5h6avnsc"]
+[gd_scene load_steps=4 format=3 uid="uid://b8e0mpul1np85"]
 
-[ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_tjyn1"]
+[ext_resource type="PackedScene" path="res://entities/ships/ship_steering.tscn" id="1_tjyn1"]
 [ext_resource type="PackedScene" uid="uid://bkogtdpbfkee4" path="res://entities/ships/rowing_boat/rowing_boat.glb" id="2_1xris"]
 
-[node name="RowingBoat" type="CharacterBody3D"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tagk"]
+radius = 1.02721
+height = 5.68763
+
+[node name="RowingBoat" type="CharacterBody3D" groups=["boat"]]
 
 [node name="ShipSteering" parent="." instance=ExtResource("1_tjyn1")]
 
 [node name="RowingBoatModel" parent="." instance=ExtResource("2_1xris")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.778521, -0.292078)
+shape = SubResource("CapsuleShape3D_3tagk")

@@ -1,42 +1,55 @@
-[gd_scene load_steps=9 format=3 uid="uid://do7cwpg6tht1h"]
+[gd_scene load_steps=14 format=3 uid="uid://do7cwpg6tht1h"]
 
-[ext_resource type="Shader" path="res://world/ocean/water.gdshader" id="1_8qx3y"]
-[ext_resource type="PackedScene" uid="uid://qkol5h6avnsc" path="res://entities/ships/rowing_boat/rowing_boat.tscn" id="2_w484w"]
+[ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_ddwd0"]
+[ext_resource type="PackedScene" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
 [ext_resource type="PackedScene" uid="uid://c0eg78m7jmyuo" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
 [ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
 [ext_resource type="Script" path="res://world/ocean/Dialogue.gd" id="5_ygos2"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_vplt3"]
-size = Vector3(0.1, 1, 0.1)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gnhkk"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qece7"]
+noise = SubResource("FastNoiseLite_gnhkk")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xbt3l"]
+frequency = 0.206
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ya8hl"]
+noise = SubResource("FastNoiseLite_xbt3l")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u7756"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8x484"]
+noise = SubResource("FastNoiseLite_u7756")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hqk6h"]
 render_priority = 0
-shader = ExtResource("1_8qx3y")
+shader = ExtResource("1_ddwd0")
+shader_parameter/iChannel0 = SubResource("NoiseTexture2D_qece7")
+shader_parameter/iChannel1 = SubResource("NoiseTexture2D_ya8hl")
+shader_parameter/iChannel2 = SubResource("NoiseTexture2D_8x484")
+shader_parameter/maelstrom_positions1 = Basis(0.1, 0.3, 0.8, 0.2, 0.9, 0.4, 0, 0, 1)
+shader_parameter/screen_resolution = null
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iacdl"]
 material = SubResource("ShaderMaterial_hqk6h")
-size = Vector2(50, 50)
-subdivide_width = 32
-subdivide_depth = 32
+size = Vector2(500, 500)
+subdivide_width = 512
+subdivide_depth = 512
 
 [node name="ocean" type="Node3D"]
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
-visible = false
-emitting = false
-amount = 100
-mesh = SubResource("BoxMesh_vplt3")
-emission_shape = 3
-emission_box_extents = Vector3(10, 19, 19)
+[node name="LightningStrikeGenerator" parent="." instance=ExtResource("1_woglw")]
 
 [node name="WaterShader" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("PlaneMesh_iacdl")
 
-[node name="RowingBoat" parent="." instance=ExtResource("2_w484w")]
-visible = false
-
 [node name="viking_boat" parent="." instance=ExtResource("3_13om1")]
+
+[node name="Camera3D" type="Camera3D" parent="viking_boat"]
+transform = Transform3D(1, 0, 0, 0, 0.809335, 0.587347, 0, -0.587347, 0.809335, 0, 7.30701, 5.83753)
+current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 

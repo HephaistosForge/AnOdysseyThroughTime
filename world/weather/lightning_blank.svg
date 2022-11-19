@@ -6,16 +6,13 @@
    height="297mm"
    viewBox="0 0 210 297"
    version="1.1"
-   id="svg135"
-   inkscape:export-filename="lightning_blank.svg"
-   inkscape:export-xdpi="51.313133"
-   inkscape:export-ydpi="51.313133"
+   id="svg5"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview137"
+     id="namedview7"
      pagecolor="#505050"
      bordercolor="#eeeeee"
      borderopacity="1"
@@ -26,7 +23,7 @@
      inkscape:document-units="mm"
      showgrid="false" />
   <defs
-     id="defs132" />
+     id="defs2" />
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
