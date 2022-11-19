@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b3tjwxnqgc6dj"]
 
 [ext_resource type="Shader" path="res://world/ocean/water.gdshader" id="1_8qx3y"]
-[ext_resource type="PackedScene" uid="uid://b8e0mpul1np85" path="res://entities/ships/rowing_boat/rowing_boat.tscn" id="2_w484w"]
+[ext_resource type="PackedScene" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
 [ext_resource type="PackedScene" uid="uid://d0ccsxot8f5l0" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
 [ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
 [ext_resource type="Script" path="res://world/ocean/Dialogue.gd" id="5_ygos2"]
@@ -21,6 +21,8 @@ subdivide_depth = 32
 
 [node name="ocean" type="Node3D"]
 
+[node name="LightningStrikeGenerator" parent="." instance=ExtResource("1_woglw")]
+
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
 visible = false
 emitting = false
@@ -32,9 +34,6 @@ emission_box_extents = Vector3(10, 19, 19)
 [node name="WaterShader" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("PlaneMesh_iacdl")
-
-[node name="RowingBoat" parent="." instance=ExtResource("2_w484w")]
-visible = false
 
 [node name="viking_boat" parent="." instance=ExtResource("3_13om1")]
 

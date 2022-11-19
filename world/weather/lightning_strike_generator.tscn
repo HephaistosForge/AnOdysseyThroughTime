@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvefsuiwqibn8"]
+[gd_scene load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://world/ocean/LightningStrikeGenerator.gd" id="1_ns62h"]
+[ext_resource type="Script" path="res://world/weather/LightningStrikeGenerator.gd" id="1_ns62h"]
 
 [node name="LightningStrikeGenerator" type="Node3D"]
 script = ExtResource("1_ns62h")

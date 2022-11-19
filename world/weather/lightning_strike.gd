@@ -14,15 +14,10 @@ var active = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var tween = create_tween()
-	tween.tween_property(spawn_indicator, "scale", Vector3(0.5,0.5,0.5), spawn_time)
-	tween.tween_callback(set_active)
-	tween.tween_property(spawn_indicator, "visible", false, 0.2)
+	var _error = tween.tween_property(spawn_indicator, "scale", Vector3(0.5,0.5,0.5), spawn_time)
+	_error = tween.tween_callback(set_active)
+	_error = tween.tween_property(spawn_indicator, "visible", false, 0.2)
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 
 func set_active():
 	self.active = true

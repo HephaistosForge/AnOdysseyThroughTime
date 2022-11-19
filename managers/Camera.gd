@@ -16,7 +16,7 @@ func _ready():
 	
 	offset_to_player = global_position - player_node.global_position
 
-func _process(delta):
+func _process(_delta):
 	
 	
 	var theta = atan2(offset_to_player.z, offset_to_player.x)

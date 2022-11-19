@@ -40,7 +40,6 @@ func set_difficulty() -> void:
 		difficulty = DIFFICULTY.EASY
 	else:
 		difficulty = DIFFICULTY.PEACEFUL
-	print(difficulty)
 
 
 func get_randomized_spawn_position() -> Vector3:
@@ -60,9 +59,7 @@ func on_hit():
 func _on_timer_timeout() -> void:
 	var now = Time.get_unix_time_from_system()
 	time_since_last_hit = now - last_hit
-	print(time_since_last_hit)
 	set_difficulty()
-	print("instantiating lightning_strike")
 	var lightning_strike = LIGHTNING_STRIKE_PREFAB.instantiate()
 	self.add_child(lightning_strike)
 	lightning_strike.position = get_randomized_spawn_position()

@@ -28,8 +28,8 @@ var forward_vec_gloal = Vector3.ZERO
 
 var axis = Vector3(0, 1, 0)
 
-func action_strength(name):
-	return Input.get_action_strength(name)
+func action_strength(_name):
+	return Input.get_action_strength(_name)
 	
 func normalize_vec_with_max(vec, max_val):
 	if vec.length() > max_val:
@@ -38,7 +38,7 @@ func normalize_vec_with_max(vec, max_val):
 
 @onready var parent = get_parent()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	
 	acceleration *= 0.9
 	turn_acceleration *= 0.9
