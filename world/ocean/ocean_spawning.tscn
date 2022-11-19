@@ -205,6 +205,7 @@ mouse_filter = 2
 [node name="Camera3D2" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 360.784, 0)
 projection = 1
+current = true
 fov = 85.0
 size = 1200.0
 
@@ -213,6 +214,7 @@ transform = Transform3D(21.2096, -420.256, -1.21344, 1.86468, 67.8171, 185.485, 
 texture = ExtResource("11_wd3o7")
 
 [node name="Area3D" type="Area3D" parent="Sprite3D"]
+script = ExtResource("12_x7p0s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
 shape = SubResource("BoxShape3D_i714l")
@@ -232,10 +234,16 @@ transform = Transform3D(-0.474713, -731.81, 17.5179, 1.86468, 67.8171, 185.485, 
 texture = ExtResource("11_wd3o7")
 
 [node name="Area3D" type="Area3D" parent="Sprite3D3"]
+script = ExtResource("12_x7p0s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D3/Area3D"]
 shape = SubResource("BoxShape3D_i714l")
 
+[connection signal="input_event" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_input_event"]
+[connection signal="mouse_entered" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_mouse_exited"]
 [connection signal="input_event" from="Sprite3D2/Area3D" to="Sprite3D2/Area3D" method="_on_input_event"]
 [connection signal="mouse_entered" from="Sprite3D2/Area3D" to="Sprite3D2/Area3D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Sprite3D2/Area3D" to="Sprite3D2/Area3D" method="_on_mouse_exited"]
+[connection signal="input_event" from="Sprite3D3/Area3D" to="Sprite3D3/Area3D" method="_on_input_event"]
+[connection signal="mouse_exited" from="Sprite3D3/Area3D" to="Sprite3D3/Area3D" method="_on_mouse_exited"]
