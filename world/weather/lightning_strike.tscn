@@ -1,19 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo22tvthdxm7n"]
+[gd_scene load_steps=9 format=3 uid="uid://bo22tvthdxm7n"]
 
 [ext_resource type="Script" path="res://world/weather/lightning_strike.gd" id="1_vskvf"]
 [ext_resource type="Material" uid="uid://uaa80rtlifqf" path="res://world/weather/lightning_material.tres" id="1_yx63d"]
 [ext_resource type="Texture2D" uid="uid://jlykxa6arsv" path="res://world/weather/lightning_blank.svg" id="2_qedqn"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_kosuu"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_khqrx"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u04p4"]
+transparency = 1
+albedo_color = Color(0.913725, 1, 0.305882, 0.627451)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0jjhy"]
+material = SubResource("StandardMaterial3D_u04p4")
+top_radius = 1.0
+bottom_radius = 1.0
+height = 0.001
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qep6h"]
 transparency = 1
-albedo_color = Color(1, 0.929412, 0.345098, 0.254902)
+albedo_color = Color(1, 0.929412, 0.345098, 0.588235)
 
 [sub_resource type="TorusMesh" id="TorusMesh_ptqcc"]
 material = SubResource("StandardMaterial3D_qep6h")
-inner_radius = 1.686
-outer_radius = 2.209
+inner_radius = 0.832
 
 [node name="LightningStrike" type="Node3D"]
 script = ExtResource("1_vskvf")
@@ -21,20 +31,25 @@ script = ExtResource("1_vskvf")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("SphereShape3D_kosuu")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.573846, 0)
+shape = SubResource("CylinderShape3D_khqrx")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.49922, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.87735, 0)
 visible = false
 material_overlay = ExtResource("1_yx63d")
 texture = ExtResource("2_qedqn")
 
-[node name="SpawnIndicator" type="MeshInstance3D" parent="."]
-transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.607595, 0)
+[node name="DespawnTimer" type="Timer" parent="."]
+
+[node name="SpawnAreaIndicator" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+mesh = SubResource("CylinderMesh_0jjhy")
+
+[node name="SpawnProgressIndicator" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.4, 0)
 mesh = SubResource("TorusMesh_ptqcc")
 skeleton = NodePath("")
-
-[node name="DespawnTimer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
