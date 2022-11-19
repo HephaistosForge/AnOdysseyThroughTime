@@ -59,9 +59,8 @@ func accelerate_on_signal(vector):
 
 func _ready():
 	anchor = get_tree().get_first_node_in_group("anchor")
-	if accelerate_only_on_accelerate_signal:s
+	if accelerate_only_on_accelerate_signal:
 		parent.get_node("Model").connect("accelerate", accelerate_on_signal)
-
 
 func point_anchor():
 	var ship = get_tree().get_first_node_in_group("boat")
@@ -69,7 +68,6 @@ func point_anchor():
 	var theta = atan2(ship_to_mid.x, ship_to_mid.z)
 	
 	anchor.rotate(Vector3(0,1,0), theta - anchor.global_rotation.y)
-
 
 func action_strength(_name):
 	return Input.get_action_strength(_name)

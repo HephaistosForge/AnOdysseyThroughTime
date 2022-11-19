@@ -12,18 +12,6 @@ height = 10.4836
 [node name="VikingBoat" type="CharacterBody3D" groups=["boat", "pullable"]]
 
 [node name="ShipSteering" parent="." instance=ExtResource("1_gv77f")]
-MAX_ACCELERATION = null
-ACCELERATION_MULTIPLIER = null
-MAX_SPEED = null
-MAX_TURN_ACCELERATION = null
-MIN_TURN_ACCELERATION = null
-MAX_TURN_SPEED = null
-TURN_ACCELERATION_FACTOR = null
-FRICTION = null
-SIDEWAYS_FRICTION_MULTIPLIER = null
-right_move_anim = null
-left_move_anim = null
-accelerate_only_on_accelerate_signal = null
 
 [node name="Model" parent="." instance=ExtResource("2_jl4av")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)

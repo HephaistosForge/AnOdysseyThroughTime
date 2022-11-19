@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bdn4e5fvf2ddy"]
+[gd_scene load_steps=29 format=3 uid="uid://bdn4e5fvf2ddy"]
 
 [ext_resource type="Shader" path="res://world/weather/sky.gdshader" id="1_8oio7"]
 [ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_ddwd0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="3_k8sgn"]
 [ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
 [ext_resource type="PackedScene" uid="uid://cx01enkvm0qdr" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
+[ext_resource type="PackedScene" uid="uid://beidarsyit5ya" path="res://audio/sounds/SFX/SFX.tscn" id="7_kw4om"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_ngqft"]
 [ext_resource type="PackedScene" uid="uid://dxc1ht5s5puis" path="res://ui/dialogue/TutorialInformation/TutorialInformation.tscn" id="8_uvx3f"]
 [ext_resource type="PackedScene" uid="uid://drf1jxsbswk04" path="res://world/maelstrom/maelstrom_area.tscn" id="9_5csxv"]
@@ -201,6 +202,8 @@ fov = 100.0
 script = ExtResource("4_p8d8g")
 player = NodePath("../viking_boat")
 
+[node name="SFX" parent="Camera3D" instance=ExtResource("7_kw4om")]
+
 [node name="ObstacleGenerator" parent="." instance=ExtResource("7_11iuw")]
 
 [node name="GameManager" type="Node3D" parent="." groups=["manager"]]
@@ -234,4 +237,3 @@ transform = Transform3D(4.951, 0.698285, 0, -0.698285, 4.951, 0, 0, 0, 5, -0.637
 transform = Transform3D(1.58046, -0.523911, -1.108, 0.62931, 1.89841, 0, 1.05172, -0.348639, 1.66503, -5.75548, 6.86144, 9.15125)
 
 [connection signal="body_entered" from="GameManager/GoalArea" to="GameManager" method="_on_goal_area_body_entered"]
-[connection signal="body_entered" from="GameManager/GoalArea" to="GameManager/GoalArea" method="_on_body_entered"]
