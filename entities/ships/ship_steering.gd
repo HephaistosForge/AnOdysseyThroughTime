@@ -20,6 +20,23 @@ class_name Ship
 
 @export var accelerate_only_on_accelerate_signal = true
 
+func interpolate0to10(value, min, max):
+	var diff = max - min;
+	return diff * (value / 10.0) + min;
+
+func set_attributes(size, max_speed, turn_speed, acceleration):
+	scale = interpolate0to10(size, 0.5, 3)
+	
+	MAX_SPEED = interpolate0to10(max_speed, 5, 30)
+	
+	MAX_TURN_SPEED = interpolate0to10(turn_speed, 0.03, 0.15)
+	
+	MAX_TURN_ACCELERATION = interpolate0to10(acceleration, 0.005, 0.05)
+	TURN_ACCELERATION_FACTOR = interpolate0to10(acceleration, 0.2, 1.5)
+	MAX_ACCELERATION = interpolate0to10(acceleration, 0.5, 10)
+	ACCELERATION_MULTIPLIER = interpolate0to10(acceleration, 0.01, 0.1)
+	
+
 
 # In radians
 var turn_speed = 0
