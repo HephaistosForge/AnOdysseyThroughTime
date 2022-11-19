@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://beidarsyit5ya"]
+
+[ext_resource type="PackedScene" uid="uid://bjhyewbi5bwut" path="res://audio/sounds/sea_waves_loop/SeaWavesLoop.tscn" id="1_0y76g"]
+[ext_resource type="PackedScene" uid="uid://isq0ogmca061" path="res://audio/sounds/seagull/Seagull.tscn" id="2_qgybh"]
+[ext_resource type="PackedScene" uid="uid://kpu5sacnew3g" path="res://audio/sounds/bubbles/BubblesSFX.tscn" id="3_ln2de"]
+
+[node name="SFX" type="Node"]
+
+[node name="SeaWavesLoop" parent="." instance=ExtResource("1_0y76g")]
+
+[node name="BubblesSFX" parent="." instance=ExtResource("3_ln2de")]
+
+[node name="SeagullSFX" parent="." instance=ExtResource("2_qgybh")]

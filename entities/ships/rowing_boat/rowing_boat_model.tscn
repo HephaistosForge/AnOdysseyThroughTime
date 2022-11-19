@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d1uh2akavm7ew"]
+[gd_scene load_steps=20 format=3 uid="uid://nsa4w708f5ix"]
 
 [ext_resource type="Script" path="res://entities/ships/rowing_boat/model_script.gd" id="1_spx23"]
 

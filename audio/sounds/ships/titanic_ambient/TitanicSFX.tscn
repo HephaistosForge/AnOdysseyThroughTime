@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlo0hf246jdnl"]
+
+[ext_resource type="Script" path="res://audio/sounds/multiple_ambient_noises.gd" id="1_fob36"]
+[ext_resource type="AudioStream" uid="uid://ck6o6bdim171e" path="res://audio/sounds/ships/titanic_ambient/ambient01.mp3" id="2_o0nwn"]
+[ext_resource type="AudioStream" uid="uid://2fos18qmjotg" path="res://audio/sounds/ships/titanic_ambient/ambient02.mp3" id="3_c6cfs"]
+[ext_resource type="AudioStream" uid="uid://cu06btvii71c1" path="res://audio/sounds/ships/titanic_ambient/engine01.mp3" id="4_887ki"]
+
+[node name="TitanicSFX" type="AudioStreamPlayer3D"]
+volume_db = 55.0
+bus = &"Titanic Ambient"
+script = ExtResource("1_fob36")
+streams = [ExtResource("2_o0nwn"), ExtResource("3_c6cfs"), ExtResource("3_c6cfs")]
+
+[node name="TitanicAmbient" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_887ki")
+volume_db = 25.0
+autoplay = true
