@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b8pkku6jgdsh0"]
 
 [ext_resource type="Script" path="res://ui/dialogue/dialogue.gd" id="1_bmxfx"]
-[ext_resource type="FontFile" uid="uid://3g80vo0xxc35" path="res://ui/dialogue/NotoSansRunic-Regular.ttf" id="2_tkmxt"]
+[ext_resource type="FontFile" uid="uid://c601hoyfgty5j" path="res://ui/dialogue/NotoSansRunic-Regular.ttf" id="2_tkmxt"]
 
 [sub_resource type="SystemFont" id="SystemFont_mb56d"]
 fallbacks = [ExtResource("2_tkmxt")]
@@ -16,27 +16,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_bmxfx")
 label_name_path = NodePath("TextBoxBackground/ContentContainer/Name")
 label_text_path = NodePath("TextBoxBackground/ContentContainer/Text")
 
 [node name="TextBoxBackground" type="ColorRect" parent="."]
-layout_mode = 0
 offset_left = 38.0
 offset_top = 26.0
 offset_right = 337.0
 offset_bottom = 156.0
+mouse_filter = 2
 color = Color(0.592157, 0.482353, 0.521569, 1)
 
 [node name="ContentContainer" type="VBoxContainer" parent="TextBoxBackground"]
-layout_mode = 0
 offset_left = 7.0
 offset_top = 7.0
 offset_right = 292.0
 offset_bottom = 121.0
+mouse_filter = 2
 
 [node name="Name" type="Label" parent="TextBoxBackground/ContentContainer"]
-layout_mode = 2
 offset_right = 285.0
 offset_bottom = 26.0
 theme_override_fonts/font = SubResource("SystemFont_mb56d")
@@ -44,7 +44,6 @@ text = "<>"
 autowrap_mode = 3
 
 [node name="Text" type="Label" parent="TextBoxBackground/ContentContainer"]
-layout_mode = 2
 offset_top = 30.0
 offset_right = 285.0
 offset_bottom = 56.0

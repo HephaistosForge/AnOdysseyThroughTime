@@ -1,7 +1,9 @@
 extends Node
 
 var rng
-# Called when the node enters the scene tree for the first time.
+var start_pos = Vector3.ZERO
+var map_size = Vector2(1200, 1200)
+
 func _ready():
 	rng = RandomNumberGenerator.new()
 	rng.randomize()

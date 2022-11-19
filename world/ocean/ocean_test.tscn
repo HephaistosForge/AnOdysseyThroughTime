@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cms4yjwj8i86h"]
+[gd_scene load_steps=17 format=3 uid="uid://bmc8joom78m07"]
 
 [ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_pw1o5"]
 [ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="2_5lww2"]
@@ -33,6 +33,12 @@ shader_parameter/iChannel1 = SubResource("NoiseTexture2D_ya8hl")
 shader_parameter/iChannel2 = SubResource("NoiseTexture2D_8x484")
 shader_parameter/maelstrom_positions0 = null
 shader_parameter/maelstrom_positions1 = Basis(0.1, 0.3, 0.8, 0.2, 0.9, 0.4, 0, 0, 1)
+shader_parameter/maelstrom_positions10 = null
+shader_parameter/maelstrom_positions11 = null
+shader_parameter/maelstrom_positions12 = null
+shader_parameter/maelstrom_positions13 = null
+shader_parameter/maelstrom_positions14 = null
+shader_parameter/maelstrom_positions15 = null
 shader_parameter/maelstrom_positions2 = null
 shader_parameter/maelstrom_positions3 = null
 shader_parameter/maelstrom_positions4 = null
@@ -46,7 +52,7 @@ shader_parameter/water_color = Color(0.282353, 0.27451, 0.392157, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iacdl"]
 material = SubResource("ShaderMaterial_hqk6h")
-size = Vector2(500, 500)
+size = Vector2(1200, 1200)
 subdivide_width = 512
 subdivide_depth = 512
 
@@ -57,6 +63,64 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("PlaneMesh_iacdl")
 script = ExtResource("2_5lww2")
 maelstroms = []
+
+[node name="Maelstroms" type="Node3D" parent="WaterShader"]
+
+[node name="MaelstromPoint" type="Node3D" parent="WaterShader/Maelstroms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -243.648, 0, 0)
+
+[node name="MaelstromPoint2" type="Node3D" parent="WaterShader/Maelstroms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -230.435, 0, 113.237)
+
+[node name="MaelstromPoint3" type="Node3D" parent="WaterShader/Maelstroms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.77, -6.10352e-05, 183.517)
+
+[node name="MaelstromPoint4" type="Node3D" parent="WaterShader/Maelstroms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17542, 0, 194.705)
+
+[node name="MaelstromPoint5" type="Node3D" parent="WaterShader/Maelstroms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.4, 0, 211.353)
+
+[node name="MaelstromPoint6" type="Node3D" parent="WaterShader/Maelstroms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310.228, 0, 155.248)
+
+[node name="MaelstromPoint7" type="Node3D" parent="WaterShader/Maelstroms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 294.533, 0, 44.6143)
+
+[node name="MaelstromPoint8" type="Node3D" parent="WaterShader/Maelstroms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222.914, 0, -56.0731)
+
+[node name="MaelstromPoint9" type="Node3D" parent="WaterShader/Maelstroms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 276.154, 0, -201.444)
+
+[node name="MaelstromPoint10" type="Node3D" parent="WaterShader/Maelstroms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.494, 0, -287.467)
+
+[node name="MaelstromPoint11" type="Node3D" parent="WaterShader/Maelstroms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7887, -6.10352e-05, -270.634)
+
+[node name="MaelstromPoint12" type="Node3D" parent="WaterShader/Maelstroms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.22, -6.10352e-05, -267.411)
+
+[node name="MaelstromPoint13" type="Node3D" parent="WaterShader/Maelstroms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -231.759, 0, -229.378)
+
+[node name="MaelstromPoint14" type="Node3D" parent="WaterShader/Maelstroms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -199.22, 0, -93.112)
+
+[node name="SpawnPoints" type="Node3D" parent="WaterShader"]
+
+[node name="Spawns" type="Node3D" parent="WaterShader/SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -476.401, 0, 325.945)
+
+[node name="Spawns2" type="Node3D" parent="WaterShader/SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 306.772, 0, 467.975)
+
+[node name="Spawns3" type="Node3D" parent="WaterShader/SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 478.436, 0, -341.409)
+
+[node name="Spawns4" type="Node3D" parent="WaterShader/SpawnPoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -462.492, -6.10352e-05, -247.389)
 
 [node name="LightningStrikeGenerator" parent="." instance=ExtResource("3_xsjsu")]
 

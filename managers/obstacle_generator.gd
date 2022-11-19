@@ -21,7 +21,7 @@ func _ready():
 
 func _on_spawn_timer_timeout() -> void:
 	var next_obstacle = randi() % OBSTACLE_PREFABS.size()
-	var size = gameManager.map_size
+	var size = Globals.map_size
 	var rand_position = Vector3(size.x*(randf()-0.5), 0, size.y*(randf()-0.5))
 	
 	var obstacle = OBSTACLE_PREFABS[next_obstacle].instantiate()
