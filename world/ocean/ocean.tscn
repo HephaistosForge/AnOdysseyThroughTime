@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://do7cwpg6tht1h"]
+[gd_scene load_steps=14 format=3 uid="uid://b3tjwxnqgc6dj"]
 
 [ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_ddwd0"]
 [ext_resource type="PackedScene" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
-[ext_resource type="PackedScene" uid="uid://c0eg78m7jmyuo" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
+[ext_resource type="PackedScene" uid="uid://d0ccsxot8f5l0" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
 [ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
 [ext_resource type="Script" path="res://world/ocean/Dialogue.gd" id="5_ygos2"]
 
@@ -39,11 +39,11 @@ subdivide_depth = 512
 
 [node name="ocean" type="Node3D"]
 
-[node name="LightningStrikeGenerator" parent="." instance=ExtResource("1_woglw")]
-
 [node name="WaterShader" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("PlaneMesh_iacdl")
+
+[node name="LightningStrikeGenerator" parent="." instance=ExtResource("1_woglw")]
 
 [node name="viking_boat" parent="." instance=ExtResource("3_13om1")]
 
@@ -67,7 +67,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Dialogue" type="ColorRect" parent="Control"]
-layout_mode = 0
 offset_left = 235.0
 offset_top = 34.0
 offset_right = 525.0
@@ -76,21 +75,18 @@ color = Color(0.592157, 0.482353, 0.521569, 1)
 script = ExtResource("5_ygos2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/Dialogue"]
-layout_mode = 0
 offset_left = 7.0
 offset_top = 7.0
 offset_right = 280.0
 offset_bottom = 133.0
 
 [node name="Name" type="Label" parent="Control/Dialogue/VBoxContainer"]
-layout_mode = 2
 offset_right = 273.0
 offset_bottom = 26.0
 text = "Test"
 autowrap_mode = 3
 
 [node name="Text" type="Label" parent="Control/Dialogue/VBoxContainer"]
-layout_mode = 2
 offset_top = 30.0
 offset_right = 273.0
 offset_bottom = 56.0

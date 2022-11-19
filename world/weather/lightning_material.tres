@@ -3,7 +3,7 @@
 [ext_resource type="Shader" path="res://world/weather/lightning_material.gdshader" id="1_i742r"]
 
 [resource]
-render_priority = 0
+render_priority = 1
 shader = ExtResource("1_i742r")
 shader_parameter/beam_difference = null
 shader_parameter/beams = null

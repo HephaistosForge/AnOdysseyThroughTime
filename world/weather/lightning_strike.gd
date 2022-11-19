@@ -9,7 +9,7 @@ extends Node3D
 @onready var sprite = $Sprite3D
 @export var despawn_time: float = 0.3
 
-var spawn_time: float = 3.0
+var spawn_time: float = 1.5
 
 var active = false
 
@@ -44,6 +44,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func _on_despawn_timer_timeout() -> void:
 	self.queue_free()
+	#pass
 
 
 
