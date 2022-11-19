@@ -29,3 +29,8 @@ func _ready():
 func start_game(pos):
 	Globals.start_pos = pos
 	get_tree().change_scene_to_file("res://world/ocean/ocean.tscn") 
+
+
+func _on_goal_area_body_entered(body):
+	if body.is_in_group("boat"):
+		print("You Win!")

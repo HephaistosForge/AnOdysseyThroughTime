@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bdn4e5fvf2ddy"]
+[gd_scene load_steps=28 format=3 uid="uid://bdn4e5fvf2ddy"]
 
 [ext_resource type="Shader" path="res://world/weather/sky.gdshader" id="1_8oio7"]
 [ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_ddwd0"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_ngqft"]
 [ext_resource type="PackedScene" uid="uid://dxc1ht5s5puis" path="res://ui/dialogue/TutorialInformation/TutorialInformation.tscn" id="8_uvx3f"]
 [ext_resource type="PackedScene" uid="uid://drf1jxsbswk04" path="res://world/maelstrom/maelstrom_area.tscn" id="9_5csxv"]
+[ext_resource type="Script" path="res://managers/GoalArea.gd" id="9_uvrgv"]
 [ext_resource type="Script" path="res://world/ocean/ShipGenerator.gd" id="11_3dgxt"]
 [ext_resource type="PackedScene" uid="uid://dmr36cwesw5lo" path="res://ui/hud/ship_selection.tscn" id="11_5i74g"]
 [ext_resource type="PackedScene" uid="uid://dwm2nfteihmdi" path="res://entities/obstacles/island.tscn" id="13_13k4f"]
@@ -107,6 +108,9 @@ size = Vector2(1200, 1200)
 subdivide_width = 128
 subdivide_depth = 128
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_si2jr"]
+radius = 35.0
+
 [node name="ocean" type="Node3D" groups=["ocean"]]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -202,6 +206,13 @@ player = NodePath("../viking_boat")
 [node name="GameManager" type="Node3D" parent="." groups=["manager"]]
 script = ExtResource("8_ngqft")
 
+[node name="GoalArea" type="Area3D" parent="GameManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.4541, 0)
+script = ExtResource("9_uvrgv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameManager/GoalArea"]
+shape = SubResource("SphereShape3D_si2jr")
+
 [node name="maelstrom_area" parent="." instance=ExtResource("9_5csxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 350.093, 392.596, -6.82382)
 
@@ -214,10 +225,13 @@ script = ExtResource("11_3dgxt")
 [node name="ship_selection" parent="ShipGenerator" groups=["ship_selection"] instance=ExtResource("11_5i74g")]
 
 [node name="island" parent="." instance=ExtResource("13_13k4f")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.94901, -0.79187, 1.56842)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.94901, -8.24597, 1.56842)
 
 [node name="golden_monkey" parent="." instance=ExtResource("14_3r2b0")]
-transform = Transform3D(4.951, 0.698285, 0, -0.698285, 4.951, 0, 0, 0, 5, -0.637918, 14.3155, 6.79138)
+transform = Transform3D(4.951, 0.698285, 0, -0.698285, 4.951, 0, 0, 0, 5, -0.637918, 6.86144, 6.79138)
 
 [node name="golden_monkey2" parent="." instance=ExtResource("14_3r2b0")]
-transform = Transform3D(1.58046, -0.523911, -1.108, 0.62931, 1.89841, 0, 1.05172, -0.348639, 1.66503, -5.75548, 14.3155, 9.15125)
+transform = Transform3D(1.58046, -0.523911, -1.108, 0.62931, 1.89841, 0, 1.05172, -0.348639, 1.66503, -5.75548, 6.86144, 9.15125)
+
+[connection signal="body_entered" from="GameManager/GoalArea" to="GameManager" method="_on_goal_area_body_entered"]
+[connection signal="body_entered" from="GameManager/GoalArea" to="GameManager/GoalArea" method="_on_body_entered"]
