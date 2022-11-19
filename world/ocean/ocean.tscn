@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3tjwxnqgc6dj"]
+[gd_scene load_steps=15 format=3 uid="uid://do7cwpg6tht1h"]
 
 [ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_ddwd0"]
 [ext_resource type="PackedScene" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
-[ext_resource type="PackedScene" uid="uid://d0ccsxot8f5l0" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
+[ext_resource type="PackedScene" uid="uid://c0eg78m7jmyuo" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
+[ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="3_k8sgn"]
 [ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
 [ext_resource type="Script" path="res://world/ocean/Dialogue.gd" id="5_ygos2"]
 
@@ -28,7 +29,16 @@ shader = ExtResource("1_ddwd0")
 shader_parameter/iChannel0 = SubResource("NoiseTexture2D_qece7")
 shader_parameter/iChannel1 = SubResource("NoiseTexture2D_ya8hl")
 shader_parameter/iChannel2 = SubResource("NoiseTexture2D_8x484")
+shader_parameter/maelstrom_positions0 = null
 shader_parameter/maelstrom_positions1 = Basis(0.1, 0.3, 0.8, 0.2, 0.9, 0.4, 0, 0, 1)
+shader_parameter/maelstrom_positions2 = null
+shader_parameter/maelstrom_positions3 = null
+shader_parameter/maelstrom_positions4 = null
+shader_parameter/maelstrom_positions5 = null
+shader_parameter/maelstrom_positions6 = null
+shader_parameter/maelstrom_positions7 = null
+shader_parameter/maelstrom_positions8 = null
+shader_parameter/maelstrom_positions9 = null
 shader_parameter/screen_resolution = null
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iacdl"]
@@ -42,14 +52,12 @@ subdivide_depth = 512
 [node name="WaterShader" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("PlaneMesh_iacdl")
+script = ExtResource("3_k8sgn")
+maelstroms = []
 
 [node name="LightningStrikeGenerator" parent="." instance=ExtResource("1_woglw")]
 
 [node name="viking_boat" parent="." instance=ExtResource("3_13om1")]
-
-[node name="Camera3D" type="Camera3D" parent="viking_boat"]
-transform = Transform3D(1, 0, 0, 0, 0.809335, 0.587347, 0, -0.587347, 0.809335, 0, 7.30701, 5.83753)
-current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
@@ -67,6 +75,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Dialogue" type="ColorRect" parent="Control"]
+layout_mode = 0
 offset_left = 235.0
 offset_top = 34.0
 offset_right = 525.0
@@ -75,18 +84,21 @@ color = Color(0.592157, 0.482353, 0.521569, 1)
 script = ExtResource("5_ygos2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/Dialogue"]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 7.0
 offset_right = 280.0
 offset_bottom = 133.0
 
 [node name="Name" type="Label" parent="Control/Dialogue/VBoxContainer"]
+layout_mode = 2
 offset_right = 273.0
 offset_bottom = 26.0
 text = "Test"
 autowrap_mode = 3
 
 [node name="Text" type="Label" parent="Control/Dialogue/VBoxContainer"]
+layout_mode = 2
 offset_top = 30.0
 offset_right = 273.0
 offset_bottom = 56.0

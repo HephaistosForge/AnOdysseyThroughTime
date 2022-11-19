@@ -7,7 +7,7 @@
 radius = 2.30067
 height = 10.4836
 
-[node name="VikingBoat" type="CharacterBody3D" groups=["boat"]]
+[node name="VikingBoat" type="CharacterBody3D" groups=["boat", "pullable"]]
 
 [node name="ShipSteering" parent="." instance=ExtResource("1_gv77f")]
 

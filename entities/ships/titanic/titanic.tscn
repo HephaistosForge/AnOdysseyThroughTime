@@ -7,7 +7,7 @@
 radius = 1.278
 height = 14.746
 
-[node name="RowingBoat" type="CharacterBody3D" groups=["boat"]]
+[node name="Titanic" type="CharacterBody3D" groups=["boat", "pullable"]]
 
 [node name="ShipSteering" parent="." instance=ExtResource("1_ymrqw")]
 
@@ -15,4 +15,4 @@ height = 14.746
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.19313, 1.17447)
 shape = SubResource("CapsuleShape3D_3tagk")
 
-[node name="titanic" parent="." instance=ExtResource("2_jktoa")]
+[node name="TitanicModel" parent="." instance=ExtResource("2_jktoa")]

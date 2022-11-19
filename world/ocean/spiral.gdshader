@@ -1,7 +1,17 @@
 shader_type spatial;
-render_mode 	cull_disabled,diffuse_burley,specular_schlick_ggx, blend_mix;
+render_mode cull_disabled,diffuse_burley,specular_schlick_ggx, blend_mix;
 
-uniform mat3 maelstrom_positions1;
+uniform vec3 maelstrom_positions0;
+uniform vec3 maelstrom_positions1;
+uniform vec3 maelstrom_positions2;
+uniform vec3 maelstrom_positions3;
+uniform vec3 maelstrom_positions4;
+uniform vec3 maelstrom_positions5;
+uniform vec3 maelstrom_positions6;
+uniform vec3 maelstrom_positions7;
+uniform vec3 maelstrom_positions8;
+uniform vec3 maelstrom_positions9;
+
 
 uniform sampler2D iChannel0;
 uniform sampler2D iChannel1;
@@ -90,20 +100,25 @@ vec3 get_hole(vec2 uv, vec3 maelstrom_pos_size) {
     return finalSamp * mask * .1 + 1.2 * ring * mask * finalSamp * col;
 }
 
-float add_maelstroms(vec2 uv, mat3 positions) {
-	float h = 0.;
-	for (int i = 0; i < 3; i++) {
-		vec3 hole = get_hole(uv, positions[i]);
-		float sum = hole.x + hole.y + hole.z;
-		h += -clamp(sum, 0, 10) * 10.0;
-	}
-	return h;
+float add_maelstrom(vec2 uv, vec3 positions) {
+	vec3 hole = get_hole(uv, positions);
+	float sum = hole.x + hole.y + hole.z;
+	return -clamp(sum, 0, 10) * 10.0;
 }
 
 float height(vec2 uv) {
 	float h = sin(TIME * 1.0 + uv.x*100. + uv.y*120.) / 3.;
 	h += sin(TIME * 0.5 + uv.x*80. + uv.y*20.) / 3.;
-	h += add_maelstroms(uv, maelstrom_positions1);
+	h += add_maelstrom(uv, maelstrom_positions0);
+	h += add_maelstrom(uv, maelstrom_positions1);
+	h += add_maelstrom(uv, maelstrom_positions2);
+	h += add_maelstrom(uv, maelstrom_positions3);
+	h += add_maelstrom(uv, maelstrom_positions4);
+	h += add_maelstrom(uv, maelstrom_positions5);
+	h += add_maelstrom(uv, maelstrom_positions6);
+	h += add_maelstrom(uv, maelstrom_positions7);
+	h += add_maelstrom(uv, maelstrom_positions8);
+	h += add_maelstrom(uv, maelstrom_positions9);
 	
 	return h;
 }

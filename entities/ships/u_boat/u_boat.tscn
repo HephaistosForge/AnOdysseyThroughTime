@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://xjdj641p45m2"]
 
 [ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_8pw5e"]
-[ext_resource type="PackedScene" uid="uid://bdml33d4hkfp0" path="res://entities/ships/titanic/titanic.glb" id="2_dmrjm"]
+[ext_resource type="PackedScene" uid="uid://ndrabu62u65f" path="res://entities/ships/u_boat/uboat.glb" id="2_oj638"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tagk"]
 radius = 1.278
-height = 14.746
+height = 12.473
 
-[node name="RowingBoat" type="CharacterBody3D" groups=["boat"]]
+[node name="UBoat" type="CharacterBody3D" groups=["boat", "pullable"]]
 
 [node name="ShipSteering" parent="." instance=ExtResource("1_8pw5e")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.19313, 1.17447)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.19313, -0.0493612)
 shape = SubResource("CapsuleShape3D_3tagk")
 
-[node name="titanic" parent="." instance=ExtResource("2_dmrjm")]
+[node name="UBoatModel" parent="." instance=ExtResource("2_oj638")]
