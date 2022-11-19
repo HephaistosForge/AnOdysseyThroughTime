@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://drf1jxsbswk04"]
+[gd_scene load_steps=4 format=3 uid="uid://pupiv2s81jme"]
 
 [ext_resource type="Script" path="res://world/maelstrom/maelstrom_area.gd" id="1_whq31"]
+[ext_resource type="PackedScene" uid="uid://pcd7badpojb8" path="res://audio/sounds/maelstrom/Maelstrom.tscn" id="2_ejkv5"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_y8ott"]
 height = 96.1975
@@ -12,5 +13,7 @@ script = ExtResource("1_whq31")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0618072, 0)
 shape = SubResource("CylinderShape3D_y8ott")
+
+[node name="MaelstromSFX" parent="." instance=ExtResource("2_ejkv5")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

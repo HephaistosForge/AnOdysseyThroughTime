@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dj8v2bbnujv4u"]
+[gd_scene load_steps=7 format=3 uid="uid://dj8v2bbnujv4u"]
 
-[ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_ymrqw"]
+[ext_resource type="PackedScene" path="res://entities/ships/ship_steering.tscn" id="1_ymrqw"]
 [ext_resource type="PackedScene" uid="uid://bdml33d4hkfp0" path="res://entities/ships/titanic/titanic.glb" id="2_jktoa"]
 [ext_resource type="PackedScene" uid="uid://b8pkku6jgdsh0" path="res://ui/dialogue/Dialogue.tscn" id="3_ou6vq"]
 [ext_resource type="PackedScene" uid="uid://byaks36vihbmo" path="res://entities/ships/pointer.glb" id="4_8k3jj"]
+[ext_resource type="PackedScene" uid="uid://dlo0hf246jdnl" path="res://audio/sounds/ships/titanic_ambient/TitanicSFX.tscn" id="4_r77jp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tagk"]
 radius = 1.278
@@ -28,12 +29,11 @@ shape = SubResource("CapsuleShape3D_3tagk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.17636, -4.01898)
 
 [node name="Dialogue" parent="." instance=ExtResource("3_ou6vq")]
-inital_dialog = ["Ich habe kein gutes Gefühl bei der Sache...", "Och nö, nicht dieses Schiff schon wieder!", "Immer eine Handbreite Wasser unterm Kiel..."]
-follow_up_dialog = ["Egal, wird schon nichts passieren.", "Aber was könnte schon schiefgehen?", "Ob es hier Eisberge gibt?"]
-name_of_speaker = ["Edward", "Jack", "Rose", "Caledon"]
 
 [node name="Anchor" type="Node3D" parent="." groups=["anchor"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15844, 0)
 
 [node name="pointer" parent="Anchor" instance=ExtResource("4_8k3jj")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 8.92862)
+
+[node name="TitanicSFX" parent="." instance=ExtResource("4_r77jp")]

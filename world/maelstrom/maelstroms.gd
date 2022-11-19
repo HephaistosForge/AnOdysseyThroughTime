@@ -64,7 +64,13 @@ func _physics_process(_delta):
 		var px = int(object.position.x+256)
 		var py = int(object.position.z+256)
 		object.position.y = -height(object.position / 512 + Vector3(0.5, 0.5, 0.5))
-		print(object.position)
+		for maelstrom in maelstroms:
+			var pos = Vector3(maelstrom.x-0.5, 0, maelstrom.y-.5) * mesh_size
+			var diff = pos - object.position
+			var dist = diff.length()
+			object.position.y -= 10000 / max(100, pow(dist, 2))
+		#if object.is_in_group("boat"):
+		#	print(object.position)
 		#print(object.position, img.get_pixel(px, py).b * 10)
 
 
