@@ -11,18 +11,15 @@ grow_vertical = 2
 script = ExtResource("1_kt124")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="header" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 141.0
 theme_override_constants/margin_top = 50
 
 [node name="Label" type="Label" parent="VBoxContainer/header"]
-layout_mode = 2
 offset_left = 366.0
 offset_top = 50.0
 offset_right = 786.0
@@ -32,7 +29,6 @@ theme_override_font_sizes/font_size = 64
 text = "Einstellungen"
 
 [node name="body" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_top = 145.0
 offset_right = 1152.0
 offset_bottom = 373.0
@@ -42,68 +38,57 @@ theme_override_constants/margin_right = 96
 theme_override_constants/margin_bottom = 56
 
 [node name="menu_frame" type="PanelContainer" parent="VBoxContainer/body"]
-layout_mode = 2
 offset_left = 96.0
 offset_top = 56.0
 offset_right = 1056.0
 offset_bottom = 172.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/body"]
-layout_mode = 2
 offset_left = 96.0
 offset_top = 56.0
 offset_right = 1056.0
 offset_bottom = 172.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
-layout_mode = 2
 offset_right = 960.0
 offset_bottom = 26.0
 
 [node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer"]
-layout_mode = 2
 offset_right = 960.0
 offset_bottom = 26.0
 text = "placeholder"
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
-layout_mode = 2
 offset_top = 30.0
 offset_right = 960.0
 offset_bottom = 56.0
 
 [node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer2"]
-layout_mode = 2
 offset_right = 960.0
 offset_bottom = 26.0
 text = "placeholder"
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
-layout_mode = 2
 offset_top = 60.0
 offset_right = 960.0
 offset_bottom = 86.0
 
 [node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer3"]
-layout_mode = 2
 offset_right = 960.0
 offset_bottom = 26.0
 text = "placeholder"
 
 [node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
-layout_mode = 2
 offset_top = 90.0
 offset_right = 960.0
 offset_bottom = 116.0
 
 [node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer4"]
-layout_mode = 2
 offset_right = 960.0
 offset_bottom = 26.0
 text = "placeholder"
 
 [node name="footer" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_top = 377.0
 offset_right = 1152.0
 offset_bottom = 408.0
@@ -113,7 +98,6 @@ theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
 [node name="back_button" type="Button" parent="VBoxContainer/footer"]
-layout_mode = 2
 offset_left = 545.0
 offset_right = 607.0
 offset_bottom = 31.0
