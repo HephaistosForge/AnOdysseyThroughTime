@@ -39,7 +39,7 @@ libraries = {
 
 [node name="Dialogue" parent="." instance=ExtResource("3_gdptf")]
 inital_dialog = ["Wenn man in die falsche Richtung läuft, hat es keinen Zweck, das Tempo zu erhöhen...", "Das Leben ist wie eine Schachtel Pralinen. Man weiß nie, was man bekommt...", "Wie viele Dinge es gibt, die ich nicht brauche..."]
-follow_up_dialog = ["Hm. Weniger ist mehr.", "Hm. Lieber nichts besitzen als zu verlieren.", "Hm. Das Leben ist leicht, aber wir machen es uns schwer."]
+follow_up_dialog = ["Hm. Weniger ist mehr.", "Hm. Lieber nichts besitzen, als zu verlieren.", "Hm. Das Leben ist leicht, aber wir machen es uns schwer."]
 name_of_speaker = ["Forrest", "Albert", "Marcus", "Sokrates"]
 
 [editable path="Model"]
