@@ -68,10 +68,10 @@ parameters/TimeScale/scale = 1.0
 [node name="Model" parent="." instance=ExtResource("2_5vwr0")]
 
 [node name="RightPaddle" parent="Model" index="4"]
-transform = Transform3D(0.0121577, 1.74891, -0.029139, 0.0254095, 0.617698, 0.065926, 0.0690492, -0.535243, -0.0191296, 0.959433, 0.926597, -0.0850979)
+transform = Transform3D(0.0112895, 1.75443, -0.0289922, 0.0253868, 0.620279, 0.0658986, 0.0692048, -0.513744, -0.0194444, 0.959433, 0.926597, -0.0850979)
 
 [node name="LeftPaddle" parent="Model" index="5"]
-transform = Transform3D(0.0561022, 1.27156, -0.000979606, -0.00431995, 0.0893307, -0.0743684, -0.0489399, 1.44977, 0.00544157, -0.959434, 0.93199, -0.0850973)
+transform = Transform3D(0.0555749, 1.28594, -0.00222894, -0.0052428, 0.0654802, -0.0743461, -0.0494487, 1.43831, 0.00537746, -0.959434, 0.93199, -0.0850973)
 
 [node name="AnimationPlayer" parent="Model" index="6"]
 playback_speed = 0.1

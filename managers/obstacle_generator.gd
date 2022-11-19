@@ -10,20 +10,22 @@ const OBSTACLE_PREFABS: Array[PackedScene] = [
 	preload("res://entities/obstacles/tree.tscn"),
 ]
 
+@export var spawn_time: float = 0.4
+
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var ship: CharacterBody3D = get_tree().get_first_node_in_group("boat")
+@onready var gameManager: Node3D = get_tree().get_first_node_in_group("manager")
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	spawn_timer.start(spawn_time)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-func _on_timer_timeout() -> void:
+func _on_spawn_timer_timeout() -> void:
 	var next_obstacle = randi() % OBSTACLE_PREFABS.size()
-	#var rand_position = 
+	var size = gameManager.map_size
+	var rand_position = Vector3(size.x*(randf()-0.5), 0, size.y*(randf()-0.5))
 	
+	var obstacle = OBSTACLE_PREFABS[next_obstacle].instantiate()
+	self.add_child(obstacle)
+	obstacle.position = rand_position
+	
+	spawn_timer.start(spawn_time)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://drf1jxsbswk04"]
+
+[ext_resource type="Script" path="res://world/maelstrom/maelstrom_area.gd" id="1_whq31"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_y8ott"]
+height = 96.1975
+radius = 6.96467
+
+[node name="maelstrom_area" type="Area3D" groups=["maelstrom_area"]]
+script = ExtResource("1_whq31")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0618072, 0)
+shape = SubResource("CylinderShape3D_y8ott")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -20,5 +20,6 @@ transform = Transform3D(0.6, 0, 0, 0, -2.62268e-08, 0.6, 0, -0.6, -2.62268e-08, 
 shape = SubResource("CapsuleShape3D_4v0rn")
 
 [node name="Dialogue" parent="." instance=ExtResource("3_u7opl")]
-dialog = ["Hier könnte Ihre Werbung stehen", "γεια!"]
-name_of_speaker = "Wikinger-Boot"
+inital_dialog = ["ᚾᚨᚾᚢ?", "ᚺᚢᚨᛞ ᛖᚱ ᛞᛖᚱ ᚾᚢ ᛊᚲᛖᛏ?", "ᛞᛖᚱ ᛖᚱ ᛊᚲᛖᛏ ᚾᛟᚷᛖᛏ!"]
+follow_up_dialog = ["ᛃᛖᚷ ᚲᚨᚾ ᚷᛟᛞᛏ ᛚᛁᛞᛖ ᚱᚨᛁᛞᛊ!", "ᚲᛚᚨᚱ ᛏᛁᛚ ᚲᚨᛗᛈ.", "ᛏᛁᛞ ᛏᛁᛚ ᛖᚱᛟᛒᚱᛁᛜᛖᚱ, ᚺᚨᚺᚨ!"]
+name_of_speaker = ["Astrid", "Freya", "Bjorn", "Erik"]
