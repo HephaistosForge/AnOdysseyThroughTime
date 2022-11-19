@@ -31,6 +31,17 @@ func _ready():
 		area.position = uv_to_world(maelstroms[i])
 		
 		
+var time = 0
+func _process(delta):
+	# shader_mat.set_uniform_value("time", time)
+	time += delta
+		
+func height(uv):
+	var h = sin(time * 1.0 + uv.x*100. + uv.y*120.)
+	h += sin(time * 0.5 + uv.x*80. + uv.y*20. )
+	return h
+
+		
 func _physics_process(_delta):
 	for object in get_tree().get_nodes_in_group("pullable"):
 		var force = Vector3.ZERO
@@ -44,4 +55,16 @@ func _physics_process(_delta):
 			object.apply_force(force * 10000)
 		else:
 			object.velocity += force * 100
+			
+	# var img = height_texture.get_image()
+	#for y in img.MAX_HEIGHT:
+	#	for x in img.MAX_WIDTH:
+	#		print(img.get_pixel(x, y))
+	for object in get_tree().get_nodes_in_group("pullable"):
+		var px = int(object.position.x+256)
+		var py = int(object.position.z+256)
+		object.position.y = -height(object.position / 512 + Vector3(0.5, 0.5, 0.5))
+		print(object.position)
+		#print(object.position, img.get_pixel(px, py).b * 10)
+
 
