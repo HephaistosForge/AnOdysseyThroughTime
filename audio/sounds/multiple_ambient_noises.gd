@@ -23,4 +23,4 @@ func _on_timer_timeout() -> void:
 
 
 func _on_stream_finished() -> void:
-	timer.start(randi() % 10 + 20)
+	timer.start(randi() % 20 + 10)

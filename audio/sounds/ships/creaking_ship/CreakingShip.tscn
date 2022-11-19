@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://00wpf5wk5tb7"]
 
-[ext_resource type="AudioStream" uid="uid://cwvoflcho3c5l" path="res://audio/sounds/ships/creaking_ship/creaking_ship.wav" id="1_2gnsh"]
+[ext_resource type="AudioStream" uid="uid://b7nf7vgxh36i8" path="res://audio/sounds/ships/creaking_ship/creaking_ship.wav" id="1_2gnsh"]
 
 [node name="CreakingShip" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_2gnsh")
-volume_db = 12.0
+volume_db = 15.0
 autoplay = true
 bus = &"CreakingShip"

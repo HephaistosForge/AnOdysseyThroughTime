@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://dtqpwh6mnvu6g"
+uid="uid://bxfr08l2ilqht"
 path="res://.godot/imported/bubbling.mp3-aca060f1362aeb93381234ca5f0ceb8d.mp3str"
 
 [deps]
@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/bubbling.mp3-aca060f1362aeb93381234ca5f0ceb8d
 
 [params]
 
-loop=true
-loop_offset=0
-bpm=0
+loop=false
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://d1v6tyoat2ont"
+uid="uid://2fos18qmjotg"
 path="res://.godot/imported/ambient02.mp3-0ed194566531091963ac7253ca6074db.mp3str"
 
 [deps]
@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/ambient02.mp3-0ed194566531091963ac7253ca6074d
 
 [params]
 
-loop=true
-loop_offset=0
-bpm=0
+loop=false
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

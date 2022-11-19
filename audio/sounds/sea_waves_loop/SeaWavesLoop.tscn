@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bjhyewbi5bwut"]
 
-[ext_resource type="AudioStream" uid="uid://c8tdf367ty54h" path="res://audio/sounds/sea_waves_loop/sea_waves_loop.wav" id="1_eapxk"]
+[ext_resource type="AudioStream" uid="uid://db4cmurc74fm5" path="res://audio/sounds/sea_waves_loop/sea_waves_loop.wav" id="1_eapxk"]
 
 [node name="SeaWavesLoop" type="AudioStreamPlayer"]
 stream = ExtResource("1_eapxk")

@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://kpu5sacnew3g"]
 
-[ext_resource type="AudioStream" uid="uid://b4f73jdffe8xb" path="res://audio/sounds/bubbles/bubbling.mp3" id="1_n4bj6"]
+[ext_resource type="AudioStream" uid="uid://bxfr08l2ilqht" path="res://audio/sounds/bubbles/bubbling.mp3" id="1_n4bj6"]
 [ext_resource type="Script" path="res://audio/sounds/bubbles/bubbles.gd" id="2_52v8m"]
 
 [node name="BubblesSFX" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_n4bj6")
+volume_db = 30.0
 autoplay = true
 bus = &"Bubbles"
 script = ExtResource("2_52v8m")

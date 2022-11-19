@@ -1,7 +1,7 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://cpejb8p6u4bqn"]
 
 [resource]
-bus/0/volume_db = -0.130497
+bus/0/volume_db = -6.5751
 bus/1/name = &"SeaWaves"
 bus/1/solo = false
 bus/1/mute = false
@@ -42,5 +42,5 @@ bus/7/name = &"Titanic Ambient"
 bus/7/solo = false
 bus/7/mute = false
 bus/7/bypass_fx = false
-bus/7/volume_db = 3.04474
+bus/7/volume_db = 5.22674
 bus/7/send = &"Master"

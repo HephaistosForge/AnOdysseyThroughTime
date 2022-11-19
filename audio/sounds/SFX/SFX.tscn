@@ -9,7 +9,5 @@
 [node name="SeaWavesLoop" parent="." instance=ExtResource("1_0y76g")]
 
 [node name="BubblesSFX" parent="." instance=ExtResource("3_ln2de")]
-volume_db = 20.0
-max_db = 4.0
 
 [node name="SeagullSFX" parent="." instance=ExtResource("2_qgybh")]

@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://coksguhm082bs"
+uid="uid://cpqb8hmocfft5"
 path="res://.godot/imported/seagull01.mp3-d2e16b0840e8dcb8c0af2f5f7d0fb0af.mp3str"
 
 [deps]
@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/seagull01.mp3-d2e16b0840e8dcb8c0af2f5f7d0fb0a
 
 [params]
 
-loop=true
-loop_offset=0
-bpm=0
+loop=false
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

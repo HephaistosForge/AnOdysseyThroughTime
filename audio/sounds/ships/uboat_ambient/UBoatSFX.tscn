@@ -1,18 +1,19 @@
 [gd_scene load_steps=6 format=3 uid="uid://cq4x7bwjosu5l"]
 
 [ext_resource type="Script" path="res://audio/sounds/multiple_ambient_noises.gd" id="1_41e6l"]
-[ext_resource type="AudioStream" uid="uid://bpg2e73c8pyip" path="res://audio/sounds/ships/uboat_ambient/ambient01.mp3" id="2_aqvd2"]
-[ext_resource type="AudioStream" uid="uid://cg31g3fixlg24" path="res://audio/sounds/ships/uboat_ambient/ambient02.mp3" id="3_s0neb"]
-[ext_resource type="AudioStream" uid="uid://bcslcgordc02g" path="res://audio/sounds/ships/uboat_ambient/ambient03.mp3" id="4_70q27"]
+[ext_resource type="AudioStream" uid="uid://diwsdfr5swg1d" path="res://audio/sounds/ships/uboat_ambient/ambient01.mp3" id="2_aqvd2"]
+[ext_resource type="AudioStream" uid="uid://d3ivrucb8q7aw" path="res://audio/sounds/ships/uboat_ambient/ambient02.mp3" id="3_s0neb"]
+[ext_resource type="AudioStream" uid="uid://bfy6q3fw4scxn" path="res://audio/sounds/ships/uboat_ambient/ambient03.mp3" id="4_70q27"]
 [ext_resource type="AudioStream" uid="uid://chrfwjhrxxjqx" path="res://audio/sounds/ships/uboat_ambient/engine01.mp3" id="5_8fk7p"]
 
 [node name="UBoatSFX" type="AudioStreamPlayer3D"]
+volume_db = 15.0
 bus = &"UBoat Ambient"
 script = ExtResource("1_41e6l")
 streams = [ExtResource("2_aqvd2"), ExtResource("3_s0neb"), ExtResource("4_70q27")]
 
 [node name="UBoatAmbient" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_8fk7p")
-volume_db = 15.0
+volume_db = 65.0
 max_db = 4.0
 autoplay = true
