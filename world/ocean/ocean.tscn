@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bdn4e5fvf2ddy"]
+[gd_scene load_steps=26 format=3 uid="uid://bdn4e5fvf2ddy"]
 
 [ext_resource type="Shader" path="res://world/weather/sky.gdshader" id="1_8oio7"]
 [ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_ddwd0"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://drf1jxsbswk04" path="res://world/maelstrom/maelstrom_area.tscn" id="9_5csxv"]
 [ext_resource type="Script" path="res://world/ocean/ShipGenerator.gd" id="11_3dgxt"]
 [ext_resource type="PackedScene" uid="uid://dmr36cwesw5lo" path="res://ui/hud/ship_selection.tscn" id="11_5i74g"]
+[ext_resource type="PackedScene" uid="uid://dwm2nfteihmdi" path="res://entities/obstacles/island.tscn" id="13_13k4f"]
+[ext_resource type="PackedScene" uid="uid://b817vbef7oyde" path="res://entities/golden_monkey.glb" id="14_3r2b0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iekdp"]
 shader = ExtResource("1_8oio7")
@@ -210,3 +212,12 @@ mouse_filter = 2
 script = ExtResource("11_3dgxt")
 
 [node name="ship_selection" parent="ShipGenerator" groups=["ship_selection"] instance=ExtResource("11_5i74g")]
+
+[node name="island" parent="." instance=ExtResource("13_13k4f")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.94901, -0.79187, 1.56842)
+
+[node name="golden_monkey" parent="." instance=ExtResource("14_3r2b0")]
+transform = Transform3D(4.951, 0.698285, 0, -0.698285, 4.951, 0, 0, 0, 5, -0.637918, 14.3155, 6.79138)
+
+[node name="golden_monkey2" parent="." instance=ExtResource("14_3r2b0")]
+transform = Transform3D(1.58046, -0.523911, -1.108, 0.62931, 1.89841, 0, 1.05172, -0.348639, 1.66503, -5.75548, 14.3155, 9.15125)
