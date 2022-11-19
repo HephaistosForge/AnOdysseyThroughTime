@@ -72,8 +72,8 @@ func _physics_process(_delta: float) -> void:
 	
 	
 	var strength = action_strength("move_forwards") - action_strength("move_backwards") * 0.02
-	# acceleration += (forward_vec * strength * ACCELERATION_MULTIPLIER)
-	# acceleration = normalize_vec_with_max(acceleration, MAX_ACCELERATION)
+	acceleration += (forward_vec * strength * ACCELERATION_MULTIPLIER)
+	acceleration = normalize_vec_with_max(acceleration, MAX_ACCELERATION)
 		
 		
 	var raw_turning = action_strength("turn_left") - action_strength("turn_right")
@@ -83,14 +83,16 @@ func _physics_process(_delta: float) -> void:
 	turn_speed = clamp(turn_speed, -MAX_TURN_SPEED, MAX_TURN_SPEED)
 	
 	acceleration = acceleration.rotated(axis, -turn_speed)
-	var anim_tree = parent.get_node("AnimationTree")
 	
-	anim_tree.set("parameters/TimeScale/scale", max(acceleration.length()*2, strength * 3))
-	if move_left_right_separately:
-		var left_ratio = clamp(acceleration.x, -0.5, 0.5) * 2 + 1
-		var right_ratio = 2 - left_ratio
-		anim_tree.set("parameters/LeftScale/scale", left_ratio)
-		anim_tree.set("parameters/RightScale/scale", right_ratio)
+	if parent.has_node("AnimationTree"):
+		var anim_tree = parent.get_node("AnimationTree")
+		
+		anim_tree.set("parameters/TimeScale/scale", max(acceleration.length()*2, strength * 3))
+		if move_left_right_separately:
+			var left_ratio = clamp(acceleration.x, -0.5, 0.5) * 2 + 1
+			var right_ratio = 2 - left_ratio
+			anim_tree.set("parameters/LeftScale/scale", left_ratio)
+			anim_tree.set("parameters/RightScale/scale", right_ratio)
 
 	#anim_player.playback_speed = acceleration.length() * 100
 	#if acceleration:

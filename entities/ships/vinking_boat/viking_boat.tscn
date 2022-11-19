@@ -12,7 +12,7 @@ height = 10.4836
 
 [node name="ShipSteering" parent="." instance=ExtResource("1_gv77f")]
 
-[node name="VikingModel" parent="." instance=ExtResource("2_jl4av")]
+[node name="Model" parent="." instance=ExtResource("2_jl4av")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
