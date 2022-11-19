@@ -25,7 +25,7 @@ func _on_spawn_timer_timeout() -> void:
 	var rand_position = Vector3(size.x*(randf()-0.5), 0, size.y*(randf()-0.5))
 	
 
-	if ship:
+	if ship and is_instance_valid(ship):
 		while (rand_position-ship.position).length() > 350 or (rand_position-ship.position).length() < 30:
 			rand_position = Vector3(size.x*(randf()-0.5), 0, size.y*(randf()-0.5))
 	
