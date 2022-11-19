@@ -14,16 +14,27 @@ extends PanelContainer
 
 @onready var ship_image: TextureRect = $CenterContainer/VBoxContainer/Image2
 
-func init_values(_name, _ship_image, _geschwindigkeit, _wendigkeit, _beschleunigung, _jahrgang, _laenge, _breite, _gewicht):
-	name_label.text = _name
+
+var option_index
+
+func init_values(attributes):
 	
-	ship_image.texture = _ship_image
+	name_label.text = attributes[4]
 	
-	geschwindigkeit.value = _geschwindigkeit
-	wendigkeit.value = _wendigkeit
-	beschleunigung.value = _beschleunigung
+	ship_image.texture = attributes[5]
 	
-	jahrgang_label.text = _jahrgang
-	laenge_label.text = _laenge
-	breite_label.text = _breite
-	gewicht_label.text = _gewicht
+	geschwindigkeit.value = attributes[1] * 10
+	wendigkeit.value = attributes[2] * 10
+	beschleunigung.value = attributes[3] * 10
+	#ship_size.value = attributes[0] * 10
+	
+	jahrgang_label.text = attributes[6]
+	gewicht_label.text = attributes[7]
+	option_index = attributes[8]
+
+
+func _on_button_pressed() -> void:
+	print("hello")
+	get_tree().paused = false
+	get_tree().get_first_node_in_group("ship_selection").visible = false
+	get_tree().get_first_node_in_group("ship_generator").init_new_ship(option_index)

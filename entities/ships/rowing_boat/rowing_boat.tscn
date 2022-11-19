@@ -1,46 +1,20 @@
-[gd_scene load_steps=12 format=3 uid="uid://qkol5h6avnsc"]
+[gd_scene load_steps=7 format=3 uid="uid://qkol5h6avnsc"]
 
-[ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_tjyn1"]
-[ext_resource type="PackedScene" uid="uid://d1uh2akavm7ew" path="res://entities/ships/rowing_boat/rowing_boat_model.tscn" id="2_5vwr0"]
+[ext_resource type="PackedScene" path="res://entities/ships/ship_steering.tscn" id="1_tjyn1"]
+[ext_resource type="PackedScene" uid="uid://bkogtdpbfkee4" path="res://entities/ships/rowing_boat/rowing_boat.glb" id="2_1xris"]
+[ext_resource type="PackedScene" uid="uid://b8pkku6jgdsh0" path="res://ui/dialogue/Dialogue.tscn" id="3_gdptf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tagk"]
 radius = 1.02721
 height = 5.68763
 
-[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_4qfww"]
+[sub_resource type="Animation" id="Animation_yuown"]
+resource_name = "move_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yxd7q"]
-animation = &"RightPaddling"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fk6pq"]
-animation = &"LeftPaddling"
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_2pe7l"]
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_umwgx"]
-
-[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_7asnd"]
-
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_3ijmq"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_6akt3"]
-graph_offset = Vector2(-204.194, -19.1111)
-nodes/Add2/node = SubResource("AnimationNodeAdd2_4qfww")
-nodes/Add2/position = Vector2(160, 80)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_yxd7q")
-nodes/Animation/position = Vector2(-180, 180)
-nodes/LeftPaddling/node = SubResource("AnimationNodeAnimation_fk6pq")
-nodes/LeftPaddling/position = Vector2(-180, 60)
-nodes/LeftScale/node = SubResource("AnimationNodeTimeScale_2pe7l")
-nodes/LeftScale/position = Vector2(0, 40)
-nodes/RightScale/node = SubResource("AnimationNodeTimeScale_umwgx")
-nodes/RightScale/position = Vector2(0, 180)
-nodes/Seek/node = SubResource("AnimationNodeTimeSeek_7asnd")
-nodes/Seek/position = Vector2(540, 80)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_3ijmq")
-nodes/TimeScale/position = Vector2(380, 80)
-nodes/output/position = Vector2(720, 120)
-node_connections = [&"output", 0, &"Seek", &"Add2", 0, &"LeftScale", &"Add2", 1, &"RightScale", &"LeftScale", 0, &"LeftPaddling", &"RightScale", 0, &"Animation", &"Seek", 0, &"TimeScale", &"TimeScale", 0, &"Add2"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7q44v"]
+_data = {
+"move_left": SubResource("Animation_yuown")
+}
 
 [node name="RowingBoat" type="CharacterBody3D" groups=["boat", "pullable"]]
 
@@ -51,29 +25,19 @@ MIN_TURN_ACCELERATION = 0.2
 MAX_TURN_SPEED = 0.7
 TURN_ACCELERATION_FACTOR = 1.2
 
+[node name="Model" parent="." instance=ExtResource("2_1xris")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.28475, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.86076, -0.292078)
 shape = SubResource("CapsuleShape3D_3tagk")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeBlendTree_6akt3")
-anim_player = NodePath("../Model/AnimationPlayer")
-active = true
-parameters/Add2/add_amount = 1.0
-parameters/LeftScale/scale = 1.0
-parameters/RightScale/scale = 1.0
-parameters/Seek/seek_position = -1.0
-parameters/TimeScale/scale = 1.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7q44v")
+}
 
-[node name="Model" parent="." instance=ExtResource("2_5vwr0")]
-
-[node name="RightPaddle" parent="Model" index="4"]
-transform = Transform3D(0.0112895, 1.75443, -0.0289922, 0.0253868, 0.620279, 0.0658986, 0.0692048, -0.513744, -0.0194444, 0.959433, 0.926597, -0.0850979)
-
-[node name="LeftPaddle" parent="Model" index="5"]
-transform = Transform3D(0.0555749, 1.28594, -0.00222894, -0.0052428, 0.0654802, -0.0743461, -0.0494487, 1.43831, 0.00537746, -0.959434, 0.93199, -0.0850973)
-
-[node name="AnimationPlayer" parent="Model" index="6"]
-playback_speed = 0.1
+[node name="Dialogue" parent="." instance=ExtResource("3_gdptf")]
+name_of_speaker = ["Forrest", "Albert", "Marcus", "Sokrates"]
 
 [editable path="Model"]

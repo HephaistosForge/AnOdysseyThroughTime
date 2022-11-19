@@ -71,6 +71,9 @@ var VIKINGBOAT_ATTRIBUTES: Dictionary = {
 @onready var ocean: Node3D = get_tree().get_first_node_in_group("ocean")
 var options: Array
 
+func _input(event):
+	print(event)
+
 
 func get_random_ship_with_attributes() -> Array:
 	var rand = Globals.rng.randi_range(0, len(available_ships)-1)
