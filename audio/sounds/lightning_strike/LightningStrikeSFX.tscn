@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhlug70ic41i1"]
+
+[ext_resource type="AudioStream" uid="uid://v7ih01kn7kep" path="res://audio/sounds/lightning_strike/lightning_strike.ogg" id="1_enoyq"]
+[ext_resource type="Script" path="res://audio/sounds/lightning_strike/lightning_strike_sfx.gd" id="2_ev0cy"]
+
+[node name="LightningStrikeSFX" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_enoyq")
+volume_db = 35.0
+max_db = 4.0
+bus = &"Lightning Strike"
+script = ExtResource("2_ev0cy")

@@ -24,6 +24,12 @@ func _on_spawn_timer_timeout() -> void:
 	var size = Globals.map_size
 	var rand_position = Vector3(size.x*(randf()-0.5), 0, size.y*(randf()-0.5))
 	
+
+	if ship:
+		while (rand_position-ship.position).length() > 350 or (rand_position-ship.position).length() < 30:
+			rand_position = Vector3(size.x*(randf()-0.5), 0, size.y*(randf()-0.5))
+	
+	
 	var obstacle = OBSTACLE_PREFABS[next_obstacle].instantiate()
 	self.add_child(obstacle)
 	obstacle.position = rand_position - Vector3(0,20,0)

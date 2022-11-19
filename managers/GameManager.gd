@@ -27,7 +27,7 @@ func _ready():
 		
 		
 func start_game(pos):
-	Globals.start_pos = pos
+	Globals.start_pos = pos*1.6
 	get_tree().change_scene_to_file("res://world/ocean/ocean.tscn") 
 
 

@@ -67,7 +67,7 @@ vec3 get_hole(vec2 uv, vec3 maelstrom_pos_size) {
     float m = 1.;
     m += smoothstep(.02, .0, dist) / 1.0;
 	// return vec3(smoothstep(.08, .0, dist));
-    m = (1.0 - dist * 5.6) * .5 * m;
+    m = (1.0 - dist * 15.) * 1. * m;
 	//m = smoothstep(0, 0.1, m * size);
 	//return vec3(m);
 	float mask = m;
