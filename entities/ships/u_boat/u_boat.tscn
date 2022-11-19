@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://xjdj641p45m2"]
+
+[ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_8pw5e"]
+[ext_resource type="PackedScene" uid="uid://bdml33d4hkfp0" path="res://entities/ships/titanic/titanic.glb" id="2_dmrjm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tagk"]
+radius = 1.278
+height = 14.746
+
+[node name="RowingBoat" type="CharacterBody3D" groups=["boat"]]
+
+[node name="ShipSteering" parent="." instance=ExtResource("1_8pw5e")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.19313, 1.17447)
+shape = SubResource("CapsuleShape3D_3tagk")
+
+[node name="titanic" parent="." instance=ExtResource("2_dmrjm")]

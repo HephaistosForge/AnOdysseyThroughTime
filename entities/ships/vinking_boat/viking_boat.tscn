@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0ccsxot8f5l0"]
+[gd_scene load_steps=4 format=3 uid="uid://c0eg78m7jmyuo"]
 
-[ext_resource type="PackedScene" path="res://entities/ships/ship_steering.tscn" id="1_gv77f"]
+[ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_gv77f"]
 [ext_resource type="PackedScene" uid="uid://d2gpfit42ejd3" path="res://entities/ships/vinking_boat/viking.glb" id="2_jl4av"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4v0rn"]
@@ -12,7 +12,8 @@ height = 10.4836
 [node name="ShipSteering" parent="." instance=ExtResource("1_gv77f")]
 
 [node name="VikingModel" parent="." instance=ExtResource("2_jl4av")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.37406, 0)
+transform = Transform3D(0.6, 0, 0, 0, -2.62268e-08, 0.6, 0, -0.6, -2.62268e-08, 0, 1.56517, 0)
 shape = SubResource("CapsuleShape3D_4v0rn")
