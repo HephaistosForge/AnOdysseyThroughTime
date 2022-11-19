@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://qkol5h6avnsc"]
+[gd_scene load_steps=7 format=3 uid="uid://qkol5h6avnsc"]
 
-[ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_tjyn1"]
+[ext_resource type="PackedScene" path="res://entities/ships/ship_steering.tscn" id="1_tjyn1"]
 [ext_resource type="PackedScene" uid="uid://bkogtdpbfkee4" path="res://entities/ships/rowing_boat/rowing_boat.glb" id="2_1xris"]
+[ext_resource type="PackedScene" uid="uid://b8pkku6jgdsh0" path="res://ui/dialogue/Dialogue.tscn" id="3_gdptf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tagk"]
 radius = 1.02721
@@ -27,12 +28,6 @@ TURN_ACCELERATION_FACTOR = 1.2
 [node name="Model" parent="." instance=ExtResource("2_1xris")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.28475, 0)
 
-[node name="RightPaddle" parent="Model" index="4"]
-transform = Transform3D(0.0167728, 1.85854, 0.0111971, 0.0172032, -0.39059, 0.0709763, 0.0705972, -0.346381, -0.0199558, 0.959433, 0.926597, -0.0850979)
-
-[node name="LeftPaddle" parent="Model" index="6"]
-transform = Transform3D(0.0579923, 1.09, 0.0206196, 0.0115996, 0.489051, -0.0712024, -0.0454266, 1.51639, 0.00814189, -0.959434, 0.93199, -0.0850973)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.86076, -0.292078)
 shape = SubResource("CapsuleShape3D_3tagk")
@@ -41,5 +36,10 @@ shape = SubResource("CapsuleShape3D_3tagk")
 libraries = {
 "": SubResource("AnimationLibrary_7q44v")
 }
+
+[node name="Dialogue" parent="." instance=ExtResource("3_gdptf")]
+inital_dialog = ["Wenn man in die falsche Richtung läuft, hat es keinen Zweck, das Tempo zu erhöhen...", "Das Leben ist wie eine Schachtel Pralinen. Man weiß nie, was man bekommt...", "Wie viele Dinge es gibt, die ich nicht brauche..."]
+follow_up_dialog = ["Hm. Weniger ist mehr.", "Hm. Lieber nichts besitzen als zu verlieren.", "Hm. Das Leben ist leicht, aber wir machen es uns schwer."]
+name_of_speaker = ["Forrest", "Albert", "Marcus", "Sokrates"]
 
 [editable path="Model"]
