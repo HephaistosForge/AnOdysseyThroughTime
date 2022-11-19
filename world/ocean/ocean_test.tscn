@@ -1,12 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://do7cwpg6tht1h"]
+[gd_scene load_steps=17 format=3 uid="uid://cms4yjwj8i86h"]
 
-[ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_ddwd0"]
-[ext_resource type="PackedScene" uid="uid://0krnl6i3o5ap" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
-[ext_resource type="PackedScene" uid="uid://c0eg78m7jmyuo" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
-[ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="3_k8sgn"]
-[ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
-[ext_resource type="Script" path="res://world/ocean/Dialogue.gd" id="5_ygos2"]
-[ext_resource type="PackedScene" uid="uid://cx01enkvm0qdr" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
+[ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_pw1o5"]
+[ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="2_5lww2"]
+[ext_resource type="PackedScene" uid="uid://0krnl6i3o5ap" path="res://world/weather/lightning_strike_generator.tscn" id="3_xsjsu"]
+[ext_resource type="PackedScene" uid="uid://c0eg78m7jmyuo" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="4_63at3"]
+[ext_resource type="Script" path="res://managers/Camera.gd" id="5_i73i5"]
+[ext_resource type="PackedScene" uid="uid://dj8v2bbnujv4u" path="res://entities/ships/titanic/titanic.tscn" id="5_tuixe"]
+[ext_resource type="Script" path="res://world/ocean/Dialogue.gd" id="6_hnngw"]
+[ext_resource type="PackedScene" uid="uid://qkol5h6avnsc" path="res://entities/ships/rowing_boat/rowing_boat.tscn" id="8_wjvql"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_gnhkk"]
 
@@ -26,7 +27,7 @@ noise = SubResource("FastNoiseLite_u7756")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hqk6h"]
 render_priority = 0
-shader = ExtResource("1_ddwd0")
+shader = ExtResource("1_pw1o5")
 shader_parameter/iChannel0 = SubResource("NoiseTexture2D_qece7")
 shader_parameter/iChannel1 = SubResource("NoiseTexture2D_ya8hl")
 shader_parameter/iChannel2 = SubResource("NoiseTexture2D_8x484")
@@ -53,12 +54,16 @@ subdivide_depth = 512
 [node name="WaterShader" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("PlaneMesh_iacdl")
-script = ExtResource("3_k8sgn")
+script = ExtResource("2_5lww2")
 maelstroms = []
 
-[node name="LightningStrikeGenerator" parent="." instance=ExtResource("1_woglw")]
+[node name="LightningStrikeGenerator" parent="." instance=ExtResource("3_xsjsu")]
 
-[node name="viking_boat" parent="." instance=ExtResource("3_13om1")]
+[node name="viking_boat" parent="." instance=ExtResource("4_63at3")]
+visible = false
+
+[node name="Titanic" parent="." instance=ExtResource("5_tuixe")]
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
@@ -66,8 +71,8 @@ maelstroms = []
 transform = Transform3D(1, 0, 0, 0, 0.598479, 0.801139, 0, -0.801139, 0.598479, 3.1558, 15.0181, 9.90466)
 current = true
 fov = 100.0
-script = ExtResource("4_p8d8g")
-player = NodePath("../viking_boat")
+script = ExtResource("5_i73i5")
+player = NodePath("../RowingBoat")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -76,26 +81,30 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Dialogue" type="ColorRect" parent="Control"]
+layout_mode = 0
 offset_left = 235.0
 offset_top = 34.0
 offset_right = 525.0
 offset_bottom = 178.0
 color = Color(0.592157, 0.482353, 0.521569, 1)
-script = ExtResource("5_ygos2")
+script = ExtResource("6_hnngw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/Dialogue"]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 7.0
 offset_right = 280.0
 offset_bottom = 133.0
 
 [node name="Name" type="Label" parent="Control/Dialogue/VBoxContainer"]
+layout_mode = 2
 offset_right = 273.0
 offset_bottom = 26.0
 text = "Test"
 autowrap_mode = 3
 
 [node name="Text" type="Label" parent="Control/Dialogue/VBoxContainer"]
+layout_mode = 2
 offset_top = 30.0
 offset_right = 273.0
 offset_bottom = 56.0
@@ -104,4 +113,4 @@ autowrap_mode = 3
 
 [node name="Timer" type="Timer" parent="Control/Dialogue"]
 
-[node name="ObstacleGenerator" parent="." instance=ExtResource("7_11iuw")]
+[node name="RowingBoat" parent="." instance=ExtResource("8_wjvql")]

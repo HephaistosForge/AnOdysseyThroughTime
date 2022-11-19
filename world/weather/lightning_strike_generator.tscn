@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://0krnl6i3o5ap"]
 
 [ext_resource type="Script" path="res://world/weather/LightningStrikeGenerator.gd" id="1_ns62h"]
 
