@@ -1,212 +1,110 @@
-[gd_scene load_steps=25 format=3 uid="uid://drumj3c7ubecd"]
+[gd_scene load_steps=11 format=3 uid="uid://bb783asslu8hn"]
 
-[ext_resource type="Shader" path="res://world/weather/sky.gdshader" id="1_ypmm8"]
-[ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="2_mmqt0"]
-[ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="3_nbdfw"]
-[ext_resource type="PackedScene" uid="uid://0krnl6i3o5ap" path="res://world/weather/lightning_strike_generator.tscn" id="4_oe1nh"]
-[ext_resource type="PackedScene" uid="uid://c0eg78m7jmyuo" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="5_cokmm"]
-[ext_resource type="Script" path="res://managers/Camera.gd" id="6_5goi6"]
-[ext_resource type="PackedScene" uid="uid://cx01enkvm0qdr" path="res://entities/obstacles/obstacle_generator.tscn" id="7_c4ogd"]
+[ext_resource type="Texture2D" uid="uid://cr5j4078oescm" path="res://ui/menu/start_location_selection.png" id="2_diu3m"]
+[ext_resource type="Script" path="res://managers/GoalArea.gd" id="5_j0cqt"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_mrdwr"]
-[ext_resource type="PackedScene" path="res://world/maelstrom/maelstrom_area.tscn" id="9_eetqq"]
-[ext_resource type="PackedScene" uid="uid://dxc1ht5s5puis" path="res://ui/dialogue/TutorialInformation/TutorialInformation.tscn" id="10_14ini"]
 [ext_resource type="Texture2D" uid="uid://c176nk71t4ge3" path="res://ui/Rectangle.png" id="11_wd3o7"]
 [ext_resource type="Script" path="res://managers/SpawnArea.gd" id="12_x7p0s"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iekdp"]
-shader = ExtResource("1_ypmm8")
-shader_parameter/base_noise_scale = 0.2
-shader_parameter/dark_falloff = 4.0
-shader_parameter/day_bottom_color = Color(0.0705882, 0.101961, 0.121569, 1)
-shader_parameter/day_top_color = Color(0.200037, 0.260183, 0.372396, 1)
-shader_parameter/flat_sun = true
-shader_parameter/horizon_color_day = Color(0.490196, 0.54902, 0.643137, 1)
-shader_parameter/horizon_color_night = Color(0, 0.8, 1, 1)
-shader_parameter/horizon_intensity = -3.901
-shader_parameter/moon_color = Color(1, 1, 1, 1)
-shader_parameter/moon_crescent = -0.3
-shader_parameter/moon_radius = 0.15
-shader_parameter/night_bottom_color = Color(0, 0, 0.2, 1)
-shader_parameter/night_top_color = Color(0, 0, 0, 1)
-shader_parameter/offset_horizon = 0.0
-shader_parameter/stars_cutoff = 0.08
-shader_parameter/stars_sky_color = Color(0, 0.2, 0.1, 1)
-shader_parameter/stars_speed = 0.3
-shader_parameter/sun_color = Color(0.521569, 0.517647, 0.560784, 1)
-shader_parameter/sun_radius = 0.05
-shader_parameter/sun_set = Color(0.427451, 0.384314, 0.388235, 1)
+[sub_resource type="Animation" id="Animation_4h5a3"]
+resource_name = "Blink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0196078), Color(1, 1, 1, 0.0588235), Color(1, 1, 1, 0.0196078)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sprite3D3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0196078), Color(1, 1, 1, 0.0588235), Color(1, 1, 1, 0.0196078)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sprite3D2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0196078), Color(1, 1, 1, 0.0588235), Color(1, 1, 1, 0.0196078)]
+}
 
-[sub_resource type="Sky" id="Sky_loxr7"]
-sky_material = SubResource("ShaderMaterial_iekdp")
+[sub_resource type="Animation" id="Animation_tc1wm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0196078)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sprite3D3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0196078)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sprite3D2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.0196078)]
+}
 
-[sub_resource type="Environment" id="Environment_pcp7k"]
-background_mode = 2
-sky = SubResource("Sky_loxr7")
-ambient_light_source = 3
-ambient_light_color = Color(0.505882, 0.505882, 0.505882, 1)
-ambient_light_energy = 0.27
-ssr_enabled = true
-ssao_enabled = true
-ssil_enabled = true
-sdfgi_use_occlusion = true
-sdfgi_min_cell_size = 0.01
-sdfgi_cascade0_distance = 0.64
-sdfgi_max_distance = 10.24
-glow_enabled = true
-glow_intensity = 1.85
-fog_light_color = Color(0.478431, 0.509804, 0.560784, 1)
-volumetric_fog_density = 0.0188
-volumetric_fog_albedo = Color(0.482353, 0.521569, 0.717647, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_gnhkk"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qece7"]
-noise = SubResource("FastNoiseLite_gnhkk")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_xbt3l"]
-frequency = 0.206
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ya8hl"]
-noise = SubResource("FastNoiseLite_xbt3l")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_u7756"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8x484"]
-noise = SubResource("FastNoiseLite_u7756")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqk6h"]
-render_priority = 0
-shader = ExtResource("2_mmqt0")
-shader_parameter/iChannel0 = SubResource("NoiseTexture2D_qece7")
-shader_parameter/iChannel1 = SubResource("NoiseTexture2D_ya8hl")
-shader_parameter/iChannel2 = SubResource("NoiseTexture2D_8x484")
-shader_parameter/maelstrom_positions0 = null
-shader_parameter/maelstrom_positions1 = Basis(0.1, 0.3, 0.8, 0.2, 0.9, 0.4, 0, 0, 1)
-shader_parameter/maelstrom_positions10 = null
-shader_parameter/maelstrom_positions11 = null
-shader_parameter/maelstrom_positions12 = null
-shader_parameter/maelstrom_positions13 = null
-shader_parameter/maelstrom_positions14 = null
-shader_parameter/maelstrom_positions15 = null
-shader_parameter/maelstrom_positions2 = null
-shader_parameter/maelstrom_positions3 = null
-shader_parameter/maelstrom_positions4 = null
-shader_parameter/maelstrom_positions5 = null
-shader_parameter/maelstrom_positions6 = null
-shader_parameter/maelstrom_positions7 = null
-shader_parameter/maelstrom_positions8 = null
-shader_parameter/maelstrom_positions9 = null
-shader_parameter/screen_resolution = null
-shader_parameter/water_color = Color(0.329412, 0.498039, 0.592157, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_iacdl"]
-material = SubResource("ShaderMaterial_hqk6h")
-size = Vector2(1200, 1200)
-subdivide_width = 128
-subdivide_depth = 128
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aju8s"]
+_data = {
+"Blink": SubResource("Animation_4h5a3"),
+"RESET": SubResource("Animation_tc1wm")
+}
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i714l"]
 size = Vector3(1, 1.58992, 0.150865)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_m083o"]
+radius = 35.0
+
 [node name="ocean" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_pcp7k")
-
-[node name="WaterShader" type="MeshInstance3D" parent="." groups=["maelstroms"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-mesh = SubResource("PlaneMesh_iacdl")
-script = ExtResource("3_nbdfw")
-maelstroms = []
-
-[node name="Maelstroms" type="Node3D" parent="WaterShader"]
-
-[node name="MaelstromPoint" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -243.648, 0, 0)
-
-[node name="MaelstromPoint2" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -230.435, 0, 113.237)
-
-[node name="MaelstromPoint3" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.77, -6.10352e-05, 183.517)
-
-[node name="MaelstromPoint4" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17542, 0, 194.705)
-
-[node name="MaelstromPoint5" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 162.4, 0, 211.353)
-
-[node name="MaelstromPoint6" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310.228, 0, 155.248)
-
-[node name="MaelstromPoint7" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 294.533, 0, 44.6143)
-
-[node name="MaelstromPoint8" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 222.914, 0, -56.0731)
-
-[node name="MaelstromPoint9" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.814, 0, -129.994)
-
-[node name="MaelstromPoint10" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.114, 0, -259.344)
-
-[node name="MaelstromPoint11" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7887, -6.10352e-05, -270.634)
-
-[node name="MaelstromPoint12" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -113.473, -6.10352e-05, -224.12)
-
-[node name="MaelstromPoint13" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -168.616, 6.10352e-05, -201.141)
-
-[node name="MaelstromPoint14" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -199.22, 0, -93.112)
-
-[node name="MaelstromPoint15" type="Node3D" parent="WaterShader/Maelstroms"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.251, -0.00012207, 113.947)
-
-[node name="SpawnPoints" type="Node3D" parent="WaterShader"]
-
-[node name="Spawns" type="Node3D" parent="WaterShader/SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -476.401, 0, 325.945)
-
-[node name="Spawns2" type="Node3D" parent="WaterShader/SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 306.772, 0, 467.975)
-
-[node name="Spawns3" type="Node3D" parent="WaterShader/SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 478.436, 0, -341.409)
-
-[node name="Spawns4" type="Node3D" parent="WaterShader/SpawnPoints"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -462.492, -6.10352e-05, -247.389)
-
-[node name="LightningStrikeGenerator" parent="." instance=ExtResource("4_oe1nh")]
-
-[node name="viking_boat" parent="." instance=ExtResource("5_cokmm")]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 29.6078, 0)
-shadow_enabled = true
-shadow_normal_bias = 0.1
-directional_shadow_split_1 = 0.461
-directional_shadow_blend_splits = true
-
-[node name="Camera3D" type="Camera3D" parent="." groups=["camera"]]
-transform = Transform3D(1, 0, 0, 0, 0.598479, 0.801139, 0, -0.801139, 0.598479, 3.1558, 15.0181, 9.90466)
-fov = 100.0
-script = ExtResource("6_5goi6")
-player = NodePath("../viking_boat")
-
-[node name="ObstacleGenerator" parent="." instance=ExtResource("7_c4ogd")]
-
-[node name="GameManager" type="Node3D" parent="." groups=["manager"]]
-script = ExtResource("8_mrdwr")
-
-[node name="maelstrom_area" parent="." instance=ExtResource("9_eetqq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 350.093, 392.596, -6.82382)
-
-[node name="TutorialInformation" parent="." instance=ExtResource("10_14ini")]
-mouse_filter = 2
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite3D")
+autoplay = "Blink"
+libraries = {
+"": SubResource("AnimationLibrary_aju8s")
+}
 
 [node name="Camera3D2" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 360.784, 0)
@@ -216,17 +114,32 @@ fov = 85.0
 size = 1200.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(21.2096, -420.256, -1.21344, 1.86468, 67.8171, 185.485, -14.66, -599.39, 21.8373, 281.886, 80.9555, -179.85)
+transform = Transform3D(20.9485, -490.129, 0.618267, 1.96007, 70.9883, 194.163, -17.1951, -589.024, 22.8858, 358.521, 123.176, -94.4299)
+modulate = Color(1, 1, 1, 0.0196078)
 texture = ExtResource("11_wd3o7")
 
 [node name="Area3D" type="Area3D" parent="Sprite3D"]
 script = ExtResource("12_x7p0s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
+transform = Transform3D(1, 0, 5.96046e-08, -9.31323e-10, 1, 0, -1.39698e-09, -8.9407e-08, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_i714l")
+
+[node name="Sprite3D" type="Sprite3D" parent="Sprite3D"]
+transform = Transform3D(20.3408, -453.692, 0.0314879, 1.86468, 67.8171, 185.485, -15.8435, -574.498, 21.871, 338.872, 80.9555, -113.94)
+modulate = Color(1, 1, 1, 0.0196078)
+texture = ExtResource("11_wd3o7")
+
+[node name="Area3D" type="Area3D" parent="Sprite3D/Sprite3D"]
+script = ExtResource("12_x7p0s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Sprite3D/Area3D"]
+transform = Transform3D(1, 0, 5.96046e-08, -9.31323e-10, 1, 0, -1.39698e-09, -8.9407e-08, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_i714l")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(22.87, 333.649, -19.875, 1.86468, 67.8171, 185.485, 11.9049, -651.584, 9.12824, -315.808, 80.9555, -171.115)
+transform = Transform3D(22.9527, 484.273, -22.8582, 2.07829, 75.2335, 200.863, 17.2905, -651.903, 6.20034, -404.874, 80.9555, -55.1617)
+modulate = Color(1, 1, 1, 0.0196078)
 texture = ExtResource("11_wd3o7")
 
 [node name="Area3D" type="Area3D" parent="Sprite3D2"]
@@ -236,20 +149,40 @@ script = ExtResource("12_x7p0s")
 shape = SubResource("BoxShape3D_i714l")
 
 [node name="Sprite3D3" type="Sprite3D" parent="."]
-transform = Transform3D(-0.474713, -731.81, 17.5179, 1.86468, 67.8171, 185.485, -25.7786, 18.3818, 13.0944, 20.9347, 80.9555, 319.9)
+transform = Transform3D(-1.36215, -948.761, 91.001, 2.35059, 87.9984, 947.167, -32.4731, 46.1676, 64.7442, -18.8505, 80.9555, 419.099)
+modulate = Color(1, 1, 1, 0.0196078)
 texture = ExtResource("11_wd3o7")
 
 [node name="Area3D" type="Area3D" parent="Sprite3D3"]
 script = ExtResource("12_x7p0s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D3/Area3D"]
+transform = Transform3D(-0.00321781, 0.00279045, -0.038506, -0.00177924, 0.000125475, 9.48302e-05, 0.000682875, 0.00531734, 0.000352429, 0, 0, 0)
 shape = SubResource("BoxShape3D_i714l")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(25, 0, 0, 0, -1.09278e-06, 25, 0, -25, -1.09278e-06, 0, 46.5118, 0)
+texture = ExtResource("2_diu3m")
+
+[node name="GameManager" type="Node3D" parent="." groups=["manager"]]
+script = ExtResource("8_mrdwr")
+
+[node name="GoalArea" type="Area3D" parent="GameManager"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.4541, 0)
+script = ExtResource("5_j0cqt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameManager/GoalArea"]
+shape = SubResource("SphereShape3D_m083o")
 
 [connection signal="input_event" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_input_event"]
 [connection signal="mouse_entered" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_mouse_exited"]
+[connection signal="input_event" from="Sprite3D/Sprite3D/Area3D" to="Sprite3D/Sprite3D/Area3D" method="_on_input_event"]
+[connection signal="mouse_entered" from="Sprite3D/Sprite3D/Area3D" to="Sprite3D/Sprite3D/Area3D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite3D/Sprite3D/Area3D" to="Sprite3D/Sprite3D/Area3D" method="_on_mouse_exited"]
 [connection signal="input_event" from="Sprite3D2/Area3D" to="Sprite3D2/Area3D" method="_on_input_event"]
 [connection signal="mouse_entered" from="Sprite3D2/Area3D" to="Sprite3D2/Area3D" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Sprite3D2/Area3D" to="Sprite3D2/Area3D" method="_on_mouse_exited"]
 [connection signal="input_event" from="Sprite3D3/Area3D" to="Sprite3D3/Area3D" method="_on_input_event"]
 [connection signal="mouse_exited" from="Sprite3D3/Area3D" to="Sprite3D3/Area3D" method="_on_mouse_exited"]
+[connection signal="body_entered" from="GameManager/GoalArea" to="GameManager" method="_on_goal_area_body_entered"]

@@ -9,8 +9,8 @@ const VIKING_BOAT_PREFAB: PackedScene = preload("res://entities/ships/vinking_bo
 @onready var lightning_strike_generator = get_tree().get_first_node_in_group("lightning_strike_generator")
 
 #images
-const IMG_TITANIC = preload("res://ui/hud/ship_icons/titanic.jpg")
-const IMG_PIRATE = preload("res://ui/hud/ship_icons/pirate.jpg")
+const IMG_TITANIC = preload("res://ui/hud/ship_icons/titanic_2.png")
+const IMG_PIRATE = preload("res://ui/hud/ship_icons/titanic_2.png")
 const img_viking = null
 const img_u_boat = null
 

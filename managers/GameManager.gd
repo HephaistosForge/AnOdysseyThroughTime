@@ -32,5 +32,6 @@ func start_game(pos):
 
 
 func _on_goal_area_body_entered(body):
-	if body.is_in_group("boat"):
-		print("You Win!")
+	if Globals.start_pos != Vector3.ZERO:
+		if body.is_in_group("boat"):
+			print("You Win!")

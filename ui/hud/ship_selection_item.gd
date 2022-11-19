@@ -11,7 +11,7 @@ extends PanelContainer
 
 @onready var gewicht_label: Label = $CenterContainer/VBoxContainer/Trivia/MarginContainer/GridContainer/Gewicht_Wert
 
-@onready var ship_image: TextureRect = $CenterContainer/VBoxContainer/Image2
+@onready var ship_image: TextureRect = $CenterContainer/VBoxContainer/MarginContainer/Image2
 
 
 var option_index

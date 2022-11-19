@@ -53,21 +53,22 @@ var forward_vec_global = Vector3.ZERO
 var move_left_right_separately = false
 var axis = Vector3(0, 1, 0)
 
-		
 func accelerate_on_signal(vector):
 	acceleration += vector
 
 func _ready():
-	anchor = get_tree().get_first_node_in_group("anchor")
 	if accelerate_only_on_accelerate_signal:
 		parent.get_node("Model").connect("accelerate", accelerate_on_signal)
 
 func point_anchor():
+	anchor = get_tree().get_first_node_in_group("anchor")
 	var ship = get_tree().get_first_node_in_group("boat")
-	var ship_to_mid = -ship.position
-	var theta = atan2(ship_to_mid.x, ship_to_mid.z)
-	
-	anchor.rotate(Vector3(0,1,0), theta - anchor.global_rotation.y)
+	if ship:
+		var ship_to_mid = -ship.position
+		var theta = atan2(ship_to_mid.x, ship_to_mid.z)
+		
+		if anchor:
+			anchor.rotate(Vector3(0,1,0), theta - anchor.global_rotation.y)
 
 func action_strength(_name):
 	return Input.get_action_strength(_name)
