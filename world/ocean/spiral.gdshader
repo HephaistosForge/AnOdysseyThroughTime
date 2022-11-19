@@ -1,5 +1,6 @@
 shader_type spatial;
-render_mode cull_disabled,diffuse_burley,specular_schlick_ggx, blend_mix;
+// render_mode cull_disabled,diffuse_burley,specular_schlick_ggx, blend_mix;
+render_mode depth_draw_always;
 
 uniform vec3 maelstrom_positions0;
 uniform vec3 maelstrom_positions1;
