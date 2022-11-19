@@ -9,8 +9,8 @@ func _ready():
 	for i in len(maelstroms):
 		mesh.material.set_shader_parameter("maelstrom_positions" + str(i), maelstroms[i])
 		mesh_size = mesh.size.x
- 
-func _physics_process(delta):
+
+func _physics_process(_delta):
 	for object in get_tree().get_nodes_in_group("pullable"):
 		var force = Vector3.ZERO
 		for maelstrom in maelstroms:
@@ -18,5 +18,5 @@ func _physics_process(delta):
 			var diff = pos - object.position
 			var dist = diff.length()
 			force += diff / pow(dist, 2)
-		print(force)
+		#print(force)
 		object.velocity += force * 10

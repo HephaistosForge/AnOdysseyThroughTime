@@ -21,7 +21,7 @@ uniform float thickness : hint_range(0.0, 0.1) = 0.009; // Thickness of the main
 uniform float outline_thickness : hint_range(0.0, 0.1) = 0.01; //Thickness of the outline color
 uniform float beam_difference : hint_range(0.0, 1.0) = 0.0; // The thickness difference between the main beam and the other, if there are more than one beam. The closer to 1 the smaller the thickness difference.
 
-uniform float glow : hint_range(0.0, 3.0) = 0.0; // Use together with WorldEnvironment's Glow feature
+uniform float glow : hint_range(0.0, 3.0) = 3.0; // Use together with WorldEnvironment's Glow feature
 uniform float outline_glow : hint_range(0.0, 3.0) = 0.0;
 
 uniform vec4 color : source_color = vec4(0.91, 1.0, 1.0, 1.0);
