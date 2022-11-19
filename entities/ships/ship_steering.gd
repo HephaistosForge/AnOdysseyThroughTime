@@ -20,6 +20,8 @@ class_name Ship
 
 @export var accelerate_only_on_accelerate_signal = true
 
+var anchor
+
 func interpolate0to10(value, _min, _max):
 	var diff = _max - _min;
 	return diff * (value / 10.0) + _min;
@@ -56,8 +58,17 @@ func accelerate_on_signal(vector):
 	acceleration += vector
 
 func _ready():
-	if accelerate_only_on_accelerate_signal:
+	anchor = get_tree().get_first_node_in_group("anchor")
+	if accelerate_only_on_accelerate_signal:s
 		parent.get_node("Model").connect("accelerate", accelerate_on_signal)
+
+
+func point_anchor():
+	var ship = get_tree().get_first_node_in_group("boat")
+	var ship_to_mid = -ship.position
+	var theta = atan2(ship_to_mid.x, ship_to_mid.z)
+	
+	anchor.rotate(Vector3(0,1,0), theta - anchor.global_rotation.y)
 
 
 func action_strength(_name):
@@ -72,6 +83,7 @@ func normalize_vec_with_max(vec, max_val):
 @onready var anim_player = get_parent().get_node("Model").get_node("AnimationPlayer")
 
 func _physics_process(_delta: float) -> void:
+	point_anchor()
 	
 	acceleration *= 0.9
 	turn_acceleration *= 0.9

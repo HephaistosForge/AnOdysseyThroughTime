@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://xjdj641p45m2"]
+[gd_scene load_steps=6 format=3 uid="uid://xjdj641p45m2"]
 
-[ext_resource type="PackedScene" path="res://entities/ships/ship_steering.tscn" id="1_8pw5e"]
+[ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_8pw5e"]
 [ext_resource type="PackedScene" uid="uid://ndrabu62u65f" path="res://entities/ships/u_boat/uboat.glb" id="2_oj638"]
 [ext_resource type="PackedScene" uid="uid://b8pkku6jgdsh0" path="res://ui/dialogue/Dialogue.tscn" id="3_3xeai"]
+[ext_resource type="PackedScene" uid="uid://byaks36vihbmo" path="res://entities/ships/pointer.glb" id="4_q52an"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tagk"]
 radius = 1.278
@@ -16,9 +17,14 @@ height = 12.473
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.19313, -0.0493612)
 shape = SubResource("CapsuleShape3D_3tagk")
 
-[node name="Model" parent="." instance=ExtResource("2_oj638")]
+[node name="UBoatModel" parent="." instance=ExtResource("2_oj638")]
 
 [node name="Dialogue" parent="." instance=ExtResource("3_3xeai")]
 inital_dialog = ["Blub blub, blubb..?", "Hey, wer hat das Licht ausgemacht..!", "Zum Glück ist es hier drinne trocken, ich hasse Wasser!"]
 follow_up_dialog = ["Leute, Zeit die Segel zu setzen!", "Weiß jemand das Wlan-Passwort?", "Ich geh dann mal Kartoffeln schälen."]
 name_of_speaker = ["Unsinkable II", "Titanic II", "Vitamin Sea", "McBoatyFace"]
+
+[node name="Anchor" type="Node3D" parent="." groups=["anchor"]]
+
+[node name="pointer" parent="Anchor" instance=ExtResource("4_q52an")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 4.39667)

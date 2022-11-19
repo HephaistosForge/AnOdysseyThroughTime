@@ -8,16 +8,6 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "Node3D",
-"class": &"Ship",
-"language": &"GDScript",
-"path": "res://entities/ships/ship_steering.gd"
-}]
-_global_script_class_icons={
-"Ship": ""
-}
-
 [application]
 
 config/name="MV-Weihnachtsjam-2022"
