@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cr5j4078oescm" path="res://ui/menu/start_location_selection.png" id="2_diu3m"]
 [ext_resource type="Script" path="res://managers/GoalArea.gd" id="5_j0cqt"]
-[ext_resource type="Theme" uid="uid://ca3ibtddlkiye" path="res://ui/ui_theme.tres" id="6_ls5u0"]
+[ext_resource type="Theme" uid="uid://cubpqq8pqv8re" path="res://ui/ui_theme.tres" id="6_ls5u0"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_mrdwr"]
 [ext_resource type="Texture2D" uid="uid://c176nk71t4ge3" path="res://ui/Rectangle.png" id="11_wd3o7"]
 [ext_resource type="Script" path="res://managers/SpawnArea.gd" id="12_x7p0s"]
