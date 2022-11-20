@@ -3,7 +3,7 @@ extends Node
 var rng
 var score: int = 0
 var start_pos = Vector3.ZERO
-var map_size = Vector2(1800, 1800)
+var map_size = Vector2(2500, 2500)
 
 var enable_good_graphics: bool = false
 

@@ -2,16 +2,16 @@
 
 [ext_resource type="Shader" path="res://world/weather/sky.gdshader" id="1_8oio7"]
 [ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_ddwd0"]
-[ext_resource type="PackedScene" uid="uid://d4m2y6822lui7" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
+[ext_resource type="PackedScene" uid="uid://0krnl6i3o5ap" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
 [ext_resource type="Script" path="res://world/ocean/world_environment.gd" id="2_tqd1p"]
 [ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="3_k8sgn"]
 [ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
-[ext_resource type="PackedScene" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
+[ext_resource type="PackedScene" uid="uid://cx01enkvm0qdr" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
 [ext_resource type="PackedScene" uid="uid://beidarsyit5ya" path="res://audio/sounds/SFX/SFX.tscn" id="7_kw4om"]
 [ext_resource type="PackedScene" uid="uid://bxrlqftyi6s7a" path="res://audio/music/BackgroundMusic.tscn" id="8_c8pn8"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_ngqft"]
 [ext_resource type="PackedScene" uid="uid://dxc1ht5s5puis" path="res://ui/dialogue/TutorialInformation/TutorialInformation.tscn" id="8_uvx3f"]
-[ext_resource type="PackedScene" uid="uid://pupiv2s81jme" path="res://world/maelstrom/maelstrom_area.tscn" id="9_5csxv"]
+[ext_resource type="PackedScene" uid="uid://drf1jxsbswk04" path="res://world/maelstrom/maelstrom_area.tscn" id="9_5csxv"]
 [ext_resource type="Script" path="res://managers/GoalArea.gd" id="9_uvrgv"]
 [ext_resource type="Script" path="res://world/ocean/ShipGenerator.gd" id="11_3dgxt"]
 [ext_resource type="PackedScene" uid="uid://dmr36cwesw5lo" path="res://ui/hud/ship_selection.tscn" id="11_5i74g"]
@@ -106,7 +106,7 @@ shader_parameter/water_color = Color(0.329412, 0.498039, 0.592157, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iacdl"]
 material = SubResource("ShaderMaterial_hqk6h")
-size = Vector2(1800, 1800)
+size = Vector2(2500, 2500)
 subdivide_width = 128
 subdivide_depth = 128
 

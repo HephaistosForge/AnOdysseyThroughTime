@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var map_size = Vector2(1200,1200)
+@export var map_size = Vector2(2500,2500)
 
 const WIN_SCENE: PackedScene = preload("res://ui/game_end/win.tscn")
 const LOSE_SCENE: PackedScene = preload("res://ui/game_end/loose.tscn")
