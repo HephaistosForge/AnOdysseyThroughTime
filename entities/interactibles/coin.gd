@@ -24,7 +24,7 @@ func collect():
 	score.add_score(COIN_VALUE)
 
 
-func rm(pos):
+func rm(_pos):
 	if collected:
 		return
 	if rmoved:
@@ -38,7 +38,8 @@ func rm(pos):
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	collect()
+	if body.is_in_group("boat"):
+		collect()
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

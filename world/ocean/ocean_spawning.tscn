@@ -192,14 +192,8 @@ theme = ExtResource("6_ls5u0")
 text = "  Wähle deinen Startpunkt auf der roten Linie. Noch niemand traute sich hinter diese Grenze..."
 
 [connection signal="input_event" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_input_event"]
-[connection signal="mouse_entered" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_mouse_exited"]
 [connection signal="input_event" from="Sprite3D/Sprite3D/Area3D" to="Sprite3D/Sprite3D/Area3D" method="_on_input_event"]
-[connection signal="mouse_entered" from="Sprite3D/Sprite3D/Area3D" to="Sprite3D/Sprite3D/Area3D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Sprite3D/Sprite3D/Area3D" to="Sprite3D/Sprite3D/Area3D" method="_on_mouse_exited"]
 [connection signal="input_event" from="Sprite3D2/Area3D" to="Sprite3D2/Area3D" method="_on_input_event"]
-[connection signal="mouse_entered" from="Sprite3D2/Area3D" to="Sprite3D2/Area3D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Sprite3D2/Area3D" to="Sprite3D2/Area3D" method="_on_mouse_exited"]
 [connection signal="input_event" from="Sprite3D3/Area3D" to="Sprite3D3/Area3D" method="_on_input_event"]
 [connection signal="mouse_exited" from="Sprite3D3/Area3D" to="Sprite3D3/Area3D" method="_on_mouse_exited"]
 [connection signal="body_entered" from="GameManager/GoalArea" to="GameManager" method="_on_goal_area_body_entered"]
