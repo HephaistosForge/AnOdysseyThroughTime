@@ -18,19 +18,16 @@ theme = ExtResource("1_2a8rb")
 script = ExtResource("1_kt124")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="header" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 180.0
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_bottom = 50
 
 [node name="Label" type="Label" parent="VBoxContainer/header"]
-layout_mode = 2
 offset_left = 264.0
 offset_top = 50.0
 offset_right = 887.0
@@ -40,7 +37,6 @@ theme_override_font_sizes/font_size = 64
 text = "Einstellungen"
 
 [node name="body" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_top = 184.0
 offset_right = 1152.0
 offset_bottom = 433.0
@@ -50,53 +46,45 @@ theme_override_constants/margin_right = 96
 theme_override_constants/margin_bottom = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/body"]
-layout_mode = 2
 offset_left = 96.0
 offset_right = 1056.0
 offset_bottom = 249.0
 theme_override_constants/separation = 24
 
 [node name="Anzeige" type="VBoxContainer" parent="VBoxContainer/body/VBoxContainer"]
-layout_mode = 2
 offset_right = 960.0
 offset_bottom = 91.0
 theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/Anzeige"]
-layout_mode = 2
 offset_right = 960.0
 offset_bottom = 32.0
 theme_override_font_sizes/font_size = 24
 text = "Anzeige"
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer/Anzeige"]
-layout_mode = 2
 offset_top = 40.0
 offset_right = 960.0
 offset_bottom = 63.0
 theme_override_constants/margin_left = 16
 
 [node name="GridContainer" type="HBoxContainer" parent="VBoxContainer/body/VBoxContainer/Anzeige/MarginContainer2"]
-layout_mode = 2
 offset_left = 16.0
 offset_right = 960.0
 offset_bottom = 23.0
 
 [node name="ToggleShaderLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/Anzeige/MarginContainer2/GridContainer"]
-layout_mode = 2
 offset_right = 900.0
 offset_bottom = 23.0
 text = "SSAO, SSIL, SSR und Schatten aktivieren (Achtung: Benötigt leistungsfähige gpu!)"
 
 [node name="ToggleShaderButton" type="CheckButton" parent="VBoxContainer/body/VBoxContainer/Anzeige/MarginContainer2/GridContainer"]
-layout_mode = 2
 offset_left = 904.0
 offset_right = 936.0
 offset_bottom = 23.0
 script = ExtResource("4_ih8es")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer/Anzeige"]
-layout_mode = 2
 offset_top = 71.0
 offset_right = 101.0
 offset_bottom = 91.0
@@ -104,7 +92,6 @@ size_flags_horizontal = 0
 theme_override_constants/margin_left = 16
 
 [node name="ToggleFullscreenButton" type="MenuButton" parent="VBoxContainer/body/VBoxContainer/Anzeige/MarginContainer"]
-layout_mode = 2
 offset_left = 16.0
 offset_right = 101.0
 offset_bottom = 20.0
@@ -122,14 +109,12 @@ popup/item_2/id = 2
 script = ExtResource("3_kkmi1")
 
 [node name="Lautstärke" type="VBoxContainer" parent="VBoxContainer/body/VBoxContainer"]
-layout_mode = 2
 offset_top = 115.0
 offset_right = 960.0
 offset_bottom = 249.0
 theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/Lautstärke"]
-layout_mode = 2
 offset_right = 960.0
 offset_bottom = 32.0
 theme_override_font_sizes/font_size = 24
@@ -137,26 +122,22 @@ text = "Sound
 "
 
 [node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer/Lautstärke"]
-layout_mode = 2
 offset_top = 40.0
 offset_right = 960.0
 offset_bottom = 83.0
 theme_override_constants/margin_left = 16
 
 [node name="SFXVolume" type="VBoxContainer" parent="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer4"]
-layout_mode = 2
 offset_left = 16.0
 offset_right = 960.0
 offset_bottom = 43.0
 
 [node name="SFXVolumeLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer4/SFXVolume"]
-layout_mode = 2
 offset_right = 944.0
 offset_bottom = 23.0
 text = "Lautstärke Soundeffekte"
 
 [node name="SFXVolumeSlider" type="HSlider" parent="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer4/SFXVolume"]
-layout_mode = 2
 offset_top = 27.0
 offset_right = 944.0
 offset_bottom = 43.0
@@ -166,26 +147,22 @@ step = 5.0
 script = ExtResource("5_s68jc")
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer/Lautstärke"]
-layout_mode = 2
 offset_top = 91.0
 offset_right = 960.0
 offset_bottom = 134.0
 theme_override_constants/margin_left = 16
 
 [node name="SoundVolume" type="VBoxContainer" parent="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer3"]
-layout_mode = 2
 offset_left = 16.0
 offset_right = 960.0
 offset_bottom = 43.0
 
 [node name="SoundVolumeLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer3/SoundVolume"]
-layout_mode = 2
 offset_right = 944.0
 offset_bottom = 23.0
 text = "Lautstärke Hintergrundmusik"
 
 [node name="SoundVolumeSlider" type="HSlider" parent="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer3/SoundVolume"]
-layout_mode = 2
 offset_top = 27.0
 offset_right = 944.0
 offset_bottom = 43.0
@@ -195,7 +172,6 @@ step = 5.0
 script = ExtResource("4_du2dw")
 
 [node name="footer" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_left = 369.0
 offset_top = 437.0
 offset_right = 783.0
@@ -207,14 +183,12 @@ theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 50
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/footer"]
-layout_mode = 2
 offset_top = 50.0
 offset_right = 414.0
 offset_bottom = 97.0
 theme_override_constants/separation = 40
 
 [node name="Steuerung" type="Button" parent="VBoxContainer/footer/HBoxContainer"]
-layout_mode = 2
 offset_right = 223.0
 offset_bottom = 47.0
 size_flags_horizontal = 4
@@ -222,7 +196,6 @@ theme_override_font_sizes/font_size = 32
 text = "Steuerung"
 
 [node name="back_button" type="Button" parent="VBoxContainer/footer/HBoxContainer"]
-layout_mode = 2
 offset_left = 263.0
 offset_right = 414.0
 offset_bottom = 47.0
