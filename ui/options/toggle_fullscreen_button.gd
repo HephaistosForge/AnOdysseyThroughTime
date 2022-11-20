@@ -2,7 +2,7 @@ extends MenuButton
 
 
 func _ready():
-	self.get_popup().id_pressed.connect(_on_option_pressed)
+	assert(self.get_popup().id_pressed.connect(_on_option_pressed) == 0)
 
 
 func _on_option_pressed(id: int):
