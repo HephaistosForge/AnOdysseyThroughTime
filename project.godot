@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="MV-Weihnachtsjam-2022"
-run/main_scene="res://world/ocean/ocean_spawning.tscn"
+run/main_scene="res://ui/menu/menu.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
