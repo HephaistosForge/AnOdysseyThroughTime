@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxc1ht5s5puis"]
+[gd_scene load_steps=6 format=3 uid="uid://dxc1ht5s5puis"]
 
 [ext_resource type="Script" path="res://ui/dialogue/TutorialInformation/tutorial_information.gd" id="1_ddffe"]
+[ext_resource type="Theme" uid="uid://cubpqq8pqv8re" path="res://ui/ui_theme.tres" id="1_kmvbm"]
 [ext_resource type="FontFile" uid="uid://3g80vo0xxc35" path="res://ui/dialogue/NotoSansRunic-Regular.ttf" id="2_gxfxd"]
 
 [sub_resource type="SystemFont" id="SystemFont_iaq1b"]
@@ -18,37 +19,50 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_kmvbm")
 script = ExtResource("1_ddffe")
 dialog = ["Eine letzte Geschichte habe ich noch! Ich kann sie auch schneller erzählen [Space gedrückt halten].", "Vor langer, langer Zeit, da war ich grade gemütlich auf dem offenen Meer mit meinem Schiffchen.", "Da begann mein Kompass auf einmal, verrückt zu spielen, und das Wasser veränderte sich.", "Ich sah, wie starke Strudel entstanden, die alles um sich herum verschluckten.", "Mit aller Kraft versuchte ich, sie zu umschiffen [W, A, S, D]", "...und sah um mich herum [Q, E].", "Die Strudel waren plötzlich überall, es war wie ein Albtraum!", "Sie verschlangen alles um sich herum, wie schwarze Löcher.", "Und immer wieder schlugen Blitze neben mir ein.", "Einige trafen mich, aber ich kann mich nicht erinnern, was danach geschah...", "Es schien, als wären die Blitze rein magisch geladen, und würden die Zeit am Einschlagsort krümmen.", "Ich gab mein Bestes, durchzuhalten."]
 name_of_speaker = "Der Kapitän"
-label_name_path = NodePath("CanvasLayer/TextBoxBackground/ContentContainer/Name")
-label_text_path = NodePath("CanvasLayer/TextBoxBackground/ContentContainer/Text")
+label_name_path = NodePath("CanvasLayer/TextBoxBackground/MarginContainer/ContentContainer/Name")
+label_text_path = NodePath("CanvasLayer/TextBoxBackground/MarginContainer/ContentContainer/Text")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TextBoxBackground" type="ColorRect" parent="CanvasLayer"]
-offset_left = 38.0
-offset_top = 26.0
-offset_right = 337.0
-offset_bottom = 156.0
-color = Color(0.592157, 0.482353, 0.521569, 1)
+[node name="TextBoxBackground" type="PanelContainer" parent="CanvasLayer"]
+offset_left = 26.0
+offset_top = 19.0
+offset_right = 257.0
+offset_bottom = 159.0
+theme = ExtResource("1_kmvbm")
 
-[node name="ContentContainer" type="VBoxContainer" parent="CanvasLayer/TextBoxBackground"]
-offset_left = 7.0
-offset_top = 7.0
-offset_right = 292.0
-offset_bottom = 121.0
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TextBoxBackground"]
+layout_mode = 2
+offset_right = 231.0
+offset_bottom = 140.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
 
-[node name="Name" type="Label" parent="CanvasLayer/TextBoxBackground/ContentContainer"]
-offset_right = 285.0
+[node name="ContentContainer" type="VBoxContainer" parent="CanvasLayer/TextBoxBackground/MarginContainer"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 223.0
+offset_bottom = 132.0
+
+[node name="Name" type="Label" parent="CanvasLayer/TextBoxBackground/MarginContainer/ContentContainer"]
+layout_mode = 2
+offset_right = 215.0
 offset_bottom = 26.0
 theme_override_fonts/font = SubResource("SystemFont_iaq1b")
 text = "<>"
 autowrap_mode = 3
 
-[node name="Text" type="Label" parent="CanvasLayer/TextBoxBackground/ContentContainer"]
+[node name="Text" type="Label" parent="CanvasLayer/TextBoxBackground/MarginContainer/ContentContainer"]
+layout_mode = 2
 offset_top = 30.0
-offset_right = 285.0
+offset_right = 215.0
 offset_bottom = 56.0
 theme_override_fonts/font = SubResource("SystemFont_curiy")
 text = "<>"
