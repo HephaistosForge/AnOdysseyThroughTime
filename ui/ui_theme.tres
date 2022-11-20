@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cubpqq8pqv8re"]
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://cubpqq8pqv8re"]
 
 [ext_resource type="FontFile" uid="uid://goyhfqm6dybj" path="res://ui/fonts/Aldi-Regular.otf" id="1_bebdt"]
 [ext_resource type="FontFile" uid="uid://hi1ow4y4vcwl" path="res://ui/fonts/Aldi-Bold.otf" id="1_dw5ap"]
@@ -7,15 +7,61 @@
 bg_color = Color(0.0352941, 0.105882, 0.25098, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijoq6"]
-bg_color = Color(0.0540113, 0.0490153, 0.0987863, 1)
+bg_color = Color(0.054902, 0.0470588, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2issb"]
+bg_color = Color(0.729412, 0.701961, 0.627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pi7eu"]
+bg_color = Color(0.729412, 0.701961, 0.627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxqg5"]
+bg_color = Color(0.729412, 0.701961, 0.627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkxp4"]
+bg_color = Color(0.729412, 0.701961, 0.627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6j0w0"]
+bg_color = Color(0.729412, 0.701961, 0.627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpu8r"]
+bg_color = Color(0.0352941, 0.105882, 0.25098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfudb"]
+bg_color = Color(0.0352941, 0.105882, 0.25098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7nx2"]
+bg_color = Color(0.215686, 0.713726, 0.501961, 0.905882)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5d10"]
+bg_color = Color(0.0352941, 0.105882, 0.25098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1n07h"]
+bg_color = Color(0.0352941, 0.105882, 0.25098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ypyek"]
+bg_color = Color(0.054902, 0.0470588, 0.0980392, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8xsw"]
-bg_color = Color(0.729971, 0.703472, 0.628034, 1)
+bg_color = Color(0.729412, 0.701961, 0.627451, 1)
 
 [resource]
 Button/font_sizes/font_size = 11
 Button/fonts/font = ExtResource("1_bebdt")
 Button/styles/hover = SubResource("StyleBoxFlat_3ct40")
 Button/styles/pressed = SubResource("StyleBoxFlat_ijoq6")
+CheckButton/styles/focus = SubResource("StyleBoxFlat_2issb")
+CheckButton/styles/hover = SubResource("StyleBoxFlat_pi7eu")
+CheckButton/styles/hover_pressed = SubResource("StyleBoxFlat_oxqg5")
+CheckButton/styles/normal = SubResource("StyleBoxFlat_fkxp4")
+CheckButton/styles/pressed = SubResource("StyleBoxFlat_6j0w0")
 Label/fonts/font = ExtResource("1_dw5ap")
+MenuButton/colors/font_color = Color(0.14902, 0.643137, 0.333333, 1)
+MenuButton/colors/font_hover_color = Color(0.0352941, 0.105882, 0.25098, 1)
+MenuButton/styles/hover = SubResource("StyleBoxFlat_tpu8r")
+MenuButton/styles/normal = SubResource("StyleBoxFlat_mfudb")
+MenuButton/styles/pressed = SubResource("StyleBoxFlat_f7nx2")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_p5d10")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_1n07h")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_ypyek")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_n8xsw")
