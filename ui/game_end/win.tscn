@@ -13,16 +13,19 @@ theme = ExtResource("1_r0681")
 script = ExtResource("2_ujple")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="header" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 180.0
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_bottom = 50
 
 [node name="Label" type="Label" parent="VBoxContainer/header"]
+layout_mode = 2
 offset_left = 334.0
 offset_top = 50.0
 offset_right = 818.0
@@ -32,6 +35,7 @@ theme_override_font_sizes/font_size = 64
 text = "Geschafft!"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
 offset_left = 303.0
 offset_top = 184.0
 offset_right = 849.0
@@ -41,6 +45,7 @@ theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
 offset_right = 496.0
 offset_bottom = 64.0
 theme_override_font_sizes/font_size = 24
@@ -49,52 +54,60 @@ Du  hast den Schatz gefunden"
 horizontal_alignment = 1
 
 [node name="Score" type="MarginContainer" parent="VBoxContainer"]
-offset_left = 432.0
+layout_mode = 2
+offset_left = 453.0
 offset_top = 302.0
-offset_right = 719.0
-offset_bottom = 515.0
+offset_right = 698.0
+offset_bottom = 488.0
 size_flags_horizontal = 4
 theme_override_constants/margin_top = 54
 theme_override_constants/margin_bottom = 54
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Score"]
+layout_mode = 2
 offset_top = 54.0
-offset_right = 287.0
-offset_bottom = 159.0
+offset_right = 245.0
+offset_bottom = 132.0
 size_flags_horizontal = 4
 
 [node name="Label" type="Label" parent="VBoxContainer/Score/VBoxContainer"]
-offset_right = 287.0
+layout_mode = 2
+offset_right = 245.0
 offset_bottom = 42.0
 theme_override_font_sizes/font_size = 32
 text = "Dein Score:"
 
 [node name="Label2" type="Label" parent="VBoxContainer/Score/VBoxContainer"]
-offset_left = 81.0
+layout_mode = 2
+offset_left = 113.0
 offset_top = 46.0
-offset_right = 206.0
+offset_right = 131.0
 offset_bottom = 78.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
-text = "<score>"
+text = "0"
 
 [node name="Label3" type="Label" parent="VBoxContainer/Score/VBoxContainer"]
+visible = false
+layout_mode = 2
 offset_top = 82.0
 offset_right = 287.0
 offset_bottom = 105.0
 size_flags_horizontal = 4
-text = "optional: Neuer Highscore"
+text = "Du hast einen neuen Highscore geschafft!"
 
 [node name="footer" type="MarginContainer" parent="VBoxContainer"]
-offset_top = 519.0
+layout_mode = 2
+offset_top = 492.0
 offset_right = 1152.0
-offset_bottom = 616.0
+offset_bottom = 589.0
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/footer"]
+layout_mode = 2
 offset_left = 221.0
 offset_top = 50.0
 offset_right = 930.0
@@ -103,6 +116,7 @@ size_flags_horizontal = 4
 theme_override_constants/separation = 40
 
 [node name="play_button" type="Button" parent="VBoxContainer/footer/HBoxContainer"]
+layout_mode = 2
 offset_right = 311.0
 offset_bottom = 47.0
 size_flags_horizontal = 4
@@ -110,6 +124,7 @@ theme_override_font_sizes/font_size = 32
 text = "Erneut spielen"
 
 [node name="menu_button" type="Button" parent="VBoxContainer/footer/HBoxContainer"]
+layout_mode = 2
 offset_left = 351.0
 offset_right = 709.0
 offset_bottom = 47.0

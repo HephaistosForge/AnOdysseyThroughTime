@@ -32,11 +32,11 @@ func _ready():
 	#	maelstroms.append(world_to_uv(maelstrom.position))
 	
 	var pos;
-	for i in 45:
+	for i in 50:
 		var trials = 0
 		while true:
 			pos = Vector3(randf(), randf(), .2)
-			if pos.distance_to(spawn_point_as_uv) > 0.1 and pos.distance_to(island_as_uv) > 0.12:
+			if pos.distance_to(spawn_point_as_uv) > 0.045 and pos.distance_to(island_as_uv) > 0.05:
 				if trials < 10:
 					for p in maelstroms:
 						if pos.distance_to(p) < 0.1:
@@ -95,18 +95,19 @@ func _physics_process(_delta):
 		var force = Vector3.ZERO
 		for maelstrom in maelstroms:
 			var pos = Vector3(maelstrom.x-0.5, 0, maelstrom.y-.5) * mesh_size
-			var diff = pos - object.position
+			var diff = (pos - object.position)*Vector3(1,0,1)
 			var dist = diff.length()
-			force += diff / pow(dist, 3)
+			if object is RigidBody3D:
+				force += diff / pow(dist, 3)
+			else:
+				force += diff / pow(dist, 2.5)
 			
 		if object is RigidBody3D:
-			object.apply_force(force * 10000)
+			object.apply_force(force * 10000 * 40)
 		else:
-			object.velocity += force * 100
-	time_i += 1
-	#get_parent().get_node("Sprite3D").material = get_parent().get_node("Sprite3D").material_override
-	# print(material)
-	
+			object.velocity += force * 65
+	# time_i += 1
+
 	#for y in img.MAX_HEIGHT:
 	#	for x in img.MAX_WIDTH:
 	#		print(img.get_pixel(x, y))

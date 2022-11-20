@@ -1,11 +1,14 @@
 extends Node3D
 
-@export var map_size = Vector2(1200,1200)
+@export var map_size = Vector2(2500,2500)
 
 const WIN_SCENE: PackedScene = preload("res://ui/game_end/win.tscn")
 const LOSE_SCENE: PackedScene = preload("res://ui/game_end/loose.tscn")
 
 var changed = false
+@onready var score_tracker = get_tree().get_first_node_in_group("score_tracker")
+const WIN_SCORE = 10000
+
 
 func lose():
 	Globals.start_pos = Vector3.ZERO
@@ -49,4 +52,5 @@ func _on_goal_area_body_entered(body):
 	if Globals.start_pos != Vector3.ZERO:
 		if body.is_in_group("boat"):
 			if changed:
+				score_tracker.add_score(WIN_SCORE)
 				win()

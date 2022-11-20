@@ -35,5 +35,5 @@ func init_values(attributes):
 func _on_button_pressed() -> void:
 	print("hello")
 	get_tree().paused = false
-	get_tree().get_first_node_in_group("ship_selection").visible = false
+	get_tree().get_first_node_in_group("ship_selection").do_hide()
 	get_tree().get_first_node_in_group("ship_generator").init_new_ship(option_index)

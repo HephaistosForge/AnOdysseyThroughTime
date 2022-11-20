@@ -1,12 +1,14 @@
-[gd_scene load_steps=28 format=3 uid="uid://r6507up7mfbm"]
+[gd_scene load_steps=36 format=3 uid="uid://shubxluqhdt1"]
 
 [ext_resource type="Shader" path="res://world/weather/sky.gdshader" id="1_8oio7"]
 [ext_resource type="PackedScene" uid="uid://0krnl6i3o5ap" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
-[ext_resource type="Material" uid="uid://btag4dqmfem27" path="res://world/ocean/water_material.tres" id="2_o2byj"]
+[ext_resource type="Script" path="res://world/ocean/world_environment.gd" id="2_tqd1p"]
 [ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="3_k8sgn"]
+[ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="3_tq8ml"]
 [ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
 [ext_resource type="PackedScene" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
 [ext_resource type="PackedScene" uid="uid://beidarsyit5ya" path="res://audio/sounds/SFX/SFX.tscn" id="7_kw4om"]
+[ext_resource type="PackedScene" path="res://audio/music/BackgroundMusic.tscn" id="8_c8pn8"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_ngqft"]
 [ext_resource type="PackedScene" uid="uid://dxc1ht5s5puis" path="res://ui/dialogue/TutorialInformation/TutorialInformation.tscn" id="8_uvx3f"]
 [ext_resource type="PackedScene" uid="uid://drf1jxsbswk04" path="res://world/maelstrom/maelstrom_area.tscn" id="9_5csxv"]
@@ -63,32 +65,70 @@ fog_light_color = Color(0.478431, 0.509804, 0.560784, 1)
 volumetric_fog_density = 0.0188
 volumetric_fog_albedo = Color(0.482353, 0.521569, 0.717647, 1)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gnhkk"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qece7"]
+noise = SubResource("FastNoiseLite_gnhkk")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xbt3l"]
+frequency = 0.206
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ya8hl"]
+noise = SubResource("FastNoiseLite_xbt3l")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u7756"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8x484"]
+noise = SubResource("FastNoiseLite_u7756")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqk6h"]
+render_priority = 0
+shader = ExtResource("3_tq8ml")
+shader_parameter/iChannel0 = SubResource("NoiseTexture2D_qece7")
+shader_parameter/iChannel1 = SubResource("NoiseTexture2D_ya8hl")
+shader_parameter/iChannel2 = SubResource("NoiseTexture2D_8x484")
+shader_parameter/maelstrom_positions0 = null
+shader_parameter/maelstrom_positions1 = Basis(0.1, 0.3, 0.8, 0.2, 0.9, 0.4, 0, 0, 1)
+shader_parameter/maelstrom_positions10 = null
+shader_parameter/maelstrom_positions11 = null
+shader_parameter/maelstrom_positions12 = null
+shader_parameter/maelstrom_positions13 = null
+shader_parameter/maelstrom_positions14 = null
+shader_parameter/maelstrom_positions15 = null
+shader_parameter/maelstrom_positions2 = null
+shader_parameter/maelstrom_positions3 = null
+shader_parameter/maelstrom_positions4 = null
+shader_parameter/maelstrom_positions5 = null
+shader_parameter/maelstrom_positions6 = null
+shader_parameter/maelstrom_positions7 = null
+shader_parameter/maelstrom_positions8 = null
+shader_parameter/maelstrom_positions9 = null
+shader_parameter/screen_resolution = null
+shader_parameter/water_color = Color(0.329412, 0.498039, 0.592157, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_iacdl"]
-material = ExtResource("2_o2byj")
-size = Vector2(1800, 1800)
+material = SubResource("ShaderMaterial_hqk6h")
+size = Vector2(2500, 2500)
 subdivide_width = 128
 subdivide_depth = 128
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_02y5e"]
-viewport_path = NodePath("SubViewport")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_si2jr"]
 radius = 35.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_b6r5k"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_o6fk6"]
 viewport_path = NodePath("SubViewport")
 
-[node name="ocean" type="Node3D" groups=["ocean"]]
+[node name="ocean2" type="Node3D" groups=["ocean"]]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pcp7k")
+script = ExtResource("2_tqd1p")
 
 [node name="WaterShader" type="MeshInstance3D" parent="." groups=["maelstroms"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("PlaneMesh_iacdl")
 script = ExtResource("3_k8sgn")
 maelstroms = []
-water_height = SubResource("ViewportTexture_02y5e")
 
 [node name="Maelstroms" type="Node3D" parent="WaterShader"]
 
@@ -169,6 +209,8 @@ player = NodePath("../VikingBoat")
 
 [node name="SFX" parent="Camera3D" instance=ExtResource("7_kw4om")]
 
+[node name="BackgroundMusic" parent="Camera3D" instance=ExtResource("8_c8pn8")]
+
 [node name="ObstacleGenerator" parent="." instance=ExtResource("7_11iuw")]
 
 [node name="GameManager" type="Node3D" parent="." groups=["manager"]]
@@ -210,11 +252,10 @@ transform = Transform3D(1.58046, -0.523911, -1.108, 0.62931, 1.89841, 0, 1.05172
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 190.153)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("ViewportTexture_b6r5k")
+texture = SubResource("ViewportTexture_o6fk6")
 flip_v = true
 
 [node name="SubViewport" type="SubViewport" parent="."]
-disable_3d = true
 render_target_update_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="SubViewport"]

@@ -4,17 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://ci3rk255q1f13" path="res://entities/obstacles/models/ice_berg.glb" id="1_cdlbc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cvtn5"]
-radius = 3.69104
-height = 7.49768
+radius = 31.1119
+height = 69.4797
 
 [node name="ice_berg" type="RigidBody3D" groups=["obstacle", "pullable"]]
+mass = 15.0
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_25t15")
 
 [node name="ice_berg" parent="." instance=ExtResource("1_cdlbc")]
-transform = Transform3D(1, 0, 0, 0, 1, -0.000593412, 0, 0.000593412, 1, 0, -0.844, 0)
+transform = Transform3D(8, 0, 0, 0, 8, -0.0047473, 0, 0.0047473, 8, 0, -0.844, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, -0.000593412, 0, 0.000593412, 1, 0, -0.844, 0)
+transform = Transform3D(1, 0, 0, 0, 1, -0.000593412, 0, 0.000593412, 1, 0, -5.5431, 1.2177)
 shape = SubResource("CapsuleShape3D_cvtn5")
