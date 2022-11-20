@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc38f46okuxlx"]
+[gd_scene load_steps=3 format=3 uid="uid://cbqp8hyir6jny"]
 
 [ext_resource type="Theme" uid="uid://b1qnudk0gm0it" path="res://ui/ui_theme.tres" id="1_645cg"]
 [ext_resource type="Script" path="res://ui/highscore/highscore.gd" id="1_ok80r"]
@@ -11,100 +11,87 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_645cg")
 script = ExtResource("1_ok80r")
+metadata/_edit_vertical_guides_ = []
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="header" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 130.0
 theme_override_constants/margin_top = 50
 
 [node name="Label" type="Label" parent="VBoxContainer/header"]
+layout_mode = 2
 offset_left = 358.0
 offset_top = 50.0
 offset_right = 793.0
 offset_bottom = 130.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
-text = "Highscore"
+text = "HIGHSCORE"
 
-[node name="body" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
 offset_top = 134.0
 offset_right = 1152.0
-offset_bottom = 350.0
-theme_override_constants/margin_left = 96
-theme_override_constants/margin_top = 56
-theme_override_constants/margin_right = 96
-theme_override_constants/margin_bottom = 56
+offset_bottom = 302.0
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_bottom = 50
 
-[node name="menu_frame" type="PanelContainer" parent="VBoxContainer/body"]
-offset_left = 96.0
-offset_top = 56.0
-offset_right = 1056.0
-offset_bottom = 160.0
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3"]
+layout_mode = 2
+offset_top = 50.0
+offset_right = 1152.0
+offset_bottom = 118.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/body"]
-offset_left = 96.0
-offset_top = 56.0
-offset_right = 1056.0
-offset_bottom = 160.0
+[node name="score2" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+offset_left = 513.0
+offset_right = 638.0
+offset_bottom = 32.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "<score>"
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
-offset_right = 960.0
-offset_bottom = 23.0
-
-[node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer"]
-offset_right = 960.0
-offset_bottom = 23.0
-text = "placeholder"
-
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
-offset_top = 27.0
-offset_right = 960.0
-offset_bottom = 50.0
-
-[node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer2"]
-offset_right = 960.0
-offset_bottom = 23.0
-text = "placeholder"
-
-[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
-offset_top = 54.0
-offset_right = 960.0
-offset_bottom = 77.0
-
-[node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer3"]
-offset_right = 960.0
-offset_bottom = 23.0
-text = "placeholder"
-
-[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
-offset_top = 81.0
-offset_right = 960.0
-offset_bottom = 104.0
-
-[node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer4"]
-offset_right = 960.0
-offset_bottom = 23.0
-text = "placeholder"
+[node name="score" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer"]
+layout_mode = 2
+offset_left = 513.0
+offset_top = 36.0
+offset_right = 638.0
+offset_bottom = 68.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "<score>"
 
 [node name="footer" type="MarginContainer" parent="VBoxContainer"]
-offset_top = 354.0
-offset_right = 1152.0
-offset_bottom = 401.0
+layout_mode = 2
+offset_left = 500.0
+offset_top = 306.0
+offset_right = 651.0
+offset_bottom = 353.0
+size_flags_horizontal = 4
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="back_button" type="Button" parent="VBoxContainer/footer"]
-offset_left = 500.0
-offset_right = 651.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/footer"]
+layout_mode = 2
+offset_right = 151.0
+offset_bottom = 47.0
+theme_override_constants/separation = 80
+
+[node name="menu_button" type="Button" parent="VBoxContainer/footer/HBoxContainer"]
+layout_mode = 2
+offset_right = 151.0
 offset_bottom = 47.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Zurück"
 
-[connection signal="pressed" from="VBoxContainer/footer/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/footer/HBoxContainer/menu_button" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/footer/HBoxContainer/menu_button" to="." method="_on_back_button_pressed"]

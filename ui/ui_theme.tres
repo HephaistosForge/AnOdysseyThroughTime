@@ -1,18 +1,21 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ca3ibtddlkiye"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b1qnudk0gm0it"]
 
 [ext_resource type="FontFile" uid="uid://goyhfqm6dybj" path="res://ui/fonts/Aldi-Regular.otf" id="1_bebdt"]
 [ext_resource type="FontFile" uid="uid://hi1ow4y4vcwl" path="res://ui/fonts/Aldi-Bold.otf" id="1_dw5ap"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fl0ml"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kymuv"]
 bg_color = Color(0.0352941, 0.105882, 0.25098, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gyysc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysvid"]
+bg_color = Color(0.054902, 0.0470588, 0.0980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxrnq"]
 bg_color = Color(0.729971, 0.703472, 0.628034, 1)
 
 [resource]
 Button/font_sizes/font_size = 11
 Button/fonts/font = ExtResource("1_bebdt")
-Button/styles/hover = SubResource("StyleBoxFlat_fl0ml")
-Button/styles/pressed = null
+Button/styles/hover = SubResource("StyleBoxFlat_kymuv")
+Button/styles/pressed = SubResource("StyleBoxFlat_ysvid")
 Label/fonts/font = ExtResource("1_dw5ap")
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_gyysc")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_sxrnq")
