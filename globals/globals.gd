@@ -11,6 +11,7 @@ func _ready():
 	rng.randomize()
 
 
+
 func reset_score():
 	score = 0
 
