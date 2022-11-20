@@ -2,11 +2,18 @@ extends Node3D
 
 @export var map_size = Vector2(1200,1200)
 
+const WIN_SCENE: PackedScene = preload("res://ui/game_end/win.tscn")
+const LOSE_SCENE: PackedScene = preload("res://ui/game_end/loose.tscn")
+
+var changed = false
+
 func lose():
-	print_debug("You lose!")
+	Globals.start_pos = Vector3.ZERO
+	get_tree().change_scene_to_packed(LOSE_SCENE) 
 
 func win():
-	print_debug("You win!")
+	Globals.start_pos = Vector3.ZERO
+	get_tree().change_scene_to_packed(WIN_SCENE) 
 
 func _ready():
 	if Globals.start_pos != Vector3.ZERO:
@@ -18,6 +25,8 @@ func _ready():
 		var diff = new_pos - old_pos
 		cam.position = cam.position + diff
 		ship.position = new_pos
+		
+		changed = true
 		
 		var mid_to_ship = ship.position
 		var cam_to_ship = ship.position - cam.position
@@ -39,4 +48,5 @@ func start_game(pos):
 func _on_goal_area_body_entered(body):
 	if Globals.start_pos != Vector3.ZERO:
 		if body.is_in_group("boat"):
-			win()
+			if changed:
+				win()
