@@ -13,14 +13,17 @@ theme = ExtResource("1_m5heq")
 script = ExtResource("1_haam4")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="header" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 173.0
 
 [node name="game" type="MarginContainer" parent="VBoxContainer/header"]
+layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 130.0
 theme_override_constants/margin_left = 0
@@ -29,6 +32,7 @@ theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
 [node name="game_name" type="Label" parent="VBoxContainer/header/game"]
+layout_mode = 2
 offset_left = 134.0
 offset_top = 50.0
 offset_right = 1018.0
@@ -38,6 +42,7 @@ theme_override_font_sizes/font_size = 64
 text = "Hephaistos' Journey"
 
 [node name="publisher" type="MarginContainer" parent="VBoxContainer/header"]
+layout_mode = 2
 offset_left = 434.0
 offset_top = 134.0
 offset_right = 718.0
@@ -47,12 +52,14 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_bottom = 16
 
 [node name="publisher_name" type="Label" parent="VBoxContainer/header/publisher"]
+layout_mode = 2
 offset_right = 284.0
 offset_bottom = 23.0
 size_flags_horizontal = 4
 text = "Game by Hephaistos Forge"
 
 [node name="body" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
 offset_top = 177.0
 offset_right = 1152.0
 offset_bottom = 565.0
@@ -62,12 +69,14 @@ theme_override_constants/margin_right = 700
 theme_override_constants/margin_bottom = 56
 
 [node name="menu_frame" type="PanelContainer" parent="VBoxContainer/body"]
+layout_mode = 2
 offset_left = 80.0
 offset_top = 56.0
 offset_right = 452.0
 offset_bottom = 332.0
 
 [node name="buttons_list" type="VBoxContainer" parent="VBoxContainer/body"]
+layout_mode = 2
 offset_left = 80.0
 offset_top = 56.0
 offset_right = 452.0
@@ -76,6 +85,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 16
 
 [node name="play_container" type="MarginContainer" parent="VBoxContainer/body/buttons_list"]
+layout_mode = 2
 offset_right = 372.0
 offset_bottom = 59.0
 theme_override_constants/margin_left = 8
@@ -84,6 +94,7 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 4
 
 [node name="play" type="Button" parent="VBoxContainer/body/buttons_list/play_container"]
+layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 364.0
@@ -92,6 +103,7 @@ theme_override_font_sizes/font_size = 32
 text = "Spielen"
 
 [node name="highscore_container" type="MarginContainer" parent="VBoxContainer/body/buttons_list"]
+layout_mode = 2
 offset_top = 75.0
 offset_right = 372.0
 offset_bottom = 130.0
@@ -101,6 +113,7 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 4
 
 [node name="highscore" type="Button" parent="VBoxContainer/body/buttons_list/highscore_container"]
+layout_mode = 2
 offset_left = 8.0
 offset_top = 4.0
 offset_right = 364.0
@@ -109,6 +122,7 @@ theme_override_font_sizes/font_size = 32
 text = "Highscore"
 
 [node name="options_container" type="MarginContainer" parent="VBoxContainer/body/buttons_list"]
+layout_mode = 2
 offset_top = 146.0
 offset_right = 372.0
 offset_bottom = 201.0
@@ -118,6 +132,7 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 4
 
 [node name="options" type="Button" parent="VBoxContainer/body/buttons_list/options_container"]
+layout_mode = 2
 offset_left = 8.0
 offset_top = 4.0
 offset_right = 364.0
@@ -126,6 +141,7 @@ theme_override_font_sizes/font_size = 32
 text = "Einstellungen"
 
 [node name="exit_container" type="MarginContainer" parent="VBoxContainer/body/buttons_list"]
+layout_mode = 2
 offset_top = 217.0
 offset_right = 372.0
 offset_bottom = 276.0
@@ -153,6 +169,7 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
 [node name="version" type="Label" parent="VBoxContainer/footer"]
+layout_mode = 2
 offset_top = 28.0
 offset_right = 1144.0
 offset_bottom = 51.0
@@ -160,10 +177,9 @@ text = "alpha zerro"
 horizontal_alignment = 2
 
 [connection signal="pressed" from="VBoxContainer/body/buttons_list/play_container/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/body/buttons_list/play_container/play" to="." method="_on_spielen_pressed"]
 [connection signal="pressed" from="VBoxContainer/body/buttons_list/highscore_container/highscore" to="." method="_on_highscore_pressed"]
 [connection signal="pressed" from="VBoxContainer/body/buttons_list/highscore_container/highscore" to="." method="_on_einstellungen_pressed"]
-[connection signal="pressed" from="VBoxContainer/body/buttons_list/options_container/options" to="." method="_on_einstellungen_pressed"]
 [connection signal="pressed" from="VBoxContainer/body/buttons_list/options_container/options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/body/buttons_list/exit_container/exit" to="." method="_on_beenden_pressed"]
+[connection signal="pressed" from="VBoxContainer/body/buttons_list/options_container/options" to="." method="_on_einstellungen_pressed"]
 [connection signal="pressed" from="VBoxContainer/body/buttons_list/exit_container/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/body/buttons_list/exit_container/exit" to="." method="_on_beenden_pressed"]
