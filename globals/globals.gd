@@ -13,11 +13,18 @@ func _ready():
 	rng.randomize()
 
 
-
 func reset_score():
 	score = 0
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if Input.is_action_just_pressed("toggle_mute"):
+		print("toggle mute")
+		_toggle_global_sound()
+
+
+func _toggle_global_sound() -> void:
+	if AudioServer.is_bus_mute(0):
+		AudioServer.set_bus_mute(0, false)
+	else:
+		AudioServer.set_bus_mute(0, true)
