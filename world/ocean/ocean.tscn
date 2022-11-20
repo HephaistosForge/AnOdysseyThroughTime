@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c0eg78m7jmyuo" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
 [ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="3_k8sgn"]
 [ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
-[ext_resource type="PackedScene" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
+[ext_resource type="PackedScene" uid="uid://cx01enkvm0qdr" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
 [ext_resource type="PackedScene" uid="uid://beidarsyit5ya" path="res://audio/sounds/SFX/SFX.tscn" id="7_kw4om"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_ngqft"]
 [ext_resource type="PackedScene" uid="uid://dxc1ht5s5puis" path="res://ui/dialogue/TutorialInformation/TutorialInformation.tscn" id="8_uvx3f"]
@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://managers/GoalArea.gd" id="9_uvrgv"]
 [ext_resource type="Script" path="res://world/ocean/ShipGenerator.gd" id="11_3dgxt"]
 [ext_resource type="PackedScene" uid="uid://dmr36cwesw5lo" path="res://ui/hud/ship_selection.tscn" id="11_5i74g"]
-[ext_resource type="PackedScene" path="res://entities/obstacles/island.tscn" id="13_13k4f"]
+[ext_resource type="PackedScene" uid="uid://dwm2nfteihmdi" path="res://entities/obstacles/island.tscn" id="13_13k4f"]
 [ext_resource type="PackedScene" uid="uid://b817vbef7oyde" path="res://entities/golden_monkey.glb" id="14_3r2b0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iekdp"]
@@ -187,6 +187,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -462.492, -6.10352e-05, -247.
 [node name="LightningStrikeGenerator" parent="." groups=["lightning_strike_generator"] instance=ExtResource("1_woglw")]
 
 [node name="viking_boat" parent="." instance=ExtResource("3_13om1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 190.153)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 29.6078, 0)
@@ -196,7 +197,7 @@ directional_shadow_split_1 = 0.461
 directional_shadow_blend_splits = true
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["camera"]]
-transform = Transform3D(1, 0, 0, 0, 0.598479, 0.801139, 0, -0.801139, 0.598479, 3.1558, 15.0181, 9.90466)
+transform = Transform3D(1, 0, 0, 0, 0.598479, 0.801139, 0, -0.801139, 0.598479, 3.1558, 15.0181, 200.057)
 current = true
 fov = 100.0
 script = ExtResource("4_p8d8g")
