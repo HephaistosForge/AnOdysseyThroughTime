@@ -21,6 +21,7 @@ func _ready() -> void:
 func collect():
 	self.collected = true
 	animation_player.play("collect")
+	$CoinSFX.play()
 	score.add_score(COIN_VALUE)
 
 

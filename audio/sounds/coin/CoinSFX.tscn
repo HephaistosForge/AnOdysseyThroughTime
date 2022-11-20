@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4w5fxtxagnuq"]
+
+[ext_resource type="AudioStream" uid="uid://46j71bc1txl1" path="res://audio/sounds/coin/collect_coin.mp3" id="1_smh8n"]
+
+[node name="CoinSFX" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_smh8n")
+autoplay = true
