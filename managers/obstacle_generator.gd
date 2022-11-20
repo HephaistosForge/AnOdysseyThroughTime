@@ -12,7 +12,7 @@ const OBSTACLE_PREFABS: Array[PackedScene] = [
 
 var obstacle_mass = 10
 
-@export var spawn_time: float = 0.4
+@export var spawn_time: float = 0.27
 
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var ship: CharacterBody3D = get_tree().get_first_node_in_group("boat")
