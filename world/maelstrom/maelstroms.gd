@@ -120,9 +120,9 @@ func _physics_process(_delta):
 			py = clamp(py, 0, 511)
 			var h = depth_image.get_pixel(px, py)
 			if object.is_in_group("boat"):
-				print([px, py], h)
-				var new_pos = h.r * 40 - 40 + 2
-				object.position.y += (new_pos - object.position.y) / 10
+				#print([px, py], h)
+				var new_pos = h.r * 45 - 45
+				object.position.y += (new_pos - object.position.y) / 7
 		
 #	for object in get_tree().get_nodes_in_group("pullable"):
 #		object.position.y = -height(object.position / 512 + Vector3(0.5, 0.5, 0.5))
@@ -162,9 +162,11 @@ func try():
 	await get_tree().process_frame
 	await get_tree().process_frame
 	await get_tree().process_frame
-	___generated_image = ___drawer.get_texture().get_image().duplicate()
-	# emit_signal("generated")
-	___viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
-	___drawer.hide()
-	return ___generated_image
+	
+	if is_instance_valid(self):
+		___generated_image = ___drawer.get_texture().get_image().duplicate()
+		# emit_signal("generated")
+		___viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
+		___drawer.hide()
+		return ___generated_image
 
