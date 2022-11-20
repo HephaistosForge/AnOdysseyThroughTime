@@ -14,11 +14,10 @@ func _ready():
 
 func _init_highscore():
 	if "highscore" not in game_data.keys():
-		game_data ={"highscore": [
-			000000,
-			000000,
-			000000
-		]}
+		var highscores = []
+		for i in range(10):
+			highscores.append(0)
+		game_data["highscore"] = highscores
 		
 
 func _save_game() -> void:
