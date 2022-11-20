@@ -1,7 +1,7 @@
 extends Control
 
-@onready var option_1: PanelContainer = $CanvasLayer/Panel/VBoxContainer/Auswahl/MarginContainer/Option_1
-@onready var option_2: PanelContainer = $CanvasLayer/Panel/VBoxContainer/Auswahl/MarginContainer2/Option_2
+@onready var option_1: PanelContainer = $CanvasLayer/CenterContainer/Panel/VBoxContainer/Auswahl/MarginContainer/Option_1
+@onready var option_2: PanelContainer = $CanvasLayer/CenterContainer/Panel/VBoxContainer/Auswahl/MarginContainer2/Option_2
 
 func do_hide():
 	self.visible = false

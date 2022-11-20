@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bb783asslu8hn"]
+[gd_scene load_steps=13 format=3 uid="uid://bb783asslu8hn"]
 
 [ext_resource type="Texture2D" uid="uid://cr5j4078oescm" path="res://ui/menu/start_location_selection.png" id="2_diu3m"]
 [ext_resource type="Script" path="res://managers/GoalArea.gd" id="5_j0cqt"]
 [ext_resource type="Theme" uid="uid://cubpqq8pqv8re" path="res://ui/ui_theme.tres" id="6_ls5u0"]
+[ext_resource type="StyleBox" uid="uid://d13mdqm6sskpm" path="res://ui/hud/transparent_style_box.tres" id="6_vxmcs"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_mrdwr"]
 [ext_resource type="Texture2D" uid="uid://c176nk71t4ge3" path="res://ui/Rectangle.png" id="11_wd3o7"]
 [ext_resource type="Script" path="res://managers/SpawnArea.gd" id="12_x7p0s"]
@@ -180,6 +181,7 @@ offset_top = 16.0
 offset_right = 1103.0
 offset_bottom = 92.0
 mouse_filter = 1
+theme_override_styles/panel = ExtResource("6_vxmcs")
 
 [node name="Label" type="Label" parent="PanelContainer"]
 offset_top = 26.0

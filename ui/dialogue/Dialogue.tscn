@@ -1,13 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8pkku6jgdsh0"]
+[gd_scene load_steps=7 format=3 uid="uid://b8pkku6jgdsh0"]
 
 [ext_resource type="Script" path="res://ui/dialogue/dialogue.gd" id="1_bmxfx"]
-[ext_resource type="Theme" uid="uid://cubpqq8pqv8re" path="res://ui/ui_theme.tres" id="1_i48kf"]
-[ext_resource type="FontFile" uid="uid://3g80vo0xxc35" path="res://ui/dialogue/NotoSansRunic-Regular.ttf" id="2_tkmxt"]
+[ext_resource type="FontFile" uid="uid://c601hoyfgty5j" path="res://ui/dialogue/NotoSansRunic-Regular.ttf" id="2_tkmxt"]
+[ext_resource type="Texture2D" uid="uid://ccajxpfddhe68" path="res://ui/dialogue/bg_01_02.png" id="2_urjuu"]
 
-[sub_resource type="SystemFont" id="SystemFont_mb56d"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vnvxk"]
+
+[sub_resource type="SystemFont" id="SystemFont_sabfq"]
+subpixel_positioning = 0
 fallbacks = [ExtResource("2_tkmxt")]
 
-[sub_resource type="SystemFont" id="SystemFont_20ahi"]
+[sub_resource type="SystemFont" id="SystemFont_mh3xc"]
+subpixel_positioning = 0
 fallbacks = [ExtResource("2_tkmxt")]
 
 [node name="Dialogue" type="Control"]
@@ -18,44 +22,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("1_i48kf")
 script = ExtResource("1_bmxfx")
-label_name_path = NodePath("TextBoxBackground/MarginContainer/ContentContainer/Name")
-label_text_path = NodePath("TextBoxBackground/MarginContainer/ContentContainer/Text")
+label_name_path = NodePath("PanelContainer2/MarginContainer/ContentContainer/Name")
+label_text_path = NodePath("PanelContainer2/MarginContainer/ContentContainer/Text")
 
-[node name="TextBoxBackground" type="PanelContainer" parent="."]
-offset_left = 26.0
-offset_top = 19.0
-offset_right = 257.0
-offset_bottom = 159.0
-mouse_filter = 2
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 267.0
+offset_bottom = 104.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vnvxk")
 
-[node name="MarginContainer" type="MarginContainer" parent="TextBoxBackground"]
-offset_right = 231.0
-offset_bottom = 140.0
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
+[node name="TextureRect" type="TextureRect" parent="PanelContainer2"]
+offset_right = 235.0
+offset_bottom = 88.0
+texture = ExtResource("2_urjuu")
+ignore_texture_size = true
 
-[node name="ContentContainer" type="VBoxContainer" parent="TextBoxBackground/MarginContainer"]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 223.0
-offset_bottom = 132.0
-mouse_filter = 2
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2"]
+offset_right = 235.0
+offset_bottom = 88.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
-[node name="Name" type="Label" parent="TextBoxBackground/MarginContainer/ContentContainer"]
-offset_right = 215.0
+[node name="ContentContainer" type="VBoxContainer" parent="PanelContainer2/MarginContainer"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 219.0
+offset_bottom = 72.0
+
+[node name="Name" type="Label" parent="PanelContainer2/MarginContainer/ContentContainer"]
+offset_right = 203.0
 offset_bottom = 26.0
-theme_override_fonts/font = SubResource("SystemFont_mb56d")
+theme_override_fonts/font = SubResource("SystemFont_sabfq")
 text = "<>"
 autowrap_mode = 3
 
-[node name="Text" type="Label" parent="TextBoxBackground/MarginContainer/ContentContainer"]
+[node name="Text" type="Label" parent="PanelContainer2/MarginContainer/ContentContainer"]
 offset_top = 30.0
-offset_right = 215.0
+offset_right = 203.0
 offset_bottom = 56.0
-theme_override_fonts/font = SubResource("SystemFont_20ahi")
+theme_override_fonts/font = SubResource("SystemFont_mh3xc")
 text = "<>"
 autowrap_mode = 3

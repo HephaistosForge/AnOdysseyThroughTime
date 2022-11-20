@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://qkol5h6avnsc"]
+[gd_scene load_steps=8 format=3 uid="uid://qkol5h6avnsc"]
 
 [ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_tjyn1"]
 [ext_resource type="PackedScene" uid="uid://bkogtdpbfkee4" path="res://entities/ships/rowing_boat/rowing_boat.glb" id="2_1xris"]
 [ext_resource type="PackedScene" path="res://ui/dialogue/Dialogue.tscn" id="3_gdptf"]
 [ext_resource type="PackedScene" uid="uid://byaks36vihbmo" path="res://entities/ships/pointer.glb" id="4_qs7us"]
-[ext_resource type="PackedScene" uid="uid://00wpf5wk5tb7" path="res://audio/sounds/ships/creaking_ship/CreakingShip.tscn" id="5_gokuw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tagk"]
 radius = 1.02721
@@ -40,8 +39,6 @@ libraries = {
 }
 
 [node name="Dialogue" parent="." instance=ExtResource("3_gdptf")]
-inital_dialog = ["Zeit für die Weisheit des Tages:"]
-follow_up_dialog = ["Wenn man in die falsche Richtung läuft, hat es keinen Zweck, das Tempo zu erhöhen.", "Das Leben ist wie eine Schachtel Pralinen. Man weiß nie, was man bekommt.", "Wie viele Dinge es gibt, die ich nicht brauche!", "Weniger ist mehr.", "Lieber nichts besitzen, als dann zu verlieren."]
 name_of_speaker = ["Forrest", "Albert", "Marcus", "Sokrates"]
 
 [node name="Anchor" type="Node3D" parent="." groups=["anchor"]]
@@ -50,7 +47,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.59152, 0)
 [node name="pointer" parent="Anchor" instance=ExtResource("4_qs7us")]
 process_priority = -1
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.05669, 4.39667)
-
-[node name="CreakingShip" parent="." instance=ExtResource("5_gokuw")]
 
 [editable path="Model"]

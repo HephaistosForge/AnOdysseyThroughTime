@@ -211,6 +211,7 @@ player = NodePath("../VikingBoat")
 [node name="SFX" parent="Camera3D" instance=ExtResource("7_kw4om")]
 
 [node name="BackgroundMusic" parent="Camera3D" instance=ExtResource("8_c8pn8")]
+bus = &"Master"
 
 [node name="ObstacleGenerator" parent="." instance=ExtResource("7_11iuw")]
 
