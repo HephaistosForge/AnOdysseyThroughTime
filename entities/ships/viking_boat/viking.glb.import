@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dtimnj6efcpbn"
-path="res://.godot/imported/viking.glb-aca006630416c2833a64867acea6798b.scn"
+path="res://.godot/imported/viking.glb-222938629119f5a87f87f5f0ffea0f0c.scn"
 
 [deps]
 
-source_file="res://entities/ships/vinking_boat/viking.glb"
-dest_files=["res://.godot/imported/viking.glb-aca006630416c2833a64867acea6798b.scn"]
+source_file="res://entities/ships/viking_boat/viking.glb"
+dest_files=["res://.godot/imported/viking.glb-222938629119f5a87f87f5f0ffea0f0c.scn"]
 
 [params]
 

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://j20eipwd8q0r"]
+[gd_scene load_steps=2 format=3 uid="uid://di3jphobrrtku"]
 
-[ext_resource type="PackedScene" uid="uid://dtimnj6efcpbn" path="res://entities/ships/vinking_boat/viking.glb" id="1_k0swx"]
+[ext_resource type="PackedScene" uid="uid://dtimnj6efcpbn" path="res://entities/ships/viking_boat/viking.glb" id="1_k0swx"]
 
 [node name="Model" instance=ExtResource("1_k0swx")]
 
