@@ -1,14 +1,14 @@
-[gd_scene load_steps=36 format=3 uid="uid://shubxluqhdt1"]
+[gd_scene load_steps=37 format=3 uid="uid://bdn4e5fvf2ddy"]
 
 [ext_resource type="Shader" path="res://world/weather/sky.gdshader" id="1_8oio7"]
-[ext_resource type="PackedScene" uid="uid://0krnl6i3o5ap" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
+[ext_resource type="PackedScene" uid="uid://d4m2y6822lui7" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
 [ext_resource type="Script" path="res://world/ocean/world_environment.gd" id="2_tqd1p"]
 [ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="3_k8sgn"]
 [ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="3_tq8ml"]
 [ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
 [ext_resource type="PackedScene" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
 [ext_resource type="PackedScene" uid="uid://beidarsyit5ya" path="res://audio/sounds/SFX/SFX.tscn" id="7_kw4om"]
-[ext_resource type="PackedScene" path="res://audio/music/BackgroundMusic.tscn" id="8_c8pn8"]
+[ext_resource type="PackedScene" uid="uid://bxrlqftyi6s7a" path="res://audio/music/BackgroundMusic.tscn" id="8_c8pn8"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_ngqft"]
 [ext_resource type="PackedScene" uid="uid://dxc1ht5s5puis" path="res://ui/dialogue/TutorialInformation/TutorialInformation.tscn" id="8_uvx3f"]
 [ext_resource type="PackedScene" uid="uid://drf1jxsbswk04" path="res://world/maelstrom/maelstrom_area.tscn" id="9_5csxv"]
@@ -16,12 +16,13 @@
 [ext_resource type="Script" path="res://world/ocean/ShipGenerator.gd" id="11_3dgxt"]
 [ext_resource type="PackedScene" uid="uid://dmr36cwesw5lo" path="res://ui/hud/ship_selection.tscn" id="11_5i74g"]
 [ext_resource type="PackedScene" uid="uid://csp58fl03tqp4" path="res://ui/hud/score_ui.tscn" id="12_s5xsu"]
-[ext_resource type="PackedScene" path="res://entities/obstacles/island.tscn" id="13_13k4f"]
+[ext_resource type="PackedScene" uid="uid://dwm2nfteihmdi" path="res://entities/obstacles/island.tscn" id="13_13k4f"]
 [ext_resource type="PackedScene" uid="uid://dt7a3340jp07c" path="res://entities/interactibles/coin_generator.tscn" id="13_666sy"]
 [ext_resource type="PackedScene" uid="uid://b817vbef7oyde" path="res://entities/golden_monkey.glb" id="14_3r2b0"]
 [ext_resource type="PackedScene" uid="uid://dq63okwrrgho0" path="res://entities/ships/viking_boat/viking_boat.tscn" id="16_vmsvu"]
-[ext_resource type="Material" uid="uid://b0lfutlu3a884" path="res://world/ocean/water_height.tres" id="21_hpaqx"]
+[ext_resource type="Material" path="res://world/ocean/water_height.tres" id="21_hpaqx"]
 [ext_resource type="Texture2D" uid="uid://cpkr5tbpmpy4y" path="res://world/ocean/ShaderToImage_1px.png" id="21_kjflj"]
+[ext_resource type="PackedScene" uid="uid://46hl56rxpv0r" path="res://ui/hud/to_menu_confirm/ToMenuConfirm.tscn" id="21_uynll"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iekdp"]
 shader = ExtResource("1_8oio7")
@@ -263,5 +264,8 @@ material = ExtResource("21_hpaqx")
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("21_kjflj")
+
+[node name="ToMenuConfirm" parent="." instance=ExtResource("21_uynll")]
+visible = false
 
 [connection signal="body_entered" from="GameManager/GoalArea" to="GameManager" method="_on_goal_area_body_entered"]
