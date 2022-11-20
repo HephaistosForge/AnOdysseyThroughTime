@@ -18,6 +18,7 @@ func _init_highscore():
 		for i in range(10):
 			highscores.append(0)
 		game_data["highscore"] = highscores
+		game_data["highscore"].sort().reverse()
 
 
 func check_for_new_highscore(_new_score) -> bool:
@@ -30,6 +31,7 @@ func check_for_new_highscore(_new_score) -> bool:
 	if insert_at_index != null:
 		game_data["highscore"].insert(insert_at_index, _new_score)
 		game_data["highscore"].pop_back()
+		game_data["highscore"].sort().reverse()
 		_save_game()
 		return true
 	return false
