@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpbyu3jnuar5o"]
+[gd_scene load_steps=2 format=3 uid="uid://brvacwouxvc1f"]
 
-[ext_resource type="Theme" uid="uid://b1qnudk0gm0it" path="res://ui/ui_theme.tres" id="1_aah1o"]
-[ext_resource type="Script" path="res://ui/game_end/loose.gd" id="2_0fadl"]
+[ext_resource type="Theme" uid="uid://ca3ibtddlkiye" path="res://ui/ui_theme.tres" id="1_qny5b"]
 
 [node name="loose" type="PanelContainer"]
 anchors_preset = 15
@@ -9,44 +8,38 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_aah1o")
-script = ExtResource("2_0fadl")
+theme = ExtResource("1_qny5b")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
 offset_right = 1152.0
-offset_bottom = 648.0
+offset_bottom = 657.0
 
 [node name="header" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_right = 1152.0
-offset_bottom = 130.0
+offset_bottom = 141.0
 theme_override_constants/margin_top = 50
 
 [node name="Label" type="Label" parent="VBoxContainer/header"]
-layout_mode = 2
-offset_left = 337.0
+offset_left = 410.0
 offset_top = 50.0
-offset_right = 814.0
-offset_bottom = 130.0
+offset_right = 741.0
+offset_bottom = 141.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 64
 text = "Hit or Miss"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
-offset_top = 134.0
+offset_top = 145.0
 offset_right = 1152.0
-offset_bottom = 298.0
+offset_bottom = 319.0
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_bottom = 50
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
-layout_mode = 2
-offset_left = 184.0
+offset_left = 301.0
 offset_top = 50.0
-offset_right = 967.0
-offset_bottom = 114.0
+offset_right = 850.0
+offset_bottom = 124.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Du wurdest erwischt
@@ -54,55 +47,49 @@ Weiche den Gefahren aus und finde den Schatz!"
 horizontal_alignment = 1
 
 [node name="Score" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
-offset_top = 302.0
+offset_top = 323.0
 offset_right = 1152.0
-offset_bottom = 515.0
+offset_bottom = 550.0
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 54
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 54
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Score"]
-layout_mode = 2
 offset_top = 54.0
 offset_right = 1152.0
-offset_bottom = 159.0
+offset_bottom = 173.0
 
 [node name="Label" type="Label" parent="VBoxContainer/Score/VBoxContainer"]
-layout_mode = 2
-offset_left = 453.0
-offset_right = 698.0
-offset_bottom = 42.0
+offset_left = 489.0
+offset_right = 662.0
+offset_bottom = 48.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Dein Score:"
 
 [node name="score" type="Label" parent="VBoxContainer/Score/VBoxContainer"]
-layout_mode = 2
-offset_left = 513.0
-offset_top = 46.0
-offset_right = 638.0
-offset_bottom = 78.0
+offset_left = 530.0
+offset_top = 52.0
+offset_right = 621.0
+offset_bottom = 89.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "<score>"
 
 [node name="Label2" type="Label" parent="VBoxContainer/Score/VBoxContainer"]
-layout_mode = 2
-offset_left = 432.0
-offset_top = 82.0
-offset_right = 719.0
-offset_bottom = 105.0
+offset_left = 474.0
+offset_top = 93.0
+offset_right = 677.0
+offset_bottom = 119.0
 size_flags_horizontal = 4
 text = "optional: Neuer Highscore"
 
 [node name="footer" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
-offset_left = 221.0
-offset_top = 519.0
-offset_right = 930.0
-offset_bottom = 616.0
+offset_left = 299.0
+offset_top = 554.0
+offset_right = 852.0
+offset_bottom = 657.0
 size_flags_horizontal = 4
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 50
@@ -110,25 +97,22 @@ theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/footer"]
-layout_mode = 2
 offset_top = 50.0
-offset_right = 709.0
-offset_bottom = 97.0
+offset_right = 553.0
+offset_bottom = 103.0
 theme_override_constants/separation = 40
 
 [node name="play_button" type="Button" parent="VBoxContainer/footer/HBoxContainer"]
-layout_mode = 2
-offset_right = 311.0
-offset_bottom = 47.0
+offset_right = 229.0
+offset_bottom = 53.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Erneut spielen"
 
 [node name="menu_button" type="Button" parent="VBoxContainer/footer/HBoxContainer"]
-layout_mode = 2
-offset_left = 351.0
-offset_right = 709.0
-offset_bottom = 47.0
+offset_left = 269.0
+offset_right = 553.0
+offset_bottom = 53.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Zurück zum Menü"
