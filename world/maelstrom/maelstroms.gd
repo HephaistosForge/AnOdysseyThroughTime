@@ -27,7 +27,7 @@ func _ready():
 	#	maelstroms.append(world_to_uv(maelstrom.position))
 	
 	var pos;
-	for i in 45:
+	for i in 50:
 		var trials = 0
 		while true:
 			pos = Vector3(randf(), randf(), .2)

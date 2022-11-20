@@ -20,8 +20,11 @@ var obstacle_mass = 10
 
 func _ready():
 	spawn_timer.start(spawn_time)
-
-func _on_spawn_timer_timeout() -> void:
+	
+	for i in 25:
+		spawn()
+	
+func spawn():
 	var next_obstacle = randi() % OBSTACLE_PREFABS.size()
 	var size = Globals.map_size
 	var rand_position = Vector3(size.x*(randf()-0.5), 0, size.y*(randf()-0.5))
@@ -40,5 +43,9 @@ func _on_spawn_timer_timeout() -> void:
 	var _error = tween.tween_property(obstacle, "position", rand_position, 3).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)
 	#_error = tween.parallel().tween_property(obstacle, "scale", Vector3.ONE, 1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
 
+	
+
+func _on_spawn_timer_timeout() -> void:
+	spawn()
 	
 	spawn_timer.start(spawn_time)
