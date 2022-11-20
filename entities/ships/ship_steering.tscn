@@ -7,17 +7,20 @@ script = ExtResource("1_8abo1")
 
 [node name="RayForwardVec" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93302, 0)
+visible = false
 target_position = Vector3(0, 0, -10)
 debug_shape_custom_color = Color(1, 0, 0, 1)
 debug_shape_thickness = 4
 
 [node name="RayVelocity" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93302, 0)
+visible = false
 target_position = Vector3(0, 0, -10)
 debug_shape_custom_color = Color(0.411765, 0.462745, 1, 1)
 
 [node name="RayAcceleration" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93302, 0)
+visible = false
 target_position = Vector3(0, 0, -10)
 debug_shape_custom_color = Color(0, 0.643137, 0.298039, 1)
 debug_shape_thickness = 4
