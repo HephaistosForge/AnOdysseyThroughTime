@@ -103,7 +103,7 @@ offset_bottom = 55.0
 layout_mode = 2
 offset_right = 960.0
 offset_bottom = 23.0
-text = "Shader aktivieren (Achtung: Benötigt leistungsfähige gpu!)"
+text = "SSAO, SSIL, SSR und Schatten aktivieren (Achtung: Benötigt leistungsfähige gpu!)"
 
 [node name="ToggleShaderButton" type="CheckButton" parent="VBoxContainer/body/VBoxContainer/MarginContainer2"]
 layout_mode = 2
