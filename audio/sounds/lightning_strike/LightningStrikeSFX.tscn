@@ -5,7 +5,7 @@
 
 [node name="LightningStrikeSFX" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_enoyq")
-volume_db = 35.0
+volume_db = 10.0
 max_db = 4.0
 bus = &"Lightning Strike"
 script = ExtResource("2_ev0cy")

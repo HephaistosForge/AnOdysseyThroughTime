@@ -5,7 +5,8 @@
 
 [node name="BubblesSFX" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_n4bj6")
-volume_db = 30.0
+volume_db = 80.0
+max_db = 4.0
 autoplay = true
 bus = &"Bubbles"
 script = ExtResource("2_52v8m")
