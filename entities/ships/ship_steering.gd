@@ -18,7 +18,7 @@ class_name Ship
 @export var right_move_anim = "move_right"
 @export var left_move_anim = "move_left"
 
-@export var accelerate_only_on_accelerate_signal = true
+@export var accelerate_only_on_accelerate_signal = false
 
 var anchor
 
@@ -58,7 +58,7 @@ func accelerate_on_signal(vector):
 
 func _ready():
 	if accelerate_only_on_accelerate_signal:
-		parent.get_node("Model").connect("accelerate", accelerate_on_signal)
+		assert(parent.get_node("Model").accelerate.connect(accelerate_on_signal) == 0)
 
 func point_anchor():
 	anchor = get_tree().get_first_node_in_group("anchor")
@@ -80,7 +80,7 @@ func normalize_vec_with_max(vec, max_val):
 	return vec
 
 @onready var parent = get_parent()
-@onready var anim_player = get_parent().get_node("Model").get_node("AnimationPlayer")
+# @onready var anim_player = get_parent().get_node("Model").get_node("AnimationPlayer")
 
 func _physics_process(_delta: float) -> void:
 	point_anchor()

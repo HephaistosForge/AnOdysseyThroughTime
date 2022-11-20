@@ -11,8 +11,7 @@ func _on_mouse_exited():
 	print("Exited")
 
 
-func _on_input_event(camera, event, click_position, click_normal, shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == 1:
-			var pos = click_position
-			gameManager.start_game(click_position)
+func _on_input_event(_camera, event, click_position, _click_normal, _shape_idx):
+	# Todo: Werden _camera, _click_normal und _shape_idx in dieser Methode benötigt??
+	if event is InputEventMouseButton and event.button_index == 1:
+		gameManager.start_game(click_position)

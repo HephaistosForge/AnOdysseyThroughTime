@@ -10,7 +10,7 @@ func _ready():
 			model = c
 	assert(model != null)
 
-func rm(pos):
+func rm():
 	if rmoved:
 		return
 	else:
