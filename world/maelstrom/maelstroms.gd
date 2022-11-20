@@ -119,10 +119,10 @@ func _physics_process(_delta):
 			px = clamp(px, 0, 511)
 			py = clamp(py, 0, 511)
 			var h = depth_image.get_pixel(px, py)
-			if object.is_in_group("boat"):
+			#if object.is_in_group("boat"):
 				#print([px, py], h)
-				var new_pos = h.r * 45 - 45
-				object.position.y += (new_pos - object.position.y) / 7
+			var new_pos = h.r * 45 - 45
+			object.position.y += (new_pos - object.position.y) / 7
 		
 #	for object in get_tree().get_nodes_in_group("pullable"):
 #		object.position.y = -height(object.position / 512 + Vector3(0.5, 0.5, 0.5))
