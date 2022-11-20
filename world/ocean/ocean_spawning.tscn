@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bb783asslu8hn"]
+[gd_scene load_steps=12 format=3 uid="uid://bb783asslu8hn"]
 
 [ext_resource type="Texture2D" uid="uid://cr5j4078oescm" path="res://ui/menu/start_location_selection.png" id="2_diu3m"]
 [ext_resource type="Script" path="res://managers/GoalArea.gd" id="5_j0cqt"]
+[ext_resource type="Theme" uid="uid://ca3ibtddlkiye" path="res://ui/ui_theme.tres" id="6_ls5u0"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_mrdwr"]
 [ext_resource type="Texture2D" uid="uid://c176nk71t4ge3" path="res://ui/Rectangle.png" id="11_wd3o7"]
 [ext_resource type="Script" path="res://managers/SpawnArea.gd" id="12_x7p0s"]
@@ -173,6 +174,22 @@ script = ExtResource("5_j0cqt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameManager/GoalArea"]
 shape = SubResource("SphereShape3D_m083o")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 42.0
+offset_top = 16.0
+offset_right = 1103.0
+offset_bottom = 92.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+offset_top = 26.0
+offset_right = 1061.0
+offset_bottom = 49.0
+mouse_filter = 1
+theme = ExtResource("6_ls5u0")
+text = "  Wähle deinen Startpunkt auf der roten Linie. Noch niemand traute sich hinter diese Grenze..."
 
 [connection signal="input_event" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_input_event"]
 [connection signal="mouse_entered" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_mouse_entered"]
