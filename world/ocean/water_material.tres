@@ -1,0 +1,44 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://btag4dqmfem27"]
+
+[ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_jpsc7"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gnhkk"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qece7"]
+noise = SubResource("FastNoiseLite_gnhkk")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xbt3l"]
+frequency = 0.206
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ya8hl"]
+noise = SubResource("FastNoiseLite_xbt3l")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_u7756"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8x484"]
+noise = SubResource("FastNoiseLite_u7756")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_jpsc7")
+shader_parameter/iChannel0 = SubResource("NoiseTexture2D_qece7")
+shader_parameter/iChannel1 = SubResource("NoiseTexture2D_ya8hl")
+shader_parameter/iChannel2 = SubResource("NoiseTexture2D_8x484")
+shader_parameter/maelstrom_positions0 = null
+shader_parameter/maelstrom_positions1 = Basis(0.1, 0.3, 0.8, 0.2, 0.9, 0.4, 0, 0, 1)
+shader_parameter/maelstrom_positions10 = null
+shader_parameter/maelstrom_positions11 = null
+shader_parameter/maelstrom_positions12 = null
+shader_parameter/maelstrom_positions13 = null
+shader_parameter/maelstrom_positions14 = null
+shader_parameter/maelstrom_positions15 = null
+shader_parameter/maelstrom_positions2 = null
+shader_parameter/maelstrom_positions3 = null
+shader_parameter/maelstrom_positions4 = null
+shader_parameter/maelstrom_positions5 = null
+shader_parameter/maelstrom_positions6 = null
+shader_parameter/maelstrom_positions7 = null
+shader_parameter/maelstrom_positions8 = null
+shader_parameter/maelstrom_positions9 = null
+shader_parameter/screen_resolution = null
+shader_parameter/water_color = Color(0.329412, 0.498039, 0.592157, 1)

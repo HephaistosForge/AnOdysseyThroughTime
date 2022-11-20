@@ -1,11 +1,11 @@
-[gd_scene load_steps=31 format=3 uid="uid://bdn4e5fvf2ddy"]
+[gd_scene load_steps=28 format=3 uid="uid://r6507up7mfbm"]
 
 [ext_resource type="Shader" path="res://world/weather/sky.gdshader" id="1_8oio7"]
-[ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_ddwd0"]
 [ext_resource type="PackedScene" uid="uid://0krnl6i3o5ap" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
+[ext_resource type="Material" uid="uid://btag4dqmfem27" path="res://world/ocean/water_material.tres" id="2_o2byj"]
 [ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="3_k8sgn"]
 [ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
-[ext_resource type="PackedScene" uid="uid://cx01enkvm0qdr" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
+[ext_resource type="PackedScene" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
 [ext_resource type="PackedScene" uid="uid://beidarsyit5ya" path="res://audio/sounds/SFX/SFX.tscn" id="7_kw4om"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_ngqft"]
 [ext_resource type="PackedScene" uid="uid://dxc1ht5s5puis" path="res://ui/dialogue/TutorialInformation/TutorialInformation.tscn" id="8_uvx3f"]
@@ -14,10 +14,12 @@
 [ext_resource type="Script" path="res://world/ocean/ShipGenerator.gd" id="11_3dgxt"]
 [ext_resource type="PackedScene" uid="uid://dmr36cwesw5lo" path="res://ui/hud/ship_selection.tscn" id="11_5i74g"]
 [ext_resource type="PackedScene" uid="uid://csp58fl03tqp4" path="res://ui/hud/score_ui.tscn" id="12_s5xsu"]
-[ext_resource type="PackedScene" uid="uid://dwm2nfteihmdi" path="res://entities/obstacles/island.tscn" id="13_13k4f"]
+[ext_resource type="PackedScene" path="res://entities/obstacles/island.tscn" id="13_13k4f"]
 [ext_resource type="PackedScene" uid="uid://dt7a3340jp07c" path="res://entities/interactibles/coin_generator.tscn" id="13_666sy"]
 [ext_resource type="PackedScene" uid="uid://b817vbef7oyde" path="res://entities/golden_monkey.glb" id="14_3r2b0"]
 [ext_resource type="PackedScene" uid="uid://dq63okwrrgho0" path="res://entities/ships/viking_boat/viking_boat.tscn" id="16_vmsvu"]
+[ext_resource type="Material" uid="uid://b0lfutlu3a884" path="res://world/ocean/water_height.tres" id="21_hpaqx"]
+[ext_resource type="Texture2D" uid="uid://cpkr5tbpmpy4y" path="res://world/ocean/ShaderToImage_1px.png" id="21_kjflj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iekdp"]
 shader = ExtResource("1_8oio7")
@@ -61,55 +63,20 @@ fog_light_color = Color(0.478431, 0.509804, 0.560784, 1)
 volumetric_fog_density = 0.0188
 volumetric_fog_albedo = Color(0.482353, 0.521569, 0.717647, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_gnhkk"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qece7"]
-noise = SubResource("FastNoiseLite_gnhkk")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_xbt3l"]
-frequency = 0.206
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ya8hl"]
-noise = SubResource("FastNoiseLite_xbt3l")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_u7756"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8x484"]
-noise = SubResource("FastNoiseLite_u7756")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hqk6h"]
-render_priority = 0
-shader = ExtResource("1_ddwd0")
-shader_parameter/iChannel0 = SubResource("NoiseTexture2D_qece7")
-shader_parameter/iChannel1 = SubResource("NoiseTexture2D_ya8hl")
-shader_parameter/iChannel2 = SubResource("NoiseTexture2D_8x484")
-shader_parameter/maelstrom_positions0 = null
-shader_parameter/maelstrom_positions1 = Basis(0.1, 0.3, 0.8, 0.2, 0.9, 0.4, 0, 0, 1)
-shader_parameter/maelstrom_positions10 = null
-shader_parameter/maelstrom_positions11 = null
-shader_parameter/maelstrom_positions12 = null
-shader_parameter/maelstrom_positions13 = null
-shader_parameter/maelstrom_positions14 = null
-shader_parameter/maelstrom_positions15 = null
-shader_parameter/maelstrom_positions2 = null
-shader_parameter/maelstrom_positions3 = null
-shader_parameter/maelstrom_positions4 = null
-shader_parameter/maelstrom_positions5 = null
-shader_parameter/maelstrom_positions6 = null
-shader_parameter/maelstrom_positions7 = null
-shader_parameter/maelstrom_positions8 = null
-shader_parameter/maelstrom_positions9 = null
-shader_parameter/screen_resolution = null
-shader_parameter/water_color = Color(0.329412, 0.498039, 0.592157, 1)
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_iacdl"]
-material = SubResource("ShaderMaterial_hqk6h")
+material = ExtResource("2_o2byj")
 size = Vector2(1800, 1800)
 subdivide_width = 128
 subdivide_depth = 128
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_02y5e"]
+viewport_path = NodePath("SubViewport")
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_si2jr"]
 radius = 35.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_b6r5k"]
+viewport_path = NodePath("SubViewport")
 
 [node name="ocean" type="Node3D" groups=["ocean"]]
 
@@ -121,6 +88,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 mesh = SubResource("PlaneMesh_iacdl")
 script = ExtResource("3_k8sgn")
 maelstroms = []
+water_height = SubResource("ViewportTexture_02y5e")
 
 [node name="Maelstroms" type="Node3D" parent="WaterShader"]
 
@@ -240,5 +208,19 @@ transform = Transform3D(1.58046, -0.523911, -1.108, 0.62931, 1.89841, 0, 1.05172
 
 [node name="VikingBoat" parent="." instance=ExtResource("16_vmsvu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 190.153)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("ViewportTexture_b6r5k")
+flip_v = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+render_target_update_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="SubViewport"]
+material = ExtResource("21_hpaqx")
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("21_kjflj")
 
 [connection signal="body_entered" from="GameManager/GoalArea" to="GameManager" method="_on_goal_area_body_entered"]
