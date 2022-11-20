@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c132qe3qy4d8a"]
+[gd_scene load_steps=4 format=3 uid="uid://c132qe3qy4d8a"]
 
-[ext_resource type="Theme" uid="uid://b1qnudk0gm0it" path="res://ui/ui_theme.tres" id="1_2a8rb"]
+[ext_resource type="Theme" uid="uid://cubpqq8pqv8re" path="res://ui/ui_theme.tres" id="1_2a8rb"]
 [ext_resource type="Script" path="res://ui/options/options.gd" id="1_kt124"]
+[ext_resource type="Script" path="res://ui/options/toggle_fullscreen_button.gd" id="3_kkmi1"]
 
 [node name="options" type="PanelContainer"]
 anchors_preset = 15
@@ -13,18 +14,15 @@ theme = ExtResource("1_2a8rb")
 script = ExtResource("1_kt124")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="header" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 130.0
 theme_override_constants/margin_top = 50
 
 [node name="Label" type="Label" parent="VBoxContainer/header"]
-layout_mode = 2
 offset_left = 264.0
 offset_top = 50.0
 offset_right = 887.0
@@ -34,82 +32,110 @@ theme_override_font_sizes/font_size = 64
 text = "Einstellungen"
 
 [node name="body" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_top = 134.0
 offset_right = 1152.0
-offset_bottom = 350.0
+offset_bottom = 395.0
 theme_override_constants/margin_left = 96
 theme_override_constants/margin_top = 56
 theme_override_constants/margin_right = 96
 theme_override_constants/margin_bottom = 56
 
 [node name="menu_frame" type="PanelContainer" parent="VBoxContainer/body"]
-layout_mode = 2
 offset_left = 96.0
 offset_top = 56.0
 offset_right = 1056.0
-offset_bottom = 160.0
+offset_bottom = 205.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/body"]
-layout_mode = 2
 offset_left = 96.0
 offset_top = 56.0
 offset_right = 1056.0
-offset_bottom = 160.0
+offset_bottom = 205.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/body/VBoxContainer"]
+offset_right = 960.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
-layout_mode = 2
-offset_right = 960.0
-offset_bottom = 23.0
+offset_top = 4.0
+offset_right = 119.0
+offset_bottom = 27.0
+size_flags_horizontal = 0
 
-[node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer"]
-layout_mode = 2
-offset_right = 960.0
+[node name="ToggleFullsceeenLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer"]
+offset_right = 119.0
 offset_bottom = 23.0
-text = "placeholder"
+size_flags_vertical = 1
+text = "> Anzeige <"
+
+[node name="ToggleFullscreenButton" type="MenuButton" parent="VBoxContainer/body/VBoxContainer/MarginContainer"]
+offset_right = 119.0
+offset_bottom = 23.0
+item_count = 3
+popup/item_0/text = "Fenstermodus"
+popup/item_0/id = 0
+popup/item_1/text = "Vollbildschirm (Rahmenlos)"
+popup/item_1/id = 1
+popup/item_2/text = "Vollbildschirm (Exklusiv)"
+popup/item_2/id = 2
+script = ExtResource("3_kkmi1")
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
-layout_mode = 2
-offset_top = 27.0
+offset_top = 31.0
 offset_right = 960.0
-offset_bottom = 50.0
+offset_bottom = 55.0
 
-[node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer2"]
-layout_mode = 2
+[node name="ToggleShaderLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer2"]
 offset_right = 960.0
 offset_bottom = 23.0
-text = "placeholder"
+text = "Shader aktivieren (Achtung: Benötigt leistungsfähige gpu!)"
+
+[node name="ToggleShaderButton" type="CheckButton" parent="VBoxContainer/body/VBoxContainer/MarginContainer2"]
+offset_right = 960.0
+offset_bottom = 24.0
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
-layout_mode = 2
-offset_top = 54.0
+offset_top = 59.0
 offset_right = 960.0
-offset_bottom = 77.0
+offset_bottom = 102.0
 
-[node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer3"]
-layout_mode = 2
+[node name="SoundVolume" type="VBoxContainer" parent="VBoxContainer/body/VBoxContainer/MarginContainer3"]
+offset_right = 960.0
+offset_bottom = 43.0
+
+[node name="SoundVolumeLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer3/SoundVolume"]
 offset_right = 960.0
 offset_bottom = 23.0
-text = "placeholder"
+text = "Lautstärke Hintergrundmusik"
+
+[node name="SoundVolumeSlider" type="HSlider" parent="VBoxContainer/body/VBoxContainer/MarginContainer3/SoundVolume"]
+offset_top = 27.0
+offset_right = 960.0
+offset_bottom = 43.0
 
 [node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
-layout_mode = 2
-offset_top = 81.0
+offset_top = 106.0
 offset_right = 960.0
-offset_bottom = 104.0
+offset_bottom = 149.0
 
-[node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer4"]
-layout_mode = 2
+[node name="SFXVolume" type="VBoxContainer" parent="VBoxContainer/body/VBoxContainer/MarginContainer4"]
+offset_right = 960.0
+offset_bottom = 43.0
+
+[node name="SFXVolumeLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer4/SFXVolume"]
 offset_right = 960.0
 offset_bottom = 23.0
-text = "placeholder"
+text = "Lautstärke Soundeffekte"
+
+[node name="SFXVolumeSlider" type="HSlider" parent="VBoxContainer/body/VBoxContainer/MarginContainer4/SFXVolume"]
+offset_top = 27.0
+offset_right = 960.0
+offset_bottom = 43.0
 
 [node name="footer" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_left = 500.0
-offset_top = 354.0
+offset_top = 399.0
 offset_right = 651.0
-offset_bottom = 401.0
+offset_bottom = 446.0
 size_flags_horizontal = 4
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 0
@@ -117,7 +143,6 @@ theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
 [node name="back_button" type="Button" parent="VBoxContainer/footer"]
-layout_mode = 2
 offset_right = 151.0
 offset_bottom = 47.0
 size_flags_horizontal = 4
