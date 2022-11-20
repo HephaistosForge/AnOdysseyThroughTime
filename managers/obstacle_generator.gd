@@ -9,6 +9,7 @@ const OBSTACLE_PREFABS: Array[PackedScene] = [
 	preload("res://entities/obstacles/shipwreck.tscn"),
 	preload("res://entities/obstacles/tree.tscn"),
 ]
+var maelstrom = null
 
 var obstacle_mass = 10
 
@@ -20,6 +21,8 @@ var obstacle_mass = 10
 
 func _ready():
 	spawn_timer.start(spawn_time)
+	if get_tree().get_first_node_in_group("maelstroms"):
+		maelstrom = get_tree().get_first_node_in_group("maelstroms")
 	
 	for i in 25:
 		spawn()
@@ -35,6 +38,10 @@ func spawn():
 	
 	var obstacle = OBSTACLE_PREFABS[next_obstacle].instantiate()
 	self.add_child(obstacle)
+	if maelstrom:
+		var h = maelstrom.get_depth_at_world_xz(rand_position.x, rand_position.z)
+		if h != null:
+			rand_position.y = h
 	obstacle.position = rand_position - Vector3(0,20,0)
 	#obstacle.scale *= 10
 	#obstacle.mass = obstacle_mass

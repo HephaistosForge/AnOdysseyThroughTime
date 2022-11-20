@@ -12,7 +12,7 @@ radius = 1.0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u04p4"]
 render_priority = 1
 transparency = 1
-albedo_color = Color(0.913725, 1, 0.305882, 0.627451)
+albedo_color = Color(0.764706, 0.694118, 0.372549, 0.627451)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_0jjhy"]
 material = SubResource("StandardMaterial3D_u04p4")
@@ -23,7 +23,7 @@ height = 0.001
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qep6h"]
 render_priority = 1
 transparency = 1
-albedo_color = Color(1, 0.929412, 0.345098, 0.588235)
+albedo_color = Color(0.764706, 0.694118, 0.372549, 0.627451)
 
 [sub_resource type="TorusMesh" id="TorusMesh_ptqcc"]
 material = SubResource("StandardMaterial3D_qep6h")
@@ -47,11 +47,11 @@ texture = ExtResource("2_qedqn")
 [node name="DespawnTimer" type="Timer" parent="."]
 
 [node name="SpawnAreaIndicator" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.76922, 0, 0, 0, 1, 0, 0, 0, 1.69233, 0, 0.4, 0)
+transform = Transform3D(1.76922, 0, 0, 0, 1, 0, 0, 0, 1.69233, 0, 4.45002, 0)
 mesh = SubResource("CylinderMesh_0jjhy")
 
 [node name="SpawnProgressIndicator" type="MeshInstance3D" parent="."]
-transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.4, 0)
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4.51886, 0)
 mesh = SubResource("TorusMesh_ptqcc")
 skeleton = NodePath("")
 

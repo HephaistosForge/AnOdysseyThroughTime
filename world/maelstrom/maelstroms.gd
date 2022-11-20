@@ -90,6 +90,15 @@ func height(uv):
 
 var time_i = 0
 
+func get_depth_at_world_xz(x, z):
+	var px = (x+mesh_size/2.0) /mesh_size * 512
+	var py = (z+mesh_size/2.0) / mesh_size * 512
+	px = clamp(px, 0, 511)
+	py = clamp(py, 0, 511)
+	if depth_image == null:
+		return null
+	return depth_image.get_pixel(px, py).r * 45 - 45
+
 func _physics_process(_delta):
 	for object in get_tree().get_nodes_in_group("pullable"):
 		var force = Vector3.ZERO
@@ -114,14 +123,10 @@ func _physics_process(_delta):
 	if depth_image != null:
 		for object in get_tree().get_nodes_in_group("swimming"):
 			# img.lock()
-			var px = (object.position.x+mesh_size/2.0) /mesh_size * 512
-			var py = (object.position.z+mesh_size/2.0) / mesh_size * 512
-			px = clamp(px, 0, 511)
-			py = clamp(py, 0, 511)
-			var h = depth_image.get_pixel(px, py)
+			
 			#if object.is_in_group("boat"):
 				#print([px, py], h)
-			var new_pos = h.r * 45 - 45
+			var new_pos = get_depth_at_world_xz(object.position.x, object.position.z)
 			object.position.y += (new_pos - object.position.y) / 7
 		
 #	for object in get_tree().get_nodes_in_group("pullable"):

@@ -17,9 +17,21 @@ var active = false
 func _ready() -> void:
 	sprite.visible = false
 	var tween = create_tween()
-	var _error = tween.tween_property(spawn_indicator, "scale", Vector3(1,1,1), spawn_time-0.05)
-	_error = tween.tween_property(spawn_indicator, "visible", false, 0.05)
-	_error = tween.parallel().tween_property(spawn_area_indicator, "visible", false, 0.05)
+	var orig_scale = spawn_area_indicator.scale
+	spawn_area_indicator.scale = Vector3.ZERO
+	tween.tween_property(spawn_area_indicator, "scale", orig_scale, 1) \
+		.set_ease(Tween.EASE_OUT) \
+		.set_trans(Tween.TRANS_ELASTIC)
+	
+	var _error = tween.parallel().tween_property(spawn_indicator, "scale", orig_scale, spawn_time-0.05)
+	# _error = tween.tween_property(spawn_indicator, "visible", false, 0.05)
+	# _error = tween.parallel().tween_property(spawn_area_indicator, "visible", false, 0.05)
+	_error = tween.tween_property(spawn_area_indicator, "scale", Vector3.ZERO, 1) \
+		.set_ease(Tween.EASE_IN) \
+		.set_trans(Tween.TRANS_ELASTIC)
+	_error = tween.parallel().tween_property(spawn_indicator, "scale", Vector3.ZERO, 1) \
+		.set_ease(Tween.EASE_IN) \
+		.set_trans(Tween.TRANS_ELASTIC)
 	_error = tween.tween_callback(set_active)
 
 
