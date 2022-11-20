@@ -10,6 +10,8 @@ const OBSTACLE_PREFABS: Array[PackedScene] = [
 	preload("res://entities/obstacles/tree.tscn"),
 ]
 
+var obstacle_mass = 5
+
 @export var spawn_time: float = 0.4
 
 @onready var spawn_timer: Timer = $SpawnTimer
@@ -33,6 +35,7 @@ func _on_spawn_timer_timeout() -> void:
 	self.add_child(obstacle)
 	obstacle.position = rand_position - Vector3(0,20,0)
 	obstacle.scale = Vector3.ONE * 0.5
+	obstacle.mass = obstacle_mass
 	
 	var tween = create_tween()
 	var _error = tween.tween_property(obstacle, "position", rand_position, 3).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_ELASTIC)

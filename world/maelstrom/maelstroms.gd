@@ -16,6 +16,8 @@ func world_to_uv(pos):
 	return Vector3(pos.x/mesh_size + 0.5, pos.z/mesh_size + 0.5, 0.2)
 
 func _ready():
+	var island = get_tree().get_first_node_in_group("island")
+	var island_as_uv = world_to_uv(island.position)
 	
 	mesh_size = mesh.size.x
 	if Globals.start_pos != Vector3.ZERO:
@@ -29,7 +31,7 @@ func _ready():
 		var trials = 0
 		while true:
 			pos = Vector3(randf(), randf(), .2)
-			if pos.distance_to(spawn_point_as_uv) > 0.15 and pos.length() > 0.17:
+			if pos.distance_to(spawn_point_as_uv) > 0.1 and pos.distance_to(island_as_uv) > 0.12:
 				if trials < 10:
 					for p in maelstroms:
 						if pos.distance_to(p) < 0.1:
@@ -37,7 +39,7 @@ func _ready():
 							continue
 				break
 		maelstroms.append(pos)
-		
+	
 	for i in len(maelstroms):
 		#mesh.material.set_shader_parameter("maelstrom_positions" + str(i), maelstroms[i])
 		var area = AREA_PREFAB.instantiate()
