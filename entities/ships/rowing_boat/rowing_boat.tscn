@@ -1,39 +1,60 @@
-[gd_scene load_steps=8 format=3 uid="uid://qkol5h6avnsc"]
+[gd_scene load_steps=14 format=3 uid="uid://qkol5h6avnsc"]
 
 [ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_tjyn1"]
-[ext_resource type="PackedScene" uid="uid://bkogtdpbfkee4" path="res://entities/ships/rowing_boat/rowing_boat.glb" id="2_1xris"]
 [ext_resource type="PackedScene" path="res://ui/dialogue/Dialogue.tscn" id="3_gdptf"]
+[ext_resource type="PackedScene" uid="uid://nsa4w708f5ix" path="res://entities/ships/rowing_boat/rowing_boat_model.tscn" id="4_q8k3c"]
 [ext_resource type="PackedScene" uid="uid://byaks36vihbmo" path="res://entities/ships/pointer.glb" id="4_qs7us"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tagk"]
 radius = 1.02721
 height = 5.68763
 
-[sub_resource type="Animation" id="Animation_yuown"]
-resource_name = "move_left"
+[sub_resource type="AnimationNodeAdd2" id="AnimationNodeAdd2_ruont"]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7q44v"]
-_data = {
-"move_left": SubResource("Animation_yuown")
-}
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ip0i7"]
+animation = &"LeftPaddling"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nhigr"]
+animation = &"RightPaddling"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_ybiim"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_4hptq"]
+
+[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_7jyfo"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_ehgf5"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_f6217"]
+graph_offset = Vector2(-365.66, 15)
+nodes/Add2/node = SubResource("AnimationNodeAdd2_ruont")
+nodes/Add2/position = Vector2(0, 180)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_nhigr")
+nodes/Animation/position = Vector2(-312, 304)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_ip0i7")
+"nodes/Animation 2/position" = Vector2(-320, 160)
+nodes/LeftScale/node = SubResource("AnimationNodeTimeScale_ybiim")
+nodes/LeftScale/position = Vector2(-140, 140)
+nodes/RightScale/node = SubResource("AnimationNodeTimeScale_4hptq")
+nodes/RightScale/position = Vector2(-140, 280)
+nodes/Seek/node = SubResource("AnimationNodeTimeSeek_7jyfo")
+nodes/Seek/position = Vector2(320, 180)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_ehgf5")
+nodes/TimeScale/position = Vector2(140, 180)
+nodes/output/position = Vector2(460, 160)
+node_connections = [&"output", 0, &"Seek", &"Add2", 0, &"LeftScale", &"Add2", 1, &"RightScale", &"LeftScale", 0, &"Animation 2", &"RightScale", 0, &"Animation", &"Seek", 0, &"TimeScale", &"TimeScale", 0, &"Add2"]
 
 [node name="RowingBoat" type="CharacterBody3D" groups=["boat", "pullable"]]
 
 [node name="ShipSteering" parent="." instance=ExtResource("1_tjyn1")]
 
-[node name="Model" parent="." instance=ExtResource("2_1xris")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.28475, 0)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.86076, -0.292078)
 shape = SubResource("CapsuleShape3D_3tagk")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_7q44v")
-}
-
 [node name="Dialogue" parent="." instance=ExtResource("3_gdptf")]
+inital_dialog = ["Wenn man in die falsche Richtung läuft, hat es keinen Zweck, das Tempo zu erhöhen...", "Das Leben ist wie eine Schachtel Pralinen. Man weiß nie, was man bekommt...", "Wie viele Dinge es gibt, die ich nicht brauche..."]
+follow_up_dialog = ["Hm. Weniger ist mehr.", "Hm. Lieber nichts besitzen, als zu verlieren.", "Hm. Das Leben ist leicht, aber wir machen es uns schwer."]
 name_of_speaker = ["Forrest", "Albert", "Marcus", "Sokrates"]
 
 [node name="Anchor" type="Node3D" parent="." groups=["anchor"]]
@@ -41,5 +62,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.59152, 0)
 
 [node name="pointer" parent="Anchor" instance=ExtResource("4_qs7us")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 4.39667)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_f6217")
+anim_player = NodePath("../Model/AnimationPlayer")
+active = true
+parameters/Add2/add_amount = 1.0
+parameters/LeftScale/scale = 1.0
+parameters/RightScale/scale = 1.0
+parameters/Seek/seek_position = -1.0
+parameters/TimeScale/scale = 1.0
+
+[node name="Model" parent="." instance=ExtResource("4_q8k3c")]
+
+[node name="RightPaddle" parent="Model" index="4"]
+transform = Transform3D(0.0103933, 1.76267, -0.0285785, 0.0252582, 0.617179, 0.0659913, 0.0693919, -0.488657, -0.01974, 0.959433, 0.926597, -0.0850979)
+
+[node name="LeftPaddle" parent="Model" index="5"]
+transform = Transform3D(0.0551284, 1.29764, -0.00305431, -0.00585885, 0.0495745, -0.0743185, -0.0498776, 1.42842, 0.00535394, -0.959434, 0.93199, -0.0850973)
 
 [editable path="Model"]

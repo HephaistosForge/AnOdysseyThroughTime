@@ -27,4 +27,4 @@ name_of_speaker = ["Unsinkable II", "Titanic II", "Vitamin Sea", "McBoatyFace"]
 [node name="Anchor" type="Node3D" parent="." groups=["anchor"]]
 
 [node name="pointer" parent="Anchor" instance=ExtResource("4_q52an")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 4.39667)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 3.75916, 10.5904)
