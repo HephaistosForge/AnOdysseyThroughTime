@@ -42,48 +42,46 @@ text = "Einstellungen"
 layout_mode = 2
 offset_top = 184.0
 offset_right = 1152.0
-offset_bottom = 433.0
+offset_bottom = 456.0
 theme_override_constants/margin_left = 96
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 96
-theme_override_constants/margin_bottom = 50
-
-[node name="menu_frame" type="PanelContainer" parent="VBoxContainer/body"]
-layout_mode = 2
-offset_left = 96.0
-offset_top = 50.0
-offset_right = 1056.0
-offset_bottom = 199.0
+theme_override_constants/margin_bottom = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/body"]
 layout_mode = 2
 offset_left = 96.0
 offset_top = 50.0
 offset_right = 1056.0
-offset_bottom = 199.0
+offset_bottom = 272.0
+theme_override_constants/separation = 24
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/body/VBoxContainer"]
+[node name="Anzeige" type="VBoxContainer" parent="VBoxContainer/body/VBoxContainer"]
 layout_mode = 2
 offset_right = 960.0
+offset_bottom = 64.0
+theme_override_constants/separation = 8
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer/Anzeige"]
 layout_mode = 2
-offset_top = 4.0
-offset_right = 187.0
-offset_bottom = 27.0
+offset_right = 127.0
+offset_bottom = 32.0
 size_flags_horizontal = 0
+theme_override_constants/margin_left = 0
 
-[node name="ToggleFullsceeenLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer"]
+[node name="ToggleFullsceeenLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/Anzeige/MarginContainer"]
 layout_mode = 2
-offset_right = 187.0
-offset_bottom = 23.0
+offset_right = 127.0
+offset_bottom = 32.0
 size_flags_vertical = 1
-text = "> Anzeigemodus <"
+theme_override_font_sizes/font_size = 24
+text = "Anzeige
+"
 
-[node name="ToggleFullscreenButton" type="MenuButton" parent="VBoxContainer/body/VBoxContainer/MarginContainer"]
+[node name="ToggleFullscreenButton" type="MenuButton" parent="VBoxContainer/body/VBoxContainer/Anzeige/MarginContainer"]
 layout_mode = 2
-offset_right = 187.0
-offset_bottom = 23.0
+offset_right = 127.0
+offset_bottom = 32.0
 item_count = 3
 popup/item_0/text = "Fenstermodus"
 popup/item_0/id = 0
@@ -93,84 +91,106 @@ popup/item_2/text = "Vollbildschirm (Exklusiv)"
 popup/item_2/id = 2
 script = ExtResource("3_kkmi1")
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer/Anzeige"]
 layout_mode = 2
-offset_top = 31.0
+offset_top = 40.0
 offset_right = 960.0
-offset_bottom = 55.0
+offset_bottom = 64.0
+theme_override_constants/margin_left = 16
 
-[node name="ToggleShaderLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer2"]
+[node name="ToggleShaderLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/Anzeige/MarginContainer2"]
 layout_mode = 2
+offset_left = 16.0
 offset_right = 960.0
 offset_bottom = 23.0
 text = "SSAO, SSIL, SSR und Schatten aktivieren (Achtung: Benötigt leistungsfähige gpu!)"
 
-[node name="ToggleShaderButton" type="CheckButton" parent="VBoxContainer/body/VBoxContainer/MarginContainer2"]
+[node name="ToggleShaderButton" type="CheckButton" parent="VBoxContainer/body/VBoxContainer/Anzeige/MarginContainer2"]
 layout_mode = 2
+offset_left = 16.0
 offset_right = 960.0
 offset_bottom = 24.0
 script = ExtResource("4_ih8es")
 
-[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
+[node name="Lautstärke" type="VBoxContainer" parent="VBoxContainer/body/VBoxContainer"]
 layout_mode = 2
-offset_top = 59.0
+offset_top = 88.0
 offset_right = 960.0
-offset_bottom = 102.0
+offset_bottom = 222.0
+theme_override_constants/separation = 8
 
-[node name="SoundVolume" type="VBoxContainer" parent="VBoxContainer/body/VBoxContainer/MarginContainer3"]
+[node name="Label" type="Label" parent="VBoxContainer/body/VBoxContainer/Lautstärke"]
 layout_mode = 2
+offset_right = 960.0
+offset_bottom = 32.0
+theme_override_font_sizes/font_size = 24
+text = "Sound
+"
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer/Lautstärke"]
+layout_mode = 2
+offset_top = 40.0
+offset_right = 960.0
+offset_bottom = 83.0
+theme_override_constants/margin_left = 16
+
+[node name="SFXVolume" type="VBoxContainer" parent="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer4"]
+layout_mode = 2
+offset_left = 16.0
 offset_right = 960.0
 offset_bottom = 43.0
 
-[node name="SoundVolumeLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer3/SoundVolume"]
+[node name="SFXVolumeLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer4/SFXVolume"]
 layout_mode = 2
-offset_right = 960.0
-offset_bottom = 23.0
-text = "Lautstärke Hintergrundmusik"
-
-[node name="SoundVolumeSlider" type="HSlider" parent="VBoxContainer/body/VBoxContainer/MarginContainer3/SoundVolume"]
-layout_mode = 2
-offset_top = 27.0
-offset_right = 960.0
-offset_bottom = 43.0
-min_value = -45.0
-max_value = 10.0
-step = 5.0
-script = ExtResource("4_du2dw")
-
-[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
-layout_mode = 2
-offset_top = 106.0
-offset_right = 960.0
-offset_bottom = 149.0
-
-[node name="SFXVolume" type="VBoxContainer" parent="VBoxContainer/body/VBoxContainer/MarginContainer4"]
-layout_mode = 2
-offset_right = 960.0
-offset_bottom = 43.0
-
-[node name="SFXVolumeLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer4/SFXVolume"]
-layout_mode = 2
-offset_right = 960.0
+offset_right = 944.0
 offset_bottom = 23.0
 text = "Lautstärke Soundeffekte"
 
-[node name="SFXVolumeSlider" type="HSlider" parent="VBoxContainer/body/VBoxContainer/MarginContainer4/SFXVolume"]
+[node name="SFXVolumeSlider" type="HSlider" parent="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer4/SFXVolume"]
 layout_mode = 2
 offset_top = 27.0
-offset_right = 960.0
+offset_right = 944.0
 offset_bottom = 43.0
 min_value = -45.0
 max_value = 10.0
 step = 5.0
 script = ExtResource("5_s68jc")
 
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer/Lautstärke"]
+layout_mode = 2
+offset_top = 91.0
+offset_right = 960.0
+offset_bottom = 134.0
+theme_override_constants/margin_left = 16
+
+[node name="SoundVolume" type="VBoxContainer" parent="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer3"]
+layout_mode = 2
+offset_left = 16.0
+offset_right = 960.0
+offset_bottom = 43.0
+
+[node name="SoundVolumeLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer3/SoundVolume"]
+layout_mode = 2
+offset_right = 944.0
+offset_bottom = 23.0
+text = "Lautstärke Hintergrundmusik"
+
+[node name="SoundVolumeSlider" type="HSlider" parent="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer3/SoundVolume"]
+layout_mode = 2
+offset_top = 27.0
+offset_right = 944.0
+offset_bottom = 43.0
+min_value = -45.0
+max_value = 10.0
+step = 5.0
+script = ExtResource("4_du2dw")
+
 [node name="footer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
 offset_left = 369.0
-offset_top = 437.0
+offset_top = 460.0
 offset_right = 783.0
-offset_bottom = 584.0
+offset_bottom = 607.0
 size_flags_horizontal = 4
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 50
@@ -201,9 +221,8 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Zurück"
 
-[connection signal="toggled" from="VBoxContainer/body/VBoxContainer/MarginContainer2/ToggleShaderButton" to="VBoxContainer/body/VBoxContainer/MarginContainer2/ToggleShaderButton" method="_on_toggled"]
-[connection signal="value_changed" from="VBoxContainer/body/VBoxContainer/MarginContainer3/SoundVolume/SoundVolumeSlider" to="VBoxContainer/body/VBoxContainer/MarginContainer3/SoundVolume/SoundVolumeSlider" method="_on_value_changed"]
-[connection signal="value_changed" from="VBoxContainer/body/VBoxContainer/MarginContainer4/SFXVolume/SFXVolumeSlider" to="VBoxContainer/body/VBoxContainer/MarginContainer4/SFXVolume/SFXVolumeSlider" method="_on_value_changed"]
-[connection signal="pressed" from="VBoxContainer/footer/HBoxContainer/Steuerung" to="." method="_on_back_button_pressed"]
+[connection signal="toggled" from="VBoxContainer/body/VBoxContainer/Anzeige/MarginContainer2/ToggleShaderButton" to="VBoxContainer/body/VBoxContainer/Anzeige/MarginContainer2/ToggleShaderButton" method="_on_toggled"]
+[connection signal="value_changed" from="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer4/SFXVolume/SFXVolumeSlider" to="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer4/SFXVolume/SFXVolumeSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer3/SoundVolume/SoundVolumeSlider" to="VBoxContainer/body/VBoxContainer/Lautstärke/MarginContainer3/SoundVolume/SoundVolumeSlider" method="_on_value_changed"]
 [connection signal="pressed" from="VBoxContainer/footer/HBoxContainer/Steuerung" to="." method="_on_steuerung_pressed"]
 [connection signal="pressed" from="VBoxContainer/footer/HBoxContainer/back_button" to="." method="_on_back_button_pressed"]
