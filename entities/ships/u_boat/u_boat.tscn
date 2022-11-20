@@ -10,6 +10,7 @@ radius = 1.278
 height = 12.473
 
 [node name="UBoat" type="CharacterBody3D" groups=["boat", "pullable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67908, 0)
 
 [node name="ShipSteering" parent="." instance=ExtResource("1_8pw5e")]
 
@@ -27,4 +28,5 @@ name_of_speaker = ["Unsinkable II", "Titanic II", "Vitamin Sea", "McBoatyFace"]
 [node name="Anchor" type="Node3D" parent="." groups=["anchor"]]
 
 [node name="pointer" parent="Anchor" instance=ExtResource("4_q52an")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 3.75916, 10.5904)
+process_priority = -1
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.720947, 10.5904)
