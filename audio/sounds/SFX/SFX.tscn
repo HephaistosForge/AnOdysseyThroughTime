@@ -11,3 +11,4 @@
 [node name="BubblesSFX" parent="." instance=ExtResource("3_ln2de")]
 
 [node name="SeagullSFX" parent="." instance=ExtResource("2_qgybh")]
+volume_db = 20.0
