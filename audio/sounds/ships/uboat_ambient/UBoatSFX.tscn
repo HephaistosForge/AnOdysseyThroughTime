@@ -17,4 +17,4 @@ stream = ExtResource("5_8fk7p")
 volume_db = 80.0
 max_db = 5.0
 autoplay = true
-bus = &"UBoat Ambient"
+bus = &"UBoat Engine"

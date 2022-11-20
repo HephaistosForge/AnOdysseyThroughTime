@@ -15,3 +15,4 @@ streams = [ExtResource("2_o0nwn"), ExtResource("3_c6cfs"), ExtResource("3_c6cfs"
 stream = ExtResource("4_887ki")
 volume_db = 25.0
 autoplay = true
+bus = &"Titanic Ambient"

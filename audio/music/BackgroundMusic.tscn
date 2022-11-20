@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxrlqftyi6s7a"]
+
+[ext_resource type="AudioStream" uid="uid://c42moy50uxadt" path="res://audio/music/smooth_sailing.ogg" id="1_qecx8"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer3D"]
+stream = ExtResource("1_qecx8")
+attenuation_model = 3
+volume_db = 80.0
+max_db = 4.5
+autoplay = true
+bus = &"BackgroundMusic"

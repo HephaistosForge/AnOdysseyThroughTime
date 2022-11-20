@@ -5,3 +5,4 @@
 [node name="CoinSFX" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_smh8n")
 autoplay = true
+bus = &"Coin"
