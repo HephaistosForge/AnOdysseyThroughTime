@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf6odlj5mdi5"]
+
+[ext_resource type="PackedScene" uid="uid://byaks36vihbmo" path="res://entities/ships/pointer.glb" id="1_a43d2"]
+
+[node name="pointer" instance=ExtResource("1_a43d2")]

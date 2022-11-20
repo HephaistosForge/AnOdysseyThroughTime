@@ -36,4 +36,5 @@ name_of_speaker = ["Edward", "Jack", "Rose", "Caledon"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15844, 0)
 
 [node name="pointer" parent="Anchor" instance=ExtResource("4_8k3jj")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 3.13257, 8.92862)
+process_priority = -1
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.05377, 8.92862)

@@ -28,4 +28,4 @@ name_of_speaker = ["Astrid", "Freya", "Bjorn", "Erik"]
 [node name="Anchor" type="Node3D" parent="." groups=["anchor"]]
 
 [node name="pointer" parent="Anchor" instance=ExtResource("4_uy5om")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 3.75909, 5.58862)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 1.84448, 5.58862)
