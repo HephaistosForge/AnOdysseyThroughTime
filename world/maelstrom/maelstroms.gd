@@ -84,7 +84,7 @@ func _physics_process(_delta):
 			force += diff / pow(dist, 3)
 			
 		if object is RigidBody3D:
-			object.apply_force(force * 10000)
+			object.apply_force(force * 10000 * 50)
 		else:
 			object.velocity += force * 100
 			
