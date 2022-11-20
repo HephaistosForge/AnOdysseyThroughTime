@@ -31,7 +31,7 @@ func _ready():
 		var trials = 0
 		while true:
 			pos = Vector3(randf(), randf(), .2)
-			if pos.distance_to(spawn_point_as_uv) > 0.1 and pos.distance_to(island_as_uv) > 0.12:
+			if pos.distance_to(spawn_point_as_uv) > 0.045 and pos.distance_to(island_as_uv) > 0.05:
 				if trials < 10:
 					for p in maelstroms:
 						if pos.distance_to(p) < 0.1:
@@ -79,17 +79,17 @@ func _physics_process(_delta):
 		var force = Vector3.ZERO
 		for maelstrom in maelstroms:
 			var pos = Vector3(maelstrom.x-0.5, 0, maelstrom.y-.5) * mesh_size
-			var diff = pos - object.position
+			var diff = (pos - object.position)*Vector3(1,0,1)
 			var dist = diff.length()
-			var pow_div = 2
 			if object is RigidBody3D:
-				pow_div = 3
-			force += diff / pow(dist, pow_div)
+				force += diff / pow(dist, 3)
+			else:
+				force += diff / pow(dist, 2.5)
 			
 		if object is RigidBody3D:
-			object.apply_force(force * 10000 * 50)
+			object.apply_force(force * 10000 * 40)
 		else:
-			object.velocity += force * 50
+			object.velocity += force * 65
 			
 	# var img = height_texture.get_image()
 	#for y in img.MAX_HEIGHT:
