@@ -2,6 +2,11 @@ extends Node3D
 
 @export var map_size = Vector2(1200,1200)
 
+func lose():
+	print_debug("You lose!")
+
+func win():
+	print_debug("You win!")
 
 func _ready():
 	if Globals.start_pos != Vector3.ZERO:
@@ -34,4 +39,4 @@ func start_game(pos):
 func _on_goal_area_body_entered(body):
 	if Globals.start_pos != Vector3.ZERO:
 		if body.is_in_group("boat"):
-			print("You Win!")
+			win()
