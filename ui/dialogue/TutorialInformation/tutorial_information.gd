@@ -10,6 +10,9 @@ extends Control
 
 @onready var timer: Timer = Timer.new()
 
+@onready var background_texture = $CanvasLayer/PanelContainer/TextureRect
+@onready var panel_container = $CanvasLayer/PanelContainer
+
 var label_name: Label
 var label_text: Label
 
@@ -73,3 +76,4 @@ func _next_phrase() -> void:
 	label_text.visible_characters = char_counter
 	
 	timer.start(text_speed)
+

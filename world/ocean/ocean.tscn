@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="3_k8sgn"]
 [ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="3_tq8ml"]
 [ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
-[ext_resource type="PackedScene" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
+[ext_resource type="PackedScene" uid="uid://cx01enkvm0qdr" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
 [ext_resource type="PackedScene" uid="uid://beidarsyit5ya" path="res://audio/sounds/SFX/SFX.tscn" id="7_kw4om"]
 [ext_resource type="PackedScene" path="res://audio/music/BackgroundMusic.tscn" id="8_c8pn8"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_ngqft"]
@@ -211,6 +211,7 @@ player = NodePath("../VikingBoat")
 [node name="SFX" parent="Camera3D" instance=ExtResource("7_kw4om")]
 
 [node name="BackgroundMusic" parent="Camera3D" instance=ExtResource("8_c8pn8")]
+bus = &"Master"
 
 [node name="ObstacleGenerator" parent="." instance=ExtResource("7_11iuw")]
 
