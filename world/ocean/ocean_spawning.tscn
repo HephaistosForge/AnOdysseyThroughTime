@@ -93,7 +93,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i714l"]
-size = Vector3(1, 1.58992, 0.150865)
+size = Vector3(1, 1.58992, 0.0231023)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_m083o"]
 radius = 35.0
@@ -150,7 +150,7 @@ script = ExtResource("12_x7p0s")
 shape = SubResource("BoxShape3D_i714l")
 
 [node name="Sprite3D3" type="Sprite3D" parent="."]
-transform = Transform3D(-1.36215, -948.761, 91.001, 2.35059, 87.9984, 947.167, -32.4731, 46.1676, 64.7442, -18.8505, 80.9555, 419.099)
+transform = Transform3D(-1.36215, -948.761, 91.001, 2.35059, 87.9984, 947.167, -32.4731, 46.1676, 64.7442, -18.8505, 157.054, 419.099)
 modulate = Color(1, 1, 1, 0.0196078)
 texture = ExtResource("11_wd3o7")
 
@@ -158,7 +158,6 @@ texture = ExtResource("11_wd3o7")
 script = ExtResource("12_x7p0s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D3/Area3D"]
-transform = Transform3D(-0.00321781, 0.00279045, -0.038506, -0.00177924, 0.000125475, 9.48302e-05, 0.000682875, 0.00531734, 0.000352429, 0, 0, 0)
 shape = SubResource("BoxShape3D_i714l")
 
 [node name="Sprite3D4" type="Sprite3D" parent="."]
@@ -183,6 +182,7 @@ offset_bottom = 92.0
 mouse_filter = 1
 
 [node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
 offset_top = 26.0
 offset_right = 1061.0
 offset_bottom = 49.0
