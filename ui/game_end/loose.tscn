@@ -86,7 +86,7 @@ offset_top = 82.0
 offset_right = 719.0
 offset_bottom = 105.0
 size_flags_horizontal = 4
-text = "optional: Neuer Highscore"
+text = "Du hast einen neuen Highscore geschafft!"
 
 [node name="footer" type="MarginContainer" parent="VBoxContainer"]
 offset_left = 221.0

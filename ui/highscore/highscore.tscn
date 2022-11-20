@@ -14,18 +14,15 @@ script = ExtResource("1_ok80r")
 metadata/_edit_vertical_guides_ = []
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="header" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 130.0
 theme_override_constants/margin_top = 50
 
 [node name="Label" type="Label" parent="VBoxContainer/header"]
-layout_mode = 2
 offset_left = 334.0
 offset_top = 50.0
 offset_right = 817.0
@@ -35,7 +32,6 @@ theme_override_font_sizes/font_size = 64
 text = "HIGHSCORES"
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_top = 134.0
 offset_right = 1152.0
 offset_bottom = 209.0
@@ -43,13 +39,11 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_bottom = 25
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3"]
-layout_mode = 2
 offset_top = 50.0
 offset_right = 1152.0
 offset_bottom = 50.0
 
 [node name="footer" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_left = 500.0
 offset_top = 213.0
 offset_right = 651.0
@@ -61,13 +55,11 @@ theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/footer"]
-layout_mode = 2
 offset_right = 151.0
 offset_bottom = 47.0
 theme_override_constants/separation = 80
 
 [node name="menu_button" type="Button" parent="VBoxContainer/footer/HBoxContainer"]
-layout_mode = 2
 offset_right = 151.0
 offset_bottom = 47.0
 size_flags_horizontal = 4
