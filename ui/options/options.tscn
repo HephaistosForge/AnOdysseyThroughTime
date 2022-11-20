@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c132qe3qy4d8a"]
+[gd_scene load_steps=7 format=3 uid="uid://c132qe3qy4d8a"]
 
 [ext_resource type="Theme" uid="uid://cubpqq8pqv8re" path="res://ui/ui_theme.tres" id="1_2a8rb"]
 [ext_resource type="Script" path="res://ui/options/options.gd" id="1_kt124"]
 [ext_resource type="Script" path="res://ui/options/toggle_fullscreen_button.gd" id="3_kkmi1"]
+[ext_resource type="Script" path="res://ui/options/sound_volume_slider.gd" id="4_du2dw"]
+[ext_resource type="Script" path="res://ui/options/toggle_shader_button.gd" id="4_ih8es"]
+[ext_resource type="Script" path="res://ui/options/sfx_volume_slider.gd" id="5_s68jc"]
 
 [node name="options" type="PanelContainer"]
 anchors_preset = 15
@@ -66,20 +69,20 @@ offset_right = 960.0
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
 layout_mode = 2
 offset_top = 4.0
-offset_right = 119.0
+offset_right = 187.0
 offset_bottom = 27.0
 size_flags_horizontal = 0
 
 [node name="ToggleFullsceeenLabel" type="Label" parent="VBoxContainer/body/VBoxContainer/MarginContainer"]
 layout_mode = 2
-offset_right = 119.0
+offset_right = 187.0
 offset_bottom = 23.0
 size_flags_vertical = 1
-text = "> Anzeige <"
+text = "> Anzeigemodus <"
 
 [node name="ToggleFullscreenButton" type="MenuButton" parent="VBoxContainer/body/VBoxContainer/MarginContainer"]
 layout_mode = 2
-offset_right = 119.0
+offset_right = 187.0
 offset_bottom = 23.0
 item_count = 3
 popup/item_0/text = "Fenstermodus"
@@ -106,6 +109,7 @@ text = "Shader aktivieren (Achtung: Benötigt leistungsfähige gpu!)"
 layout_mode = 2
 offset_right = 960.0
 offset_bottom = 24.0
+script = ExtResource("4_ih8es")
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
 layout_mode = 2
@@ -129,6 +133,10 @@ layout_mode = 2
 offset_top = 27.0
 offset_right = 960.0
 offset_bottom = 43.0
+min_value = -45.0
+max_value = 10.0
+step = 5.0
+script = ExtResource("4_du2dw")
 
 [node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/body/VBoxContainer"]
 layout_mode = 2
@@ -152,6 +160,10 @@ layout_mode = 2
 offset_top = 27.0
 offset_right = 960.0
 offset_bottom = 43.0
+min_value = -45.0
+max_value = 10.0
+step = 5.0
+script = ExtResource("5_s68jc")
 
 [node name="footer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -189,6 +201,9 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Zurück"
 
+[connection signal="toggled" from="VBoxContainer/body/VBoxContainer/MarginContainer2/ToggleShaderButton" to="VBoxContainer/body/VBoxContainer/MarginContainer2/ToggleShaderButton" method="_on_toggled"]
+[connection signal="value_changed" from="VBoxContainer/body/VBoxContainer/MarginContainer3/SoundVolume/SoundVolumeSlider" to="VBoxContainer/body/VBoxContainer/MarginContainer3/SoundVolume/SoundVolumeSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/body/VBoxContainer/MarginContainer4/SFXVolume/SFXVolumeSlider" to="VBoxContainer/body/VBoxContainer/MarginContainer4/SFXVolume/SFXVolumeSlider" method="_on_value_changed"]
 [connection signal="pressed" from="VBoxContainer/footer/HBoxContainer/Steuerung" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/footer/HBoxContainer/Steuerung" to="." method="_on_steuerung_pressed"]
 [connection signal="pressed" from="VBoxContainer/footer/HBoxContainer/back_button" to="." method="_on_back_button_pressed"]

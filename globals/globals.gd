@@ -5,6 +5,8 @@ var score: int = 0
 var start_pos = Vector3.ZERO
 var map_size = Vector2(1800, 1800)
 
+var enable_good_graphics: bool = false
+
 
 func _ready():
 	rng = RandomNumberGenerator.new()
