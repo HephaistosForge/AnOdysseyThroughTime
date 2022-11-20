@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbqp8hyir6jny"]
 
-[ext_resource type="Theme" uid="uid://b1qnudk0gm0it" path="res://ui/ui_theme.tres" id="1_645cg"]
+[ext_resource type="Theme" uid="uid://cubpqq8pqv8re" path="res://ui/ui_theme.tres" id="1_645cg"]
 [ext_resource type="Script" path="res://ui/highscore/highscore.gd" id="1_ok80r"]
 
 [node name="options" type="PanelContainer"]
@@ -14,18 +14,15 @@ script = ExtResource("1_ok80r")
 metadata/_edit_vertical_guides_ = []
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="header" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_right = 1152.0
 offset_bottom = 130.0
 theme_override_constants/margin_top = 50
 
 [node name="Label" type="Label" parent="VBoxContainer/header"]
-layout_mode = 2
 offset_left = 358.0
 offset_top = 50.0
 offset_right = 793.0
@@ -35,7 +32,6 @@ theme_override_font_sizes/font_size = 64
 text = "HIGHSCORE"
 
 [node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_top = 134.0
 offset_right = 1152.0
 offset_bottom = 302.0
@@ -43,13 +39,11 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer3"]
-layout_mode = 2
 offset_top = 50.0
 offset_right = 1152.0
 offset_bottom = 118.0
 
 [node name="score2" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer"]
-layout_mode = 2
 offset_left = 513.0
 offset_right = 638.0
 offset_bottom = 32.0
@@ -58,7 +52,6 @@ theme_override_font_sizes/font_size = 24
 text = "<score>"
 
 [node name="score" type="Label" parent="VBoxContainer/MarginContainer3/VBoxContainer"]
-layout_mode = 2
 offset_left = 513.0
 offset_top = 36.0
 offset_right = 638.0
@@ -68,7 +61,6 @@ theme_override_font_sizes/font_size = 24
 text = "<score>"
 
 [node name="footer" type="MarginContainer" parent="VBoxContainer"]
-layout_mode = 2
 offset_left = 500.0
 offset_top = 306.0
 offset_right = 651.0
@@ -80,13 +72,11 @@ theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/footer"]
-layout_mode = 2
 offset_right = 151.0
 offset_bottom = 47.0
 theme_override_constants/separation = 80
 
 [node name="menu_button" type="Button" parent="VBoxContainer/footer/HBoxContainer"]
-layout_mode = 2
 offset_right = 151.0
 offset_bottom = 47.0
 size_flags_horizontal = 4

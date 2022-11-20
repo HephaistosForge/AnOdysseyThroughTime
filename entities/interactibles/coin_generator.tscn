@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt7a3340jp07c"]
+
+[ext_resource type="Script" path="res://entities/interactibles/coin_generator.gd" id="1_jcgyb"]
+
+[node name="CoinGenerator" type="Node3D"]
+script = ExtResource("1_jcgyb")
+
+[node name="SpawnTimer" type="Timer" parent="."]

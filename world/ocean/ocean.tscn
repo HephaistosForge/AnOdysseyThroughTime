@@ -1,18 +1,19 @@
-[gd_scene load_steps=29 format=3 uid="uid://bdn4e5fvf2ddy"]
+[gd_scene load_steps=30 format=3 uid="uid://bdn4e5fvf2ddy"]
 
 [ext_resource type="Shader" path="res://world/weather/sky.gdshader" id="1_8oio7"]
 [ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_ddwd0"]
-[ext_resource type="PackedScene" uid="uid://d4m2y6822lui7" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
+[ext_resource type="PackedScene" uid="uid://0krnl6i3o5ap" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
 [ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="3_k8sgn"]
 [ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
-[ext_resource type="PackedScene" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
+[ext_resource type="PackedScene" uid="uid://cx01enkvm0qdr" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
 [ext_resource type="PackedScene" uid="uid://beidarsyit5ya" path="res://audio/sounds/SFX/SFX.tscn" id="7_kw4om"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_ngqft"]
 [ext_resource type="PackedScene" uid="uid://dxc1ht5s5puis" path="res://ui/dialogue/TutorialInformation/TutorialInformation.tscn" id="8_uvx3f"]
-[ext_resource type="PackedScene" uid="uid://pupiv2s81jme" path="res://world/maelstrom/maelstrom_area.tscn" id="9_5csxv"]
+[ext_resource type="PackedScene" uid="uid://drf1jxsbswk04" path="res://world/maelstrom/maelstrom_area.tscn" id="9_5csxv"]
 [ext_resource type="Script" path="res://managers/GoalArea.gd" id="9_uvrgv"]
 [ext_resource type="Script" path="res://world/ocean/ShipGenerator.gd" id="11_3dgxt"]
 [ext_resource type="PackedScene" uid="uid://dmr36cwesw5lo" path="res://ui/hud/ship_selection.tscn" id="11_5i74g"]
+[ext_resource type="PackedScene" uid="uid://csp58fl03tqp4" path="res://ui/hud/score_ui.tscn" id="12_s5xsu"]
 [ext_resource type="PackedScene" uid="uid://dwm2nfteihmdi" path="res://entities/obstacles/island.tscn" id="13_13k4f"]
 [ext_resource type="PackedScene" uid="uid://b817vbef7oyde" path="res://entities/golden_monkey.glb" id="14_3r2b0"]
 [ext_resource type="PackedScene" uid="uid://dq63okwrrgho0" path="res://entities/ships/viking_boat/viking_boat.tscn" id="16_vmsvu"]
@@ -220,6 +221,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 350.093, 392.596, -6.82382)
 
 [node name="TutorialInformation" parent="." instance=ExtResource("8_uvx3f")]
 mouse_filter = 2
+
+[node name="MarginContainer2" parent="." instance=ExtResource("12_s5xsu")]
 
 [node name="ShipGenerator" type="Node3D" parent="." groups=["ship_generator"]]
 script = ExtResource("11_3dgxt")
