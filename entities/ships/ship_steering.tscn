@@ -1,6 +1,15 @@
-[gd_scene format=3 uid="uid://b1x1chb5jqfly"]
+[gd_scene load_steps=2 format=3 uid="uid://b1x1chb5jqfly"]
+
+[ext_resource type="Script" path="res://entities/ships/ship_steering.gd" id="1_8abo1"]
 
 [node name="ShipSteering" type="Node3D"]
+script = ExtResource("1_8abo1")
+
+[node name="RayForwardVec" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93302, 0)
+target_position = Vector3(0, 0, -10)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+debug_shape_thickness = 4
 
 [node name="RayVelocity" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93302, 0)

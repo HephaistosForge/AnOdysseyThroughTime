@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://c0eg78m7jmyuo"]
 
 [ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_gv77f"]
-[ext_resource type="PackedScene" path="res://ui/dialogue/Dialogue.tscn" id="3_u7opl"]
+[ext_resource type="PackedScene" uid="uid://d2gpfit42ejd3" path="res://entities/ships/vinking_boat/viking.glb" id="2_jl4av"]
+[ext_resource type="PackedScene" uid="uid://b8pkku6jgdsh0" path="res://ui/dialogue/Dialogue.tscn" id="3_u7opl"]
 [ext_resource type="PackedScene" uid="uid://byaks36vihbmo" path="res://entities/ships/pointer.glb" id="4_uy5om"]
-[ext_resource type="PackedScene" uid="uid://hbq725homi21" path="res://entities/ships/vinking_boat/viking_boat_model.tscn" id="4_v1afj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4v0rn"]
 radius = 2.30067
@@ -12,6 +12,9 @@ height = 10.4836
 [node name="VikingBoat" type="CharacterBody3D" groups=["boat", "pullable"]]
 
 [node name="ShipSteering" parent="." instance=ExtResource("1_gv77f")]
+
+[node name="Model" parent="." instance=ExtResource("2_jl4av")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.6, 0, 0, 0, -2.62268e-08, 0.6, 0, -0.6, -2.62268e-08, 0, 1.56517, 0)
@@ -26,7 +29,3 @@ name_of_speaker = ["Astrid", "Freya", "Bjorn", "Erik"]
 
 [node name="pointer" parent="Anchor" instance=ExtResource("4_uy5om")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 3.75909, 5.58862)
-
-[node name="Model" parent="." instance=ExtResource("4_v1afj")]
-
-[editable path="Model"]
