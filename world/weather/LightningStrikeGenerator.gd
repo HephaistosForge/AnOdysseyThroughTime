@@ -12,11 +12,11 @@ enum DIFFICULTY {
 }
 
 const DIFFICULTY_ATTRIBUTES: Dictionary = {
-	DIFFICULTY.PEACEFUL: [30, 5, 2.0],
-	DIFFICULTY.EASY: [20, 4, 1.5],
-	DIFFICULTY.MEDIUM: [15, 3, 1.2],
-	DIFFICULTY.HARD: [10, 2, 0.8],
-	DIFFICULTY.DEADLY: [5, 0.5, 0.3]
+	DIFFICULTY.PEACEFUL: [20, 5, 2.0],
+	DIFFICULTY.EASY: [15, 4, 1.5],
+	DIFFICULTY.MEDIUM: [10, 3, 1.2],
+	DIFFICULTY.HARD: [5, 2, 0.8],
+	DIFFICULTY.DEADLY: [1, 0.5, 0.3]
 }
 
 @onready var spawn_timer: Timer = $SpawnTimer
@@ -31,13 +31,13 @@ func _ready() -> void:
 
 
 func set_difficulty() -> void:
-	if time_since_last_hit > 120:
+	if time_since_last_hit > 40:
 		difficulty = DIFFICULTY.DEADLY
-	elif time_since_last_hit > 90:
-		difficulty = DIFFICULTY.HARD
-	elif time_since_last_hit > 60:
-		difficulty = DIFFICULTY.MEDIUM
 	elif time_since_last_hit > 30:
+		difficulty = DIFFICULTY.HARD
+	elif time_since_last_hit > 20:
+		difficulty = DIFFICULTY.MEDIUM
+	elif time_since_last_hit > 10:
 		difficulty = DIFFICULTY.EASY
 	else:
 		difficulty = DIFFICULTY.PEACEFUL
@@ -46,7 +46,7 @@ func set_difficulty() -> void:
 func get_randomized_spawn_position() -> Vector3:
 	var spawn_range = DIFFICULTY_ATTRIBUTES[difficulty][0]
 
-	return ship.position + Vector3(
+	return ship.global_position + Vector3(
 		Globals.rng.randf_range(-spawn_range, spawn_range),
 		0,
 		Globals.rng.randf_range(-spawn_range, spawn_range)
@@ -65,9 +65,9 @@ func _on_timer_timeout() -> void:
 	lightning_strike.set_spawn_delay(DIFFICULTY_ATTRIBUTES[difficulty][2])
 	self.add_child(lightning_strike)
 	if spawn_on_self: 
-		lightning_strike.position = ship.position
+		lightning_strike.global_position = ship.global_position
 	else:
-		lightning_strike.position = get_randomized_spawn_position()
+		lightning_strike.global_position = get_randomized_spawn_position()
 	spawn_timer.start(Globals.rng.randf_range(0.0, DIFFICULTY_ATTRIBUTES[difficulty][1]))
 
 

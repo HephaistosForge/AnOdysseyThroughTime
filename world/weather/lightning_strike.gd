@@ -15,6 +15,7 @@ var active = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	sprite.visible = false
 	var tween = create_tween()
 	var _error = tween.tween_property(spawn_indicator, "scale", Vector3(1,1,1), spawn_time-0.05)
 	_error = tween.tween_property(spawn_indicator, "visible", false, 0.05)
@@ -37,7 +38,7 @@ func set_active():
 	
 	var lightning = $LightningStrikeSFX.duplicate()
 	get_tree().get_root().add_child(lightning)
-	lightning.position = self.position
+	lightning.global_position = self.global_position
 	lightning.play()
 
 

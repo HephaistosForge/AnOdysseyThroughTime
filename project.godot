@@ -28,6 +28,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://globals/globals.gd"
+LoadAndSave="*res://globals/load_and_save.gd"
 
 [display]
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cr5j4078oescm" path="res://ui/menu/start_location_selection.png" id="2_diu3m"]
 [ext_resource type="Script" path="res://managers/GoalArea.gd" id="5_j0cqt"]
-[ext_resource type="Theme" uid="uid://ca3ibtddlkiye" path="res://ui/ui_theme.tres" id="6_ls5u0"]
+[ext_resource type="Theme" uid="uid://cubpqq8pqv8re" path="res://ui/ui_theme.tres" id="6_ls5u0"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_mrdwr"]
 [ext_resource type="Texture2D" uid="uid://c176nk71t4ge3" path="res://ui/Rectangle.png" id="11_wd3o7"]
 [ext_resource type="Script" path="res://managers/SpawnArea.gd" id="12_x7p0s"]
@@ -183,7 +183,6 @@ offset_bottom = 92.0
 mouse_filter = 1
 
 [node name="Label" type="Label" parent="PanelContainer"]
-layout_mode = 2
 offset_top = 26.0
 offset_right = 1061.0
 offset_bottom = 49.0
@@ -192,14 +191,8 @@ theme = ExtResource("6_ls5u0")
 text = "  Wähle deinen Startpunkt auf der roten Linie. Noch niemand traute sich hinter diese Grenze..."
 
 [connection signal="input_event" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_input_event"]
-[connection signal="mouse_entered" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_mouse_exited"]
 [connection signal="input_event" from="Sprite3D/Sprite3D/Area3D" to="Sprite3D/Sprite3D/Area3D" method="_on_input_event"]
-[connection signal="mouse_entered" from="Sprite3D/Sprite3D/Area3D" to="Sprite3D/Sprite3D/Area3D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Sprite3D/Sprite3D/Area3D" to="Sprite3D/Sprite3D/Area3D" method="_on_mouse_exited"]
 [connection signal="input_event" from="Sprite3D2/Area3D" to="Sprite3D2/Area3D" method="_on_input_event"]
-[connection signal="mouse_entered" from="Sprite3D2/Area3D" to="Sprite3D2/Area3D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Sprite3D2/Area3D" to="Sprite3D2/Area3D" method="_on_mouse_exited"]
 [connection signal="input_event" from="Sprite3D3/Area3D" to="Sprite3D3/Area3D" method="_on_input_event"]
 [connection signal="mouse_exited" from="Sprite3D3/Area3D" to="Sprite3D3/Area3D" method="_on_mouse_exited"]
 [connection signal="body_entered" from="GameManager/GoalArea" to="GameManager" method="_on_goal_area_body_entered"]

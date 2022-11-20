@@ -114,8 +114,14 @@ func map_attributes_to_integer(array: Array) -> Array:
 func setup_ship_options() -> void:
 	options = []
 	var ship_choice_display_attributes = []
+	var already_chosen
 	for i in range(2):
 		var ship_with_attributes = get_random_ship_with_attributes()
+		
+		if len(options) == 1:
+			while ship_with_attributes[2] == already_chosen:
+				ship_with_attributes = get_random_ship_with_attributes()
+		
 		
 		# set ship values
 		var ship: Node3D = ship_with_attributes[0] # Ship
@@ -140,6 +146,7 @@ func setup_ship_options() -> void:
 		display_attributes.append(i)
 	
 		ship_choice_display_attributes.append(display_attributes)
+		already_chosen = ship_attributes
 	ship_selection.setup_choices(ship_choice_display_attributes)
 
 
