@@ -51,9 +51,6 @@ sky = SubResource("Sky_loxr7")
 ambient_light_source = 3
 ambient_light_color = Color(0.505882, 0.505882, 0.505882, 1)
 ambient_light_energy = 0.27
-ssr_enabled = true
-ssao_enabled = true
-ssil_enabled = true
 sdfgi_use_occlusion = true
 sdfgi_min_cell_size = 0.01
 sdfgi_cascade0_distance = 0.64
@@ -191,7 +188,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 190.153)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 29.6078, 0)
-shadow_enabled = true
 shadow_normal_bias = 0.1
 directional_shadow_split_1 = 0.461
 directional_shadow_blend_splits = true
@@ -233,7 +229,7 @@ script = ExtResource("11_3dgxt")
 
 [node name="ship_selection" parent="ShipGenerator" groups=["ship_selection"] instance=ExtResource("11_5i74g")]
 
-[node name="island" parent="." instance=ExtResource("13_13k4f")]
+[node name="island" parent="." groups=["island"] instance=ExtResource("13_13k4f")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2.94901, -8.24597, 1.56842)
 
 [node name="golden_monkey" parent="." instance=ExtResource("14_3r2b0")]
