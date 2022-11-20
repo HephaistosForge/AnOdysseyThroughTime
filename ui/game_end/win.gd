@@ -1,10 +1,13 @@
 extends PanelContainer
 
 @onready var score_label = $VBoxContainer/Score/VBoxContainer/Label2
+@onready var highscore_notification = $VBoxContainer/Score/VBoxContainer/Label3
+
 
 func _ready():
-	print("hello")
 	score_label.text = str(Globals.score)
+	if LoadAndSave.check_for_new_highscore(Globals.score):
+		highscore_notification.visible = true
 
 func _on_play_button_pressed():
 	Globals.reset_score()
