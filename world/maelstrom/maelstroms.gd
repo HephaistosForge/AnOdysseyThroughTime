@@ -91,8 +91,8 @@ func _physics_process(_delta):
 	#	for x in img.MAX_WIDTH:
 	#		print(img.get_pixel(x, y))
 	for object in get_tree().get_nodes_in_group("pullable"):
-		var px = int(object.position.x+256)
-		var py = int(object.position.z+256)
+		#var px = int(object.position.x+256)
+		#var py = int(object.position.z+256)
 		object.position.y = -height(object.position / 512 + Vector3(0.5, 0.5, 0.5))
 		for maelstrom in maelstroms:
 			var pos = Vector3(maelstrom.x-0.5, 0, maelstrom.y-.5) * mesh_size

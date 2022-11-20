@@ -3,7 +3,7 @@ extends Node3D
 const ROWING_BOAT_PREFAB: PackedScene = preload("res://entities/ships/rowing_boat/rowing_boat.tscn")
 const TITANIC_PREFAB: PackedScene = preload("res://entities/ships/titanic/titanic.tscn")
 const U_BOAT_PREFAB: PackedScene = preload("res://entities/ships/u_boat/u_boat.tscn")
-const VIKING_BOAT_PREFAB: PackedScene = preload("res://entities/ships/vinking_boat/viking_boat.tscn")
+const VIKING_BOAT_PREFAB: PackedScene = preload("res://entities/ships/viking_boat/viking_boat.tscn")
 
 @onready var camera = get_tree().get_first_node_in_group("camera")
 @onready var lightning_strike_generator = get_tree().get_first_node_in_group("lightning_strike_generator")

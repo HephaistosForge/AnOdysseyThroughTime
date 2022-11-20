@@ -9,11 +9,11 @@ var changed = false
 
 func lose():
 	Globals.start_pos = Vector3.ZERO
-	get_tree().change_scene_to_packed(LOSE_SCENE) 
+	assert(get_tree().change_scene_to_packed(LOSE_SCENE) == 0)
 
 func win():
 	Globals.start_pos = Vector3.ZERO
-	get_tree().change_scene_to_packed(WIN_SCENE) 
+	assert(get_tree().change_scene_to_packed(WIN_SCENE) == 0)
 
 func _ready():
 	if Globals.start_pos != Vector3.ZERO:
@@ -42,7 +42,7 @@ func _ready():
 		
 func start_game(pos):
 	Globals.start_pos = pos*1.6
-	get_tree().change_scene_to_file("res://world/ocean/ocean.tscn") 
+	assert(get_tree().change_scene_to_file("res://world/ocean/ocean.tscn") == 0)
 
 
 func _on_goal_area_body_entered(body):

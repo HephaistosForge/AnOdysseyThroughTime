@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://no1wqqm7d1pu"]
 
-[ext_resource type="Theme" uid="uid://ca3ibtddlkiye" path="res://ui/ui_theme.tres" id="1_r0681"]
+[ext_resource type="Theme" uid="uid://cubpqq8pqv8re" path="res://ui/ui_theme.tres" id="1_r0681"]
 [ext_resource type="Script" path="res://ui/game_end/win.gd" id="2_ujple"]
 
 [node name="win" type="PanelContainer"]
@@ -117,7 +117,7 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Zurück zum Menü"
 
-[connection signal="pressed" from="VBoxContainer/footer/HBoxContainer/play_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/footer/HBoxContainer/play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/footer/HBoxContainer/play_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/footer/HBoxContainer/menu_button" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/footer/HBoxContainer/menu_button" to="." method="_on_back_button_pressed"]

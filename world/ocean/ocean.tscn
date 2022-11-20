@@ -2,20 +2,20 @@
 
 [ext_resource type="Shader" path="res://world/weather/sky.gdshader" id="1_8oio7"]
 [ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="1_ddwd0"]
-[ext_resource type="PackedScene" uid="uid://0krnl6i3o5ap" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
-[ext_resource type="PackedScene" uid="uid://c0eg78m7jmyuo" path="res://entities/ships/vinking_boat/viking_boat.tscn" id="3_13om1"]
+[ext_resource type="PackedScene" uid="uid://d4m2y6822lui7" path="res://world/weather/lightning_strike_generator.tscn" id="1_woglw"]
 [ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="3_k8sgn"]
 [ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
-[ext_resource type="PackedScene" uid="uid://cx01enkvm0qdr" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
+[ext_resource type="PackedScene" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
 [ext_resource type="PackedScene" uid="uid://beidarsyit5ya" path="res://audio/sounds/SFX/SFX.tscn" id="7_kw4om"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_ngqft"]
 [ext_resource type="PackedScene" uid="uid://dxc1ht5s5puis" path="res://ui/dialogue/TutorialInformation/TutorialInformation.tscn" id="8_uvx3f"]
-[ext_resource type="PackedScene" uid="uid://drf1jxsbswk04" path="res://world/maelstrom/maelstrom_area.tscn" id="9_5csxv"]
+[ext_resource type="PackedScene" uid="uid://pupiv2s81jme" path="res://world/maelstrom/maelstrom_area.tscn" id="9_5csxv"]
 [ext_resource type="Script" path="res://managers/GoalArea.gd" id="9_uvrgv"]
 [ext_resource type="Script" path="res://world/ocean/ShipGenerator.gd" id="11_3dgxt"]
 [ext_resource type="PackedScene" uid="uid://dmr36cwesw5lo" path="res://ui/hud/ship_selection.tscn" id="11_5i74g"]
 [ext_resource type="PackedScene" uid="uid://dwm2nfteihmdi" path="res://entities/obstacles/island.tscn" id="13_13k4f"]
 [ext_resource type="PackedScene" uid="uid://b817vbef7oyde" path="res://entities/golden_monkey.glb" id="14_3r2b0"]
+[ext_resource type="PackedScene" uid="uid://dq63okwrrgho0" path="res://entities/ships/viking_boat/viking_boat.tscn" id="16_vmsvu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iekdp"]
 shader = ExtResource("1_8oio7")
@@ -185,8 +185,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 478.436, 0, -341.409)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -462.492, -6.10352e-05, -247.389)
 
 [node name="LightningStrikeGenerator" parent="." groups=["lightning_strike_generator"] instance=ExtResource("1_woglw")]
-
-[node name="viking_boat" parent="." instance=ExtResource("3_13om1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 190.153)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -201,7 +199,7 @@ transform = Transform3D(1, 0, 0, 0, 0.598479, 0.801139, 0, -0.801139, 0.598479, 
 current = true
 fov = 100.0
 script = ExtResource("4_p8d8g")
-player = NodePath("../viking_boat")
+player = NodePath("../VikingBoat")
 
 [node name="SFX" parent="Camera3D" instance=ExtResource("7_kw4om")]
 
@@ -236,5 +234,8 @@ transform = Transform3D(4.951, 0.698285, 0, -0.698285, 4.951, 0, 0, 0, 5, -0.637
 
 [node name="golden_monkey2" parent="." instance=ExtResource("14_3r2b0")]
 transform = Transform3D(1.58046, -0.523911, -1.108, 0.62931, 1.89841, 0, 1.05172, -0.348639, 1.66503, -5.75548, 6.86144, 9.15125)
+
+[node name="VikingBoat" parent="." instance=ExtResource("16_vmsvu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 190.153)
 
 [connection signal="body_entered" from="GameManager/GoalArea" to="GameManager" method="_on_goal_area_body_entered"]
