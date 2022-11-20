@@ -49,46 +49,47 @@ Du  hast den Schatz gefunden"
 horizontal_alignment = 1
 
 [node name="Score" type="MarginContainer" parent="VBoxContainer"]
-offset_left = 432.0
+offset_left = 453.0
 offset_top = 302.0
-offset_right = 719.0
-offset_bottom = 515.0
+offset_right = 698.0
+offset_bottom = 488.0
 size_flags_horizontal = 4
 theme_override_constants/margin_top = 54
 theme_override_constants/margin_bottom = 54
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Score"]
 offset_top = 54.0
-offset_right = 287.0
-offset_bottom = 159.0
+offset_right = 245.0
+offset_bottom = 132.0
 size_flags_horizontal = 4
 
 [node name="Label" type="Label" parent="VBoxContainer/Score/VBoxContainer"]
-offset_right = 287.0
+offset_right = 245.0
 offset_bottom = 42.0
 theme_override_font_sizes/font_size = 32
 text = "Dein Score:"
 
 [node name="Label2" type="Label" parent="VBoxContainer/Score/VBoxContainer"]
-offset_left = 81.0
+offset_left = 113.0
 offset_top = 46.0
-offset_right = 206.0
+offset_right = 131.0
 offset_bottom = 78.0
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
-text = "<score>"
+text = "0"
 
 [node name="Label3" type="Label" parent="VBoxContainer/Score/VBoxContainer"]
+visible = false
 offset_top = 82.0
 offset_right = 287.0
 offset_bottom = 105.0
 size_flags_horizontal = 4
-text = "optional: Neuer Highscore"
+text = "Neuer Highscore!"
 
 [node name="footer" type="MarginContainer" parent="VBoxContainer"]
-offset_top = 519.0
+offset_top = 492.0
 offset_right = 1152.0
-offset_bottom = 616.0
+offset_bottom = 589.0
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 0
