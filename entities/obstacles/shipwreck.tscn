@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbngchwb84j1j"]
+[gd_scene load_steps=4 format=3 uid="uid://npqmqcsc4qk2"]
 
 [ext_resource type="PackedScene" uid="uid://bs53cp0fdyvp3" path="res://entities/obstacles/models/shipwreck.glb" id="1_c54r6"]
 [ext_resource type="Script" path="res://entities/obstacles/obstacle.gd" id="1_jq6we"]
@@ -6,7 +6,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_phgfu"]
 radius = 2.14507
 
-[node name="shipwreck" type="RigidBody3D" groups=["obstacle", "pullable"]]
+[node name="shipwreck" type="RigidBody3D" groups=["obstacle", "pullable", "swimming"]]
 mass = 5.0
 gravity_scale = 0.0
 lock_rotation = true

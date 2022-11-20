@@ -112,7 +112,7 @@ func _physics_process(_delta):
 	#	for x in img.MAX_WIDTH:
 	#		print(img.get_pixel(x, y))
 	if depth_image != null:
-		for object in get_tree().get_nodes_in_group("pullable"):
+		for object in get_tree().get_nodes_in_group("swimming"):
 			# img.lock()
 			var px = (object.position.x+mesh_size/2.0) /mesh_size * 512
 			var py = (object.position.z+mesh_size/2.0) / mesh_size * 512

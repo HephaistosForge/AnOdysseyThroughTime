@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwm2nfteihmdi"]
+[gd_scene load_steps=3 format=3 uid="uid://ccyq2wo5m3lk1"]
 
 [ext_resource type="PackedScene" uid="uid://cbahwex4fprtk" path="res://entities/obstacles/models/island.glb" id="1_8vs6t"]
 
