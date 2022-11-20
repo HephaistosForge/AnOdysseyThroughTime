@@ -40,6 +40,8 @@ libraries = {
 }
 
 [node name="Dialogue" parent="." instance=ExtResource("3_gdptf")]
+inital_dialog = ["Zeit für die Weisheit des Tages:"]
+follow_up_dialog = ["Wenn man in die falsche Richtung läuft, hat es keinen Zweck, das Tempo zu erhöhen.", "Das Leben ist wie eine Schachtel Pralinen. Man weiß nie, was man bekommt.", "Wie viele Dinge es gibt, die ich nicht brauche!", "Weniger ist mehr.", "Lieber nichts besitzen, als dann zu verlieren."]
 name_of_speaker = ["Forrest", "Albert", "Marcus", "Sokrates"]
 
 [node name="Anchor" type="Node3D" parent="." groups=["anchor"]]
