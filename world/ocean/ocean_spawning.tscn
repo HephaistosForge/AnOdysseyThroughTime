@@ -182,7 +182,6 @@ offset_bottom = 92.0
 mouse_filter = 1
 
 [node name="Label" type="Label" parent="PanelContainer"]
-layout_mode = 2
 offset_top = 26.0
 offset_right = 1061.0
 offset_bottom = 49.0

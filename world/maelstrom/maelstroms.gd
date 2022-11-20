@@ -81,12 +81,15 @@ func _physics_process(_delta):
 			var pos = Vector3(maelstrom.x-0.5, 0, maelstrom.y-.5) * mesh_size
 			var diff = pos - object.position
 			var dist = diff.length()
-			force += diff / pow(dist, 3)
+			var pow_div = 2
+			if object is RigidBody3D:
+				pow_div = 3
+			force += diff / pow(dist, pow_div)
 			
 		if object is RigidBody3D:
 			object.apply_force(force * 10000 * 50)
 		else:
-			object.velocity += force * 100
+			object.velocity += force * 50
 			
 	# var img = height_texture.get_image()
 	#for y in img.MAX_HEIGHT:
