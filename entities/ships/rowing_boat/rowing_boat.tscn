@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://qkol5h6avnsc"]
+[gd_scene load_steps=9 format=3 uid="uid://qkol5h6avnsc"]
 
+[ext_resource type="PackedScene" uid="uid://00wpf5wk5tb7" path="res://audio/sounds/ships/creaking_ship/CreakingShip.tscn" id="1_84lx6"]
 [ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_tjyn1"]
 [ext_resource type="PackedScene" uid="uid://bkogtdpbfkee4" path="res://entities/ships/rowing_boat/rowing_boat.glb" id="2_1xris"]
-[ext_resource type="PackedScene" path="res://ui/dialogue/Dialogue.tscn" id="3_gdptf"]
+[ext_resource type="PackedScene" uid="uid://b8pkku6jgdsh0" path="res://ui/dialogue/Dialogue.tscn" id="3_gdptf"]
 [ext_resource type="PackedScene" uid="uid://byaks36vihbmo" path="res://entities/ships/pointer.glb" id="4_qs7us"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3tagk"]
@@ -18,6 +19,8 @@ _data = {
 }
 
 [node name="RowingBoat" type="CharacterBody3D" groups=["boat", "pullable", "swimming"]]
+
+[node name="CreakingShip" parent="." instance=ExtResource("1_84lx6")]
 
 [node name="ShipSteering" parent="." instance=ExtResource("1_tjyn1")]
 ACCELERATION_MULTIPLIER = 0.08

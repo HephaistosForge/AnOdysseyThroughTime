@@ -10,6 +10,7 @@ extends Node3D
 @export var despawn_time: float = 0.3
 
 var spawn_time: float = 1.5
+const INVULNERABILTY_TIME = 5.0
 
 var active = false
 
@@ -55,16 +56,15 @@ func set_active():
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if active and body.is_in_group("boat"):
-		lightning_strike_generator.on_hit()
-		ship_selection.prompt_ui()
-		print("hit")
-	active = false
+	if lightning_strike_generator.time_since_last_hit >= INVULNERABILTY_TIME:
+		if active and body.is_in_group("boat"):
+			lightning_strike_generator.on_hit()
+			ship_selection.prompt_ui()
+		active = false
 
 
 func _on_despawn_timer_timeout() -> void:
 	self.queue_free()
-	#pass
 
 
 

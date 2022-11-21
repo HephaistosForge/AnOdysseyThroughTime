@@ -81,7 +81,7 @@ func occ(data):
 		if val not in occu:
 			occu[val] = 0
 		occu[val] += 1
-	print(occu)
+	#print(occu)
 		
 func height(uv):
 	var h = sin(time * 1.0 + uv.x*100. + uv.y*120.)

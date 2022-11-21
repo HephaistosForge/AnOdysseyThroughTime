@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dj8v2bbnujv4u"]
 
+[ext_resource type="PackedScene" uid="uid://dlo0hf246jdnl" path="res://audio/sounds/ships/titanic_ambient/TitanicSFX.tscn" id="1_sngau"]
 [ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_ymrqw"]
 [ext_resource type="PackedScene" uid="uid://bdml33d4hkfp0" path="res://entities/ships/titanic/titanic.glb" id="2_jktoa"]
-[ext_resource type="PackedScene" path="res://ui/dialogue/Dialogue.tscn" id="3_ou6vq"]
+[ext_resource type="PackedScene" uid="uid://b8pkku6jgdsh0" path="res://ui/dialogue/Dialogue.tscn" id="3_ou6vq"]
 [ext_resource type="PackedScene" uid="uid://byaks36vihbmo" path="res://entities/ships/pointer.glb" id="4_8k3jj"]
 [ext_resource type="PackedScene" uid="uid://dlo0hf246jdnl" path="res://audio/sounds/ships/titanic_ambient/TitanicSFX.tscn" id="5_5uaus"]
 
@@ -11,6 +12,8 @@ radius = 1.278
 height = 14.746
 
 [node name="Titanic" type="CharacterBody3D" groups=["boat", "pullable", "swimming"]]
+
+[node name="TitanicSFX" parent="." instance=ExtResource("1_sngau")]
 
 [node name="ShipSteering" parent="." instance=ExtResource("1_ymrqw")]
 ACCELERATION_MULTIPLIER = 0.06

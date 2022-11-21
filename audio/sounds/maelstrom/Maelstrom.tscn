@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://pcd7badpojb8"]
 
-[ext_resource type="AudioStream" uid="uid://24uq0toi8bxj" path="res://audio/sounds/maelstrom/maelstrom.ogg" id="1_564to"]
+[ext_resource type="AudioStream" uid="uid://ddgu6ykuex1y2" path="res://audio/sounds/maelstrom/maelstrom.ogg" id="1_564to"]
 
 [node name="MaelstromSFX" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_564to")

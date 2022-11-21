@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b1x1chb5jqfly" path="res://entities/ships/ship_steering.tscn" id="1_wdi7b"]
 [ext_resource type="PackedScene" uid="uid://dtimnj6efcpbn" path="res://entities/ships/viking_boat/viking.glb" id="2_8tt1k"]
-[ext_resource type="PackedScene" path="res://ui/dialogue/Dialogue.tscn" id="3_6vha3"]
+[ext_resource type="PackedScene" uid="uid://b8pkku6jgdsh0" path="res://ui/dialogue/Dialogue.tscn" id="3_6vha3"]
 [ext_resource type="PackedScene" uid="uid://byaks36vihbmo" path="res://entities/ships/pointer.glb" id="4_vuqfc"]
 [ext_resource type="PackedScene" uid="uid://00wpf5wk5tb7" path="res://audio/sounds/ships/creaking_ship/CreakingShip.tscn" id="5_ytax8"]
 
