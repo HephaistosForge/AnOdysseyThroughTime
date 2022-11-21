@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://world/maelstrom/maelstroms.gd" id="3_k8sgn"]
 [ext_resource type="Shader" path="res://world/ocean/spiral.gdshader" id="3_tq8ml"]
 [ext_resource type="Script" path="res://managers/Camera.gd" id="4_p8d8g"]
-[ext_resource type="PackedScene" uid="uid://du363v1pg8bxa" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
+[ext_resource type="PackedScene" uid="uid://cx01enkvm0qdr" path="res://entities/obstacles/obstacle_generator.tscn" id="7_11iuw"]
 [ext_resource type="PackedScene" uid="uid://beidarsyit5ya" path="res://audio/sounds/SFX/SFX.tscn" id="7_kw4om"]
 [ext_resource type="PackedScene" path="res://audio/music/BackgroundMusic.tscn" id="8_c8pn8"]
 [ext_resource type="Script" path="res://managers/GameManager.gd" id="8_ngqft"]
@@ -202,7 +202,7 @@ directional_shadow_split_1 = 0.461
 directional_shadow_blend_splits = true
 
 [node name="Camera3D" type="Camera3D" parent="." groups=["camera"]]
-transform = Transform3D(1, 0, 0, 0, 0.794415, 0.607376, 0, -0.607376, 0.794415, 3.1558, 15.0181, 200.057)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 3.1558, 15.0181, 200.057)
 current = true
 fov = 100.0
 script = ExtResource("4_p8d8g")
